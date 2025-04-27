@@ -125,19 +125,19 @@
                     <div class="card me-4" style="width: 12rem;">
                       <div class="card-body">
                         <p class="card-text">01</p>
-                        <h5 class="card-title">Not Started</h5>
+                        <h5 class="card-title">Created</h5>
                       </div>
                     </div>
                     <div class="card me-4" style="width: 12rem;">
                       <div class="card-body">
                         <p class="card-text">12</p>
-                        <h5 class="card-title">Active</h5>
+                        <h5 class="card-title">Submitted</h5>
                       </div>
                     </div>
                     <div class="card" style="width: 12rem;">
                       <div class="card-body">
-                        <p class="card-text">00</p>
-                        <h5 class="card-title">Overdue</h5>
+                        <p class="card-text">03</p>
+                        <h5 class="card-title">Completed</h5>
                       </div>
                     </div>
                 </div>
