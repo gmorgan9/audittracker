@@ -17,7 +17,7 @@
 
     <section class="layout">
 
-        <div class="sidebar">
+        <div class="sidebar ps-2">
             <h1>
                 Logo Here
             </h1>
@@ -76,7 +76,7 @@
 
 
         <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
-            <div class="pe-3 d-flex align-items-center gap-2">
+            <div class=" d-flex align-items-center gap-2">
                 <div class="circle-with-text">
                     GM
                 </div>
