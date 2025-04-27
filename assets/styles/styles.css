@@ -12,7 +12,7 @@ html, body {
     "sidebar header header" 0.001fr
     "sidebar body_1 body_2" 1fr
     / 0.5fr 1.5fr 1.5fr;
-  gap: 8px;
+  /* gap: 8px; */
 }
 
 .sidebar { 
