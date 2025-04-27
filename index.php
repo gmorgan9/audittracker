@@ -197,18 +197,18 @@
                     </div>
 
                     <div class="engagement">
-                        <div class="card" style="">
+                        <div class="card">
                             <div class="card-body">
-                                <div class="d-flex">
-                                    <p class="fw-bold mb-2">LivePerson</p>
-                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                         <div class="progress-bar" style="width: 25%">25%</div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="fw-bold mb-0 me-3">LivePerson</p>
+                                    <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 25%">25%</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                       
                     </div>
+
                 </div>
             </div>
 
