@@ -35,6 +35,7 @@
                     <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
                     &nbsp;&nbsp;Dashboard</a>
                 </li>
+                
                 <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
     
                 <li class="pb-3">
@@ -47,10 +48,28 @@
                     <li class="ps-4 pb-3">
                         <a href="" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
                     </li>
-                    <li class="ps-4 pb-3">
+                    <li class="ps-4">
                         <a href="" class="text-decoration-none text-black"><i class="bi bi-archive"></i>&nbsp;&nbsp;Archived</a>
                     </li>
                 </ul>
+
+                <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
+
+                <li class="pb-3">
+                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3-fill text-primary" style="-webkit-text-stroke: 1px;"></i>&nbsp;&nbsp;Organization</a>
+                </li>
+                <ul class="list-unstyled">
+                    <li class="ps-4 pb-3">
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase-fill"></i>&nbsp;&nbsp;Clients</a>
+                    </li>
+                    <li class="ps-4 pb-3">
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear-fill"></i>&nbsp;&nbsp;Users</a>
+                    </li>
+                    <li class="ps-4">
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-gear-fill"></i>&nbsp;&nbsp;Settings</a>
+                    </li>
+                </ul>
+
             </ul>
 
         </div>
