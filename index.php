@@ -26,7 +26,7 @@
                 Add New Engagement +
             </button>
 
-            <ul lass="list-unstyled">
+            <ul class="list-unstyled">
                 <li>
                     <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
                 </li>
