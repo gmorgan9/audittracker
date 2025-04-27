@@ -193,7 +193,7 @@
             <div class="card" style="width: 40rem; height: 13.5rem;">
                 <div class="card-body">
                     <div class="">
-                        <h5 class="card-title mb-2">Active Engagements <i class="bi bi-dash-square-fill" style="color: rgb(173,174,183) !important;"></i></h5>
+                        <h6 class="card-title mb-2">Active Engagements</h6>
                     </div>
                     <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
                 </div>
