@@ -22,7 +22,7 @@
                 Logo Here
             </h1>
 
-            <button class="btn btn-secondary">
+            <button type="button" class="btn btn-secondary">
                 Add New Engagement +
             </button>
 
