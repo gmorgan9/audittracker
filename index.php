@@ -188,7 +188,7 @@
 
 
         <div class="body_2">
-            <div class="spacer mt-5">
+            <div class="spacer" style="height: 25px;">
 
             </div>
 
