@@ -17,7 +17,7 @@
 
     <section class="layout">
 
-        <div class="sidebar ps-2">
+        <div class="sidebar ps-2" style="box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
             <h1>
                 Logo Here
             </h1>
