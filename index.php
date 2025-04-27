@@ -75,13 +75,12 @@
         </div>
 
 
-        <div class="header" style="height: 60px !important; background-color: rgb(236,241,247) !important;">
-            <div class="float-end pe-3 d-flex align-items-center">
-                <p class="align-items-center">
-                    header
-                </p>
-            </div>
+        <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
+            <p class="pe-3 m-0">
+                header
+            </p>
         </div>
+
         <div class="body_1">
             1st column
         </div>
