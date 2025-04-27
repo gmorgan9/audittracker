@@ -37,7 +37,7 @@
                 </li>
             </ul>
 
-            <hr>
+            <hr style="color: pink !important;">
 
             <ul class="list-unstyled ps-4">
     
