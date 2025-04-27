@@ -75,8 +75,10 @@
         </div>
 
 
-        <div class="header" style="height: 50px !important; background-color: rgb(236,241,247) !important;">
-            Header
+        <div class="header" style="height: 60px !important; background-color: rgb(236,241,247) !important;">
+            <div class="float-right">
+                header
+            </div>
         </div>
         <div class="body_1">
             1st column
