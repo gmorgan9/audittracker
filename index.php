@@ -75,7 +75,7 @@
         </div>
 
 
-        <div class="header" style="height: 50px !important;">
+        <div class="header" style="height: 50px !important; background-color: rgb(236,241,247) !important;">
             Header
         </div>
         <div class="body_1">
