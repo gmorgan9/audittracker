@@ -10,9 +10,20 @@
     
 
     <section class="layout">
-        <div class="sidebar">1</div>
-        <div class="body1">2</div>
-        <div class="body2">3</div>
+
+        <div class="header">
+            header
+        </div>
+        <div class="sidebar">
+            Audit Tracker
+        </div>
+        <div class="body1">
+            1st column
+        </div>
+        <div class="body2">
+            2nd column
+        </div>
+
       </section>
 
 
