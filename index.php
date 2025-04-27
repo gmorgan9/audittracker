@@ -199,7 +199,7 @@
                     <div class="engagement">
                         <div class="card" style="">
                             <div class="card-body">
-                                <div class="">
+                                <div class="d-flex">
                                     <p class="fw-bold mb-2">LivePerson</p>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                          <div class="progress-bar" style="width: 25%">25%</div>
