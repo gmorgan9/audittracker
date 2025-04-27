@@ -12,8 +12,20 @@
     <section class="layout">
 
         <div class="sidebar">
-            Audit Tracker
+            <h1>
+                Logo Here
+            </h1>
+
+            <button>
+                Add New Engagement +
+            </button>
+
+            <a href="">Dashboard</a>
+
+            <a href="">Engagements</a>
         </div>
+
+
         <div class="header">
             Header
         </div>
