@@ -32,11 +32,11 @@
 
             <ul class="list-unstyled ps-4">
                 <li class="pb-3">
-                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 2px;"></i>
+                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
                     &nbsp;&nbsp;Dashboard</a>
                 </li>
                 <li class="pb-3">
-                    <a href="" class="text-decoration-none text-black"><i class="bi bi-folder"></i>&nbsp;&nbsp;Engagements</a>
+                    <a href="" class="text-decoration-none text-black"><i class="bi bi-folder text-primary" style="-webkit-text-stroke: 1px;"></i>&nbsp;&nbsp;Engagements</a>
                 </li>
                 <ul class="list-unstyled">
                     <li class="ps-4 pb-3">
