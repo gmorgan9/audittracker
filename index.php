@@ -188,11 +188,19 @@
 
 
         <div class="body_2">
-            <div class="spacer" style="height: 115px;">
+            <div class="spacer" style="height: 150px;"></div>
 
+            <div class="card" style="width: 18rem; height: 6rem;">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <div class="d-flex">
+                        <!-- <p class="card-text me-2">00</p> -->
+                        <h5 class="card-title mb-2">7 completed <i class="bi bi-dash-square-fill" style="color: rgb(173,174,183) !important;"></i></h5>
+                    </div>
+                    <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
+                </div>
             </div>
 
-            header
+            
         </div>
 
 
