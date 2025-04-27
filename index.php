@@ -94,29 +94,29 @@
             <div class="current_engagements">
 
                 <div class="row ms-4 mt-4">
-                    <div class="card me-4" style="width: 12rem;">
+                    <div class="card me-4" style="width: 18rem;">
                       <div class="card-body">
                         <p class="card-text">01</p>
                         <h5 class="card-title">Not Started</h5>
                       </div>
                     </div>
-                    <div class="card me-4" style="width: 12rem;">
+                    <div class="card me-4" style="width: 18rem;">
                       <div class="card-body">
                         <p class="card-text">12</p>
                         <h5 class="card-title">Active</h5>
                       </div>
                     </div>
-                    <div class="card me-4" style="width: 12rem;">
+                    <div class="card me-4" style="width: 18rem;">
                       <div class="card-body">
                         <p class="card-text">02</p>
                         <h5 class="card-title">In Review</h5>
                       </div>
                     </div>
-                    <div class="card" style="width: 12rem;">
+                    <div class="card" style="width: 18rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
                                 <!-- <p class="card-text me-2">00</p> -->
-                                <h5 class="card-title mb-2">00 Overdue</h5>
+                                <h5 class="card-title mb-2">0 Overdue</h5>
                             </div>
                             <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                         </div>
