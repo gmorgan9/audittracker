@@ -188,14 +188,14 @@
 
 
         <div class="body_2">
-        <div class="engagement">
-            <div class="content d-flex flex-direction-row">
-                <span>ACME, Inc</span>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 25%"></div>
-                </div>
+            <div class="spacer mt-5">
+
             </div>
+
+            header
         </div>
+
+
     </div>
 
       </section>
