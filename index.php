@@ -188,7 +188,7 @@
 
 
         <div class="body_2">
-            <div class="spacer" style="height: 25px;">
+            <div class="spacer" style="height: 150px;">
 
             </div>
 
