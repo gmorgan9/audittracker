@@ -32,20 +32,20 @@
 
             <ul class="list-unstyled ps-4">
                 <li class="pb-3">
-                    <a href="" class="text-decoration-none text-black"><i class="bi bi-columns-gap"></i> Dashboard</a>
+                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap"></i>&nbsp;&nbsp;Dashboard</a>
                 </li>
                 <li class="pb-3">
-                    <a href="" class="text-decoration-none text-black"><i class="bi bi-folder"></i> Engagements</a>
+                    <a href="" class="text-decoration-none text-black"><i class="bi bi-folder"></i>&nbsp;&nbsp;Engagements</a>
                 </li>
                 <ul class="list-unstyled">
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i> Draft</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i>&nbsp;&nbsp;Draft</a>
                     </li>
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i> Active</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
                     </li>
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-archive"></i> Archived</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-archive"></i>&nbsp;&nbsp;Archived</a>
                     </li>
                 </ul>
             </ul>
