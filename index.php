@@ -190,11 +190,14 @@
         <div class="body_2">
             <div class="spacer" style="height: 150px;"></div>
 
+            <h5 class="ps-3 mt-4">
+                Active Engagements
+            </h5>
             <div class="card" style="width: 40rem; height: 31.5rem;">
                 <div class="card-body">
-                    <div class="">
+                    <!-- <div class="">
                         <h6 class="card-title mb-2 fw-bold">Active Engagements</h6>
-                    </div>
+                    </div> -->
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
