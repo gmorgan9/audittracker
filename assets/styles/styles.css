@@ -1,7 +1,13 @@
-.parent {
+.layout {
+    width: 100%;
+  
     display: grid;
-    grid-template-columns: 1fr repeat(2, 1.5fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-}
+    grid:
+      "sidebar body1 body2" 1fr
+      / auto 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .sidebar { grid-area: sidebar; }
+  .body1 { grid-area: body1; }
+  .body2 { grid-area: body2; }
