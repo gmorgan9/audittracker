@@ -63,7 +63,7 @@
                         <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase-fill"></i>&nbsp;&nbsp;Clients</a>
                     </li>
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear-fill"></i>&nbsp;&nbsp;Users</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-person-fill-gear"></i>&nbsp;&nbsp;Users</a>
                     </li>
                     <li class="ps-4">
                         <a href="" class="text-decoration-none text-black"><i class="bi bi-gear-fill"></i>&nbsp;&nbsp;Settings</a>
