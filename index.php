@@ -188,9 +188,9 @@
 
 
         <div class="body_2">
-            <div class="spacer" style="height: 150px;"></div>
+            <div class="spacer" style="height: 100px;"></div>
 
-            <h5 class="ps-3 mt-4">
+            <h5 class="ps-3">
                 Active Engagements
             </h5>
             <div class="card" style="width: 40rem; height: 31.5rem;">
