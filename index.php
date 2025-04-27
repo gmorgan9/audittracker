@@ -17,13 +17,13 @@
 
     <section class="layout">
 
-        <div class="sidebar">
+        <div class="sidebar ps-2">
             <h1>
                 Logo Here
             </h1>
 
             <div class="pt-4"></div>
-            
+
             <button type="button" class="btn btn-secondary">
                 Add New Engagement +
             </button>
