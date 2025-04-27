@@ -190,7 +190,7 @@
         <div class="body_2">
             <div class="spacer" style="height: 150px;"></div>
 
-            <div class="card" style="width: 40rem; height: 30rem;">
+            <div class="card" style="width: 40rem; height: 32rem;">
                 <div class="card-body">
                     <div class="">
                         <h6 class="card-title mb-2">Active Engagements</h6>
