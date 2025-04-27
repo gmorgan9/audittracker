@@ -115,8 +115,8 @@
                     <div class="card" style="width: 12rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
-                                <p class="card-text me-2">00</p>
-                                <h5 class="card-title mb-0">Overdue</h5>
+                                <!-- <p class="card-text me-2">00</p> -->
+                                <h5 class="card-title mb-0">00 Overdue</h5>
                             </div>
                             <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                         </div>
