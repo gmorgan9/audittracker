@@ -76,10 +76,7 @@
 
 
         <div class="header" style="height: 60px !important; background-color: rgb(236,241,247) !important;">
-            <div class="float-right">
-                <p class="float-right">
-                    header
-                </p>
+            <div class="float-end">
                 header
             </div>
         </div>
