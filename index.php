@@ -102,7 +102,7 @@
             <div class="current_engagements">
 
                 <div class="row ms-4 mt-4">
-                    <div class="card me-4 mb-4" style="width: 18rem; height: 7rem;">
+                    <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
                                 <h5 class="card-title mb-2">6 in review</h5>
@@ -110,7 +110,7 @@
                             <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                       </div>
                     </div>
-                    <div class="card me-4 mb-4" style="width: 18rem;">
+                    <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
                                 <h5 class="card-title mb-2">3 are active</h5>
@@ -118,7 +118,7 @@
                             <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                         </div>
                     </div>
-                    <div class="card me-4" style="width: 18rem;">
+                    <div class="card me-4" style="width: 18rem; height: 6rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
                                 <h5 class="card-title mb-2">0 due</h5>
@@ -126,7 +126,7 @@
                             <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; height: 6rem;">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
                             <div class="d-flex">
                                 <!-- <p class="card-text me-2">00</p> -->
