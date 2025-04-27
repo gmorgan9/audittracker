@@ -7,21 +7,20 @@
     <title>Home</title>
 </head>
 <body>
-    
 
-    <div class="header">
-            header
-        </div>
 
     <section class="layout">
 
         <div class="sidebar">
             Audit Tracker
         </div>
-        <div class="body1">
-            1st column
+        <div class="header">
+            Header
         </div>
-        <div class="body2">
+        <div class="body1">
+            1nd column
+        </div>
+        <div class="body1">
             2nd column
         </div>
 

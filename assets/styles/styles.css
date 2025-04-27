@@ -1,13 +1,15 @@
 .layout {
-    width: 100%;
-  
-    display: grid;
-    grid:
-      "sidebar body1 body2" 1fr
-      / 0.5fr 1.5fr 1.5fr;
-    gap: 8px;
-  }
-  
-  .sidebar { grid-area: sidebar; }
-  .body1 { grid-area: body1; }
-  .body2 { grid-area: body2; }
+  width: 100%;
+
+  display: grid;
+  grid:
+    "sidebar header header" 0.001fr
+    "sidebar body1 body2" 1fr
+    / 0.5fr 1.5fr 1.5fr;
+  gap: 8px;
+}
+
+.sidebar { grid-area: sidebar; }
+.header { grid-area: header; }
+.body1 { grid-area: body1; }
+.body2 { grid-area: body2; }
