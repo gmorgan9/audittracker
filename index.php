@@ -113,7 +113,7 @@
                       </div>
                     </div>
                     <div class="card" style="width: 12rem;">
-                      <div class="card-body d-flex flex-direction-column justify-content-center">
+                      <div class="card-body d-flex flex-column justify-content-center">
                         <p class="card-text">00</p>
                         <h5 class="card-title">Overdue</h5>
                         <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
