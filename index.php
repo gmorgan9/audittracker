@@ -94,19 +94,13 @@
                     <div class="card me-4" style="width: 12rem;">
                       <div class="card-body">
                         <p class="card-text">01</p>
-                        <h5 class="card-title">In Review</h5>
+                        <h5 class="card-title">Not Started</h5>
                       </div>
                     </div>
                     <div class="card me-4" style="width: 12rem;">
                       <div class="card-body">
                         <p class="card-text">12</p>
                         <h5 class="card-title">Active</h5>
-                      </div>
-                    </div>
-                    <div class="card me-4" style="width: 12rem;">
-                      <div class="card-body">
-                        <p class="card-text">03</p>
-                        <h5 class="card-title">Due</h5>
                       </div>
                     </div>
                     <div class="card" style="width: 12rem;">
