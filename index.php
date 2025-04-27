@@ -35,6 +35,7 @@
                     <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
                     &nbsp;&nbsp;Dashboard</a>
                 </li>
+                <hr>
                 <li class="pb-3">
                     <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-folder text-primary" style="-webkit-text-stroke: 1px;"></i>&nbsp;&nbsp;Engagements</a>
                 </li>
