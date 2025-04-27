@@ -112,13 +112,16 @@
                         <h5 class="card-title">In Review</h5>
                       </div>
                     </div>
-                    <div class="card d-flex justify-content-center" style="width: 12rem;">
-                      <div class="card-body">
-                        <p class="card-text">00</p>
-                        <h5 class="card-title">Overdue</h5>
-                        <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
-                      </div>
-                    </div>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card" style="width: 12rem;">
+        <div class="card-body">
+            <p class="card-text">00</p>
+            <h5 class="card-title">Overdue</h5>
+            <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
+        </div>
+    </div>
+</div>
+
                 </div>
 
             </div>
