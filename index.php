@@ -76,9 +76,11 @@
 
 
         <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
-            <p class="pe-3 m-0">
-                header
-            </p>
+            <div class="pe-3 m-0">
+                <div class="circle-with-text">
+                    This is the text in a circle.
+                </div>
+            </div>
         </div>
 
         <div class="body_1">
