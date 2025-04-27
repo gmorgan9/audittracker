@@ -30,7 +30,7 @@
 
             <div class="pt-4"></div>
 
-            <ul class="list-unstyled ps-5">
+            <ul class="list-unstyled ps-4">
                 <li class="pb-1">
                     <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
                 </li>
