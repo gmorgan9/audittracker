@@ -145,8 +145,17 @@
             </div>
 
         </div>
+
+
         <div class="body_2">
-            2nd column
+            <div class="engagement">
+                <div class="content d-flex flex-direction-row">
+                    <span>ACME, Inc</span>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar w-75"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
       </section>
