@@ -106,10 +106,17 @@
                         <h5 class="card-title">Active</h5>
                       </div>
                     </div>
+                    <div class="card me-4" style="width: 12rem;">
+                      <div class="card-body">
+                        <p class="card-text">02</p>
+                        <h5 class="card-title">In Review</h5>
+                      </div>
+                    </div>
                     <div class="card" style="width: 12rem;">
                       <div class="card-body">
                         <p class="card-text">00</p>
                         <h5 class="card-title">Overdue</h5>
+                        <h5 class="card-subtitle">Overdue</h5>
                       </div>
                     </div>
                 </div>
