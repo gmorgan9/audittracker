@@ -193,7 +193,7 @@
             <div class="card" style="width: 40rem; height: 31.5rem;">
                 <div class="card-body">
                     <div class="">
-                        <h6 class="card-title mb-2">Active Engagements</h6>
+                        <h6 class="card-title mb-2 fw-bold">Active Engagements</h6>
                     </div>
 
                     <ul class="list-group list-group-flush">
