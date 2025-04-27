@@ -116,7 +116,7 @@
                       <div class="card-body">
                         <p class="card-text">00</p>
                         <h5 class="card-title">Overdue</h5>
-                        <h6 class="card-subtitle text-secondary">at the moment</h6>
+                        <p class="card-subtitle text-secondary">at the moment</p>
                       </div>
                     </div>
                 </div>
