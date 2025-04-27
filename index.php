@@ -116,7 +116,31 @@
 
             </div>
 
+            <h3 class="ps-2 mt-4">
+                Recent Activity
+            </h3>
             <div class="recent_activity">
+
+                <div class="row ms-4 mt-4">
+                    <div class="card me-4" style="width: 12rem;">
+                      <div class="card-body">
+                        <p class="card-text">01</p>
+                        <h5 class="card-title">Not Started</h5>
+                      </div>
+                    </div>
+                    <div class="card me-4" style="width: 12rem;">
+                      <div class="card-body">
+                        <p class="card-text">12</p>
+                        <h5 class="card-title">Active</h5>
+                      </div>
+                    </div>
+                    <div class="card" style="width: 12rem;">
+                      <div class="card-body">
+                        <p class="card-text">00</p>
+                        <h5 class="card-title">Overdue</h5>
+                      </div>
+                    </div>
+                </div>
 
             </div>
 
