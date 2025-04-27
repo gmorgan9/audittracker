@@ -140,9 +140,9 @@
 
             </div>
 
-            <h3 class="ps-3 mt-4">
+            <h5 class="ps-3 mt-4">
                 Recent Activity
-            </h3>
+            </h5>
             <div class="recent_activity">
 
             <div class="row ms-4 mt-4">
