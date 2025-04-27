@@ -60,13 +60,13 @@
                 </li>
                 <ul class="list-unstyled">
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase-fill"></i>&nbsp;&nbsp;Clients</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase"></i>&nbsp;&nbsp;Clients</a>
                     </li>
                     <li class="ps-4 pb-3">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-person-fill-gear"></i>&nbsp;&nbsp;Users</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear"></i>&nbsp;&nbsp;Users</a>
                     </li>
                     <li class="ps-4">
-                        <a href="" class="text-decoration-none text-black"><i class="bi bi-gear-fill"></i>&nbsp;&nbsp;Settings</a>
+                        <a href="" class="text-decoration-none text-black"><i class="bi bi-gear"></i>&nbsp;&nbsp;Settings</a>
                     </li>
                 </ul>
 
