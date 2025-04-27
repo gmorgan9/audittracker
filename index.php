@@ -9,11 +9,12 @@
 <body>
     
 
-    <section class="layout">
-
-        <div class="header">
+    <div class="header">
             header
         </div>
+
+    <section class="layout">
+
         <div class="sidebar">
             Audit Tracker
         </div>
