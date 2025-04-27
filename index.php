@@ -27,10 +27,10 @@
             </button>
 
             <ul class="text-decoration-none">
-                <li>
+                <li class="text-decoration-none">
                     <a href=""><i class="bi bi-columns-gap"></i> Dashboard</a>
                 </li>
-                <li>
+                <li class="text-decoration-none">
                     <a href=""><i class="bi bi-folder"></i> Engagements</a>
                 </li>
             </ul>
