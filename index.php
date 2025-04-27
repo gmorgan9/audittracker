@@ -91,7 +91,7 @@
             <div class="current_engagements">
 
                 <div class="row">
-                    <div class="card" style="width: 10rem;">
+                    <div class="card pe-2" style="width: 10rem;">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -100,7 +100,6 @@
                         <a href="#" class="card-link">Another link</a>
                       </div>
                     </div>
-                    <div class="pe-2"></div>
                     <div class="card" style="width: 10rem;">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
