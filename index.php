@@ -33,6 +33,15 @@
                 <li>
                     <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
                 </li>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
+                    </li>
+                </ul>
+                
             </ul>
 
         </div>
