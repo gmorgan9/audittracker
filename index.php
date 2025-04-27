@@ -26,9 +26,15 @@
                 Add New Engagement +
             </button>
 
-            <a href=""><i class="bi bi-columns-gap"></i> Dashboard</a>
+            <ul>
+                <li>
+                    <a href=""><i class="bi bi-columns-gap"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href=""><i class="bi bi-folder"></i> Engagements</a>
+                </li>
+            </ul>
 
-            <a href=""><i class="bi bi-folder"></i> Engagements</a>
         </div>
 
 
