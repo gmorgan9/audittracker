@@ -190,7 +190,7 @@
         <div class="body_2">
             <div class="spacer" style="height: 150px;"></div>
 
-            <div class="card" style="width: 18rem; height: 6rem;">
+            <div class="card" style="width: 25rem; height: 10rem;">
                 <div class="card-body d-flex flex-column align-items-center justify-content-center">
                     <div class="d-flex">
                         <!-- <p class="card-text me-2">00</p> -->
