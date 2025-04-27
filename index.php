@@ -75,7 +75,7 @@
         </div>
 
 
-        <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
+        <div class="header d-flex flex-direction-row align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
             <div class="pe-3 m-0">
                 <div class="circle-with-text">
                     GM
