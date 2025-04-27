@@ -35,10 +35,13 @@
                 </li>
                 <ul class="list-unstyled">
                     <li class="ps-4">
-                        <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
+                        <a href="" class="text-decoration-none"><i class="bi bi-vector-pen"></i> Draft</a>
                     </li>
                     <li class="ps-4">
-                        <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
+                        <a href="" class="text-decoration-none"><i class="bi bi-check-circle"></i> Active</a>
+                    </li>
+                    <li class="ps-4">
+                        <a href="" class="text-decoration-none"><i class="bi bi-archive"></i> Archived</a>
                     </li>
                 </ul>
             </ul>
