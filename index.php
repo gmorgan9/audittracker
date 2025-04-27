@@ -145,25 +145,41 @@
             </h3>
             <div class="recent_activity">
 
-                <div class="row ms-4 mt-4">
-                    <div class="card me-4" style="width: 12rem;">
-                      <div class="card-body">
-                        <p class="card-text">01</p>
-                        <h5 class="card-title">Created</h5>
+            <div class="row ms-4 mt-4">
+                    <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex">
+                                <h5 class="card-title mb-2">2 created</h5>
+                            </div>
+                            <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
                       </div>
                     </div>
-                    <div class="card me-4" style="width: 12rem;">
-                      <div class="card-body">
-                        <p class="card-text">12</p>
-                        <h5 class="card-title">Submitted</h5>
-                      </div>
+                    <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex">
+                                <h5 class="card-title mb-2">2 submitted</h5>
+                            </div>
+                            <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
+                        </div>
                     </div>
-                    <div class="card" style="width: 12rem;">
-                      <div class="card-body">
-                        <p class="card-text">03</p>
-                        <h5 class="card-title">Completed</h5>
-                      </div>
+                    <div class="card me-4" style="width: 18rem; height: 6rem;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex">
+                                <h5 class="card-title mb-2">2 returned</h5>
+                            </div>
+                            <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
+                        </div>
                     </div>
+                    <div class="card" style="width: 18rem; height: 6rem;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex">
+                                <!-- <p class="card-text me-2">00</p> -->
+                                <h5 class="card-title mb-2">7 completed <i class="bi bi-dash-square-fill" style="color: rgb(173,174,183) !important;"></i></h5>
+                            </div>
+                            <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
