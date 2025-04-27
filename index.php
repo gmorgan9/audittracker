@@ -208,10 +208,30 @@
                                 </div>
                             </div>
                         </li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
-                      <li class="list-group-item">A fourth item</li>
-                      <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="fw-bold mb-0 me-3">QuoteRush &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 32%">32%</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="fw-bold mb-0 me-3">Cedar Financial &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 25%">25%</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="fw-bold mb-0 me-3">Foxit &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 25%">25%</div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
 
                     
