@@ -31,20 +31,20 @@
             <div class="pt-4"></div>
 
             <ul class="list-unstyled ps-4">
-                <li class="pb-1">
+                <li class="pb-3">
                     <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
                 </li>
-                <li class="pb-1">
+                <li class="pb-3">
                     <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
                 </li>
                 <ul class="list-unstyled">
-                    <li class="ps-4 pb-1">
+                    <li class="ps-4 pb-3">
                         <a href="" class="text-decoration-none"><i class="bi bi-vector-pen"></i> Draft</a>
                     </li>
-                    <li class="ps-4 pb-1">
+                    <li class="ps-4 pb-3">
                         <a href="" class="text-decoration-none"><i class="bi bi-check-circle"></i> Active</a>
                     </li>
-                    <li class="ps-4 pb-1">
+                    <li class="ps-4 pb-3">
                         <a href="" class="text-decoration-none"><i class="bi bi-archive"></i> Archived</a>
                     </li>
                 </ul>
