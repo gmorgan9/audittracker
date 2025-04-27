@@ -17,7 +17,7 @@
 
     <section class="layout">
 
-        <div class="sidebar ps-2">
+        <div class="sidebar">
             <h1>
                 Logo Here
             </h1>
