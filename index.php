@@ -34,10 +34,10 @@
                     <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
                 </li>
                 <ul class="list-unstyled">
-                    <li class="ps-3">
+                    <li class="ps-4">
                         <a href="" class="text-decoration-none"><i class="bi bi-columns-gap"></i> Dashboard</a>
                     </li>
-                    <li class="ps-3">
+                    <li class="ps-4">
                         <a href="" class="text-decoration-none"><i class="bi bi-folder"></i> Engagements</a>
                     </li>
                 </ul>
