@@ -56,7 +56,7 @@
                 <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
 
                 <li class="pb-3">
-                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3-fill text-primary" style="-webkit-text-stroke: 1px;"></i>&nbsp;&nbsp;Organization</a>
+                    <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3 text-primary" style="-webkit-text-stroke: 1px;"></i>&nbsp;&nbsp;Organization</a>
                 </li>
                 <ul class="list-unstyled">
                     <li class="ps-4 pb-3">
