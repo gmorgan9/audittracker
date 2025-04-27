@@ -35,9 +35,10 @@
                     <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
                     &nbsp;&nbsp;Dashboard</a>
                 </li>
+                <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
             </ul>
 
-            <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
+            
 
             <ul class="list-unstyled ps-4">
     
