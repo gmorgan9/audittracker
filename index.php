@@ -80,7 +80,9 @@
                 <div class="circle-with-text">
                     GM
                 </div>
+                &nbsp;&nbsp;
                 Garrett Morgan
+                &nbsp;&nbsp;
                 <i class="bi bi-caret-down-fill"></i>
             </div>
         </div>
