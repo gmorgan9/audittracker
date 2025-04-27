@@ -75,7 +75,7 @@
         </div>
 
 
-        <div class="header">
+        <div class="header" style="height: 50px !important;">
             Header
         </div>
         <div class="body_1">
