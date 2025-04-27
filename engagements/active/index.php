@@ -33,7 +33,7 @@
 
                 <ul class="list-unstyled ps-4">
                     <li class="">
-                        <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
+                        <a href="/" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap text-primary" style="-webkit-text-stroke: 1px;"></i>
                         &nbsp;&nbsp;Dashboard</a>
                     </li>
 
