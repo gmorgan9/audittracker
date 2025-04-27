@@ -100,7 +100,7 @@
                         <a href="#" class="card-link">Another link</a>
                       </div>
                     </div>
-                    <div class="gap-2"></div>
+                    <div class="pe-2"></div>
                     <div class="card" style="width: 10rem;">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
