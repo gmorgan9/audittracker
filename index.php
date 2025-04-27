@@ -37,7 +37,7 @@
                 </li>
             </ul>
 
-            <hr style="color: gray !important; width: 75% !important; text-align: center !important;">
+            <hr class="ps-4" style="color: gray !important; width: 75% !important; text-align: center !important;">
 
             <ul class="list-unstyled ps-4">
     
