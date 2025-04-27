@@ -197,7 +197,7 @@
                     </div>
 
                     <div class="engagement">
-                        <div class="card" style="width: 18rem; height: 6rem;">
+                        <div class="card" style="">
                             <div class="card-body">
                                 <div class="">
                                     <p class="fw-bold mb-2">LivePerson</p>
