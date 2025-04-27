@@ -195,7 +195,15 @@
                     <div class="">
                         <h6 class="card-title mb-2">Active Engagements</h6>
                     </div>
-                    <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
+
+                    <div class="engagement">
+                        <p>
+                            LivePerson
+                        </p>
+                        <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+                            <div class="progress-bar" style="width: 25%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
