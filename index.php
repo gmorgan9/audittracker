@@ -17,10 +17,10 @@
         <div class="header">
             Header
         </div>
-        <div class="body1">
+        <div class="body_1">
             1nd column
         </div>
-        <div class="body1">
+        <div class="body_2">
             2nd column
         </div>
 
