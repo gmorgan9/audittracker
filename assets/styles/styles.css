@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .layout {
   width: 100%;
 
@@ -9,7 +15,13 @@
   gap: 8px;
 }
 
-.sidebar { grid-area: sidebar; }
+.sidebar { 
+  grid-area: sidebar; 
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding-left: 0.5rem; /* Bootstrap ps-2 */
+  padding-right: 0.5rem; /* you can remove this if you don't want right padding */
+}
 .header { grid-area: header; }
 .body_1 { grid-area: body_1; }
 .body_2 { grid-area: body_2; }
