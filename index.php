@@ -88,7 +88,7 @@
 
         <div class="body_1">
             
-            <h3 class="ps-2 mt-4">
+            <h3 class="ps-3 mt-4">
                 Current and Upcoming Engagements
             </h3>
             <div class="current_engagements">
@@ -116,7 +116,7 @@
 
             </div>
 
-            <h3 class="ps-2 mt-4">
+            <h3 class="ps-3 mt-4">
                 Recent Activity
             </h3>
             <div class="recent_activity">
