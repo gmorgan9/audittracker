@@ -87,10 +87,18 @@
 
 
         <div class="body_1">
-            
-            <h3 class="ps-3 mt-4">
-                Current and Upcoming Engagements
+
+            <h3 class="ps-3 mt-2">
+                Good Afternoon, Garrett! 
             </h3>
+
+            <h6 class="ps-3 mt-3">
+                Status Overview
+            </h6>
+            
+            <h5 class="ps-3 mt-4">
+                Current and Upcoming Engagements
+            </h5>
             <div class="current_engagements">
 
                 <div class="row ms-4 mt-4">
