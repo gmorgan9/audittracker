@@ -124,7 +124,7 @@
                           <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(178,178,178); width: 80px;">2</span></td>
                           <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(118,119,143); width: 80px;">5</span></td>
                           <td>May 30, 2025</td>
-                          <td>In progress</td>
+                          <td><span class="badge" style="background-color: rgb(236,232,213); color: rgb(201, 189, 139);">In progress</span></td>
                           <td>Apr 25, 2025</td>
                         </tr>
                       </tbody>
