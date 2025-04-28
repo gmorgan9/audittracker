@@ -26,7 +26,7 @@
                 <div class="pt-4"></div>
 
                 <button type="button" class="btn btn-secondary">
-                    Add New Engagement +
+                    Add New QA Comment <i class="bi bi-plus"></i>
                 </button>
 
                 <div class="pt-4"></div>
