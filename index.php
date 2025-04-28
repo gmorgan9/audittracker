@@ -206,7 +206,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">LivePerson &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                    <p class="fw-bold mb-0 me-3">LivePerson 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: 25%">25%</div>
                                     </div>
@@ -214,7 +214,7 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">QuoteRush &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                    <p class="fw-bold mb-0 me-3">QuoteRush 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: 32%">32%</div>
                                     </div>
@@ -222,7 +222,7 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">Cedar Financial &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                    <p class="fw-bold mb-0 me-3">Cedar Financial 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: 25%; background-color: orange;">25%</div>
                                     </div>
@@ -230,7 +230,7 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">Foxit &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                    <p class="fw-bold mb-0 me-3">Foxit 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: 25%">25%</div>
                                     </div>
