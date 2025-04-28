@@ -12,7 +12,7 @@ if (isset($_POST['add_engagement'])) {
     $e_idno = rand(1000000, 9999999);
 
     // Sanitize and validate input data
-    $name = isset($_POST['name']) ? trim($_POST['name']) : "";
+    $name = isset($_POST['name']) ? trim($_POST['name']) : ""; 
     $type = isset($_POST['type']) ? trim($_POST['type']) : "";
     $reporting_start = isset($_POST['reporting_start']) ? trim($_POST['reporting_start']) : "";
     $reporting_end = isset($_POST['reporting_end']) ? trim($_POST['reporting_end']) : "";
@@ -27,17 +27,37 @@ if (isset($_POST['add_engagement'])) {
     $senior = isset($_POST['senior']) ? trim($_POST['senior']) : "";
     $staff_1 = isset($_POST['staff_1']) ? trim($_POST['staff_1']) : "";
     $staff_2 = isset($_POST['staff_2']) ? trim($_POST['staff_2']) : "";
-    $status = "Active"; // default status when creating a new engagement
+    $senior_dol = isset($_POST['senior_dol']) ? trim($_POST['senior_dol']) : "";
+    $staff_1_dol = isset($_POST['staff_1_dol']) ? trim($_POST['staff_1_dol']) : "";
+    $staff_2_dol = isset($_POST['staff_2_dol']) ? trim($_POST['staff_2_dol']) : "";
+    
+    // Default status (can modify this if you have dynamic status)
+    $status = 'Active'; 
 
     // Prepare query
     $stmt = $conn->prepare(
-        "INSERT INTO engagements (
-            idno, name, type, reporting_start, reporting_end, reporting_as_of, irl_due_date, 
-            evidence_due_date, fieldwork_week, leadsheet_due, draft_date, final_date, 
-            manager, senior, staff_1, staff_2, status
-        ) VALUES (?, NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''),
-                  NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''),
-                  NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''))"
+        "INSERT INTO engagement (
+            idno, 
+            name, 
+            type, 
+            reporting_start, 
+            reporting_end, 
+            reporting_as_of, 
+            irl_due_date, 
+            evidence_due_date, 
+            fieldwork_week, 
+            leadsheet_due, 
+            draft_date, 
+            final_date, 
+            manager, 
+            senior, 
+            staff_1, 
+            staff_2, 
+            senior_dol, 
+            staff_1_dol, 
+            staff_2_dol, 
+            status
+        ) VALUES (?, NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''))"
     );
 
     if (!$stmt) {
@@ -45,7 +65,7 @@ if (isset($_POST['add_engagement'])) {
     }
 
     $stmt->bind_param(
-        "sssssssssssssssss",
+        "sssssssssssssssssssss",
         $e_idno,
         $name,
         $type,
@@ -62,11 +82,14 @@ if (isset($_POST['add_engagement'])) {
         $senior,
         $staff_1,
         $staff_2,
+        $senior_dol,
+        $staff_1_dol,
+        $staff_2_dol,
         $status
     );
 
     if ($stmt->execute()) {
-        header('Location: /');
+        header('Location: ' . BASE_URL . '/');
         exit;
     } else {
         echo "Execute failed: " . $stmt->error;

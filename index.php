@@ -333,36 +333,62 @@ foreach ($files as $file) {
                             <label for="final_date" class="form-label">Final Date</label>
                             <input type="date" class="form-control" id="final_date" name="final_date">
                           </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" id="status" name="status">
+                              <option selected>Choose...</option>
+                              <option value="Active">Active</option>
+                              <option value="Completed">Completed</option>
+                              <option value="Planning">Planning</option>
+                              <option value="Delayed">Delayed</option>
+                            </select>
+                          </div>
                         </div>
 
                         <div class="row">
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-4 mb-3">
                             <label for="manager" class="form-label">Manager</label>
                             <input type="text" class="form-control" id="manager" name="manager">
                           </div>
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-4 mb-3">
                             <label for="senior" class="form-label">Senior</label>
                             <input type="text" class="form-control" id="senior" name="senior">
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="staff_1" class="form-label">Staff 1</label>
+                            <input type="text" class="form-control" id="staff_1" name="staff_1">
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-md-6 mb-3">
-                            <label for="staff_1" class="form-label">Staff 1</label>
-                            <input type="text" class="form-control" id="staff_1" name="staff_1">
-                          </div>
-                          <div class="col-md-6 mb-3">
                             <label for="staff_2" class="form-label">Staff 2</label>
                             <input type="text" class="form-control" id="staff_2" name="staff_2">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-4 mb-3">
+                            <label for="senior_dol" class="form-label">Senior DOL</label>
+                            <input type="date" class="form-control" id="senior_dol" name="senior_dol">
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="staff_1_dol" class="form-label">Staff 1 DOL</label>
+                            <input type="date" class="form-control" id="staff_1_dol" name="staff_1_dol">
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
+                            <input type="date" class="form-control" id="staff_2_dol" name="staff_2_dol">
                           </div>
                         </div>
                       </div>
 
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="add_engagement" class="btn btn-primary">Add</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
                       </div>
                     </form>
+
 
                 </div>
               </div>
