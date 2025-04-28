@@ -256,7 +256,7 @@ foreach ($files as $file) {
                                     <p class="fw-bold mb-0 me-3"><?php echo $name; ?> &nbsp;<span class="text-secondary" style="font-size: 10px;">(<?php echo $type; ?>)</span></p>
                                     <div class="status_content">
                                         <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">3</span>
-                                        <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); font-size: 12px; width: 80px;">2</span>
+                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); font-size: 12px; width: 80px;">2</span>
                                         <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">0</span>
                                     </div>
                                 </div>
