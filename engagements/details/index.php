@@ -99,7 +99,7 @@
                 &nbsp; LivePerson - SOC 2 Type 2 2025
             </h5>
 
-            <span class="text-secondary ps-2" style="font-size: 12px;">5/1/2024 through 4/31/2025</span>
+            <span class="text-secondary ps-2" style="font-size: 12px;">Reporting Period: 5/1/2024 through 4/31/2025</span>
 
 
                 <div class="table_content ms-5" style="width: 90%;">
