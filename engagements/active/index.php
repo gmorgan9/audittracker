@@ -15,10 +15,10 @@
 <body>
 
 
-    <section class="layout">
+    <section class="table_layout">
 
         <!-- Sidebar -->
-            <div class="sidebar ps-2">
+            <div class="table_sidebar ps-2">
                 <h1>
                     Logo Here
                 </h1>
@@ -80,7 +80,7 @@
         <!-- end Sidebar -->
 
         <!-- Header -->
-            <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
+            <div class="table_header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
                 <div class="pe-3 d-flex align-items-center gap-2">
                     <div class="circle-with-text">
                         GM
@@ -91,38 +91,42 @@
             </div>
         <!-- end Header -->
 
+        <!-- Table -->
+            <div class="table_sidebar ps-2">
 
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>John</td>
-              <td>Doe</td>
-              <td>@social</td>
-            </tr>
-          </tbody>
-        </table>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>John</td>
+                      <td>Doe</td>
+                      <td>@social</td>
+                    </tr>
+                  </tbody>
+                </table>
 
+            </div>  
+        <!-- end Table -->
         
 
       </section>
