@@ -94,9 +94,11 @@
         <!-- Table -->
             <div class="table_body ps-2 pt-4">
 
-                <h5 class="pb-2 ps-2 align-middle">
-                    <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">Active</span> &nbsp; LivePerson - SOC 2 Type 2 2025
-                </h5>
+            <h5 class="d-flex align-items-center pb-2 ps-2">
+                <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">Active</span>
+                &nbsp; LivePerson - SOC 2 Type 2 2025
+            </h5>
+
 
                 <div class="table_content ms-5" style="width: 90%;">
                     <table class="table table-hover">
