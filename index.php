@@ -231,7 +231,7 @@ foreach ($files as $file) {
                           </div>
                           <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 12px;">
                             <div style="width: 10px; height: 10px; background-color: rgb(232,232,232); border-radius: 50%;"></div>
-                            <span>In Progress</span>
+                            <span>In Review</span>
                           </div>
                           <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 12px;">
                             <div style="width: 10px; height: 10px; background-color: rgb(236,232,213); border-radius: 50%;"></div>
@@ -279,12 +279,20 @@ foreach ($files as $file) {
                                             echo $comment_rowtotal[0];
                                             ?>
                                         </span>
-                                        <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">
+                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql3 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_id = '$id'";
+                                            $sql3 = "SELECT COUNT('1') FROM comments WHERE status = 'In Review' AND engagement_id = '$id'";
                                             $comment_result2 = mysqli_query($conn, $sql3);
                                             $comment_rowtotal2 = mysqli_fetch_array($comment_result2);
                                             echo $comment_rowtotal2[0];
+                                            ?>
+                                        </span>
+                                        <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">
+                                            <?php
+                                            $sql4 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_id = '$id'";
+                                            $comment_result3 = mysqli_query($conn, $sql4);
+                                            $comment_rowtotal3 = mysqli_fetch_array($comment_result3);
+                                            echo $comment_rowtotal3[0];
                                             ?>
                                         </span>
                                     </div>
