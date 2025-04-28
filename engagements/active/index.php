@@ -121,8 +121,8 @@
                         </tr>
                         <tr>
                           <th scope="row">QuoteRush - SOC 2 Type 2 2025</th>
-                          <td>3</td>
-                          <td>1</td>
+                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(178,178,178); width: 80px;">2</span></td>
+                          <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(118,119,143); width: 80px;">5</span></td>
                           <td>May 30, 2025</td>
                           <td>In progress</td>
                           <td>Apr 25, 2025</td>
