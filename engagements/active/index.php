@@ -111,19 +111,20 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <tr class="align-middle">
-                            <a href="../details/" class="stretched-link"></a>
-                          <th scope="row">
-                            LivePerson - SOC 2 Type 2 2025 
-                            <br>
-                            <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
-                          </th>
-                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span></td>
-                          <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span></td>
-                          <td>May 5, 2025</td>
-                          <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
-                          <td>Apr 12, 2025</td>
-                        </tr>
+                        <a href="../details/">
+                            <tr class="align-middle">
+                                <th scope="row">
+                                    LivePerson - SOC 2 Type 2 2025 
+                                    <br>
+                                    <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
+                                </th>
+                                <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span></td>
+                                <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span></td>
+                                <td>May 5, 2025</td>
+                                <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
+                                <td>Apr 12, 2025</td>
+                            </tr>
+                        </a>
 
                         <tr class="align-middle">
                           <th scope="row">QuoteRush - SOC 2 Type 1 2025
