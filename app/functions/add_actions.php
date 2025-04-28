@@ -36,7 +36,7 @@ if (isset($_POST['add_engagement'])) {
 
     // Prepare query
     $stmt = $conn->prepare(
-        "INSERT INTO engagement (
+        "INSERT INTO engagements (
             idno, 
             name, 
             type, 
