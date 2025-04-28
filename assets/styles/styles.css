@@ -17,7 +17,7 @@ html, body {
   /* gap: 8px; */
 }
 
-.sidebar,.table_sidebar { 
+.sidebar { 
   grid-area: sidebar; 
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
@@ -34,15 +34,19 @@ html, body {
 
   display: grid;
   grid:
-    "sidebar header" 0.001fr
-    "sidebar body" 1fr
+    "table_sidebar table_header" 0.001fr
+    "table_sidebar table_body" 1fr
     / auto 1fr;
   gap: 8px;
 }
 
-.table_sidebar { grid-area: sidebar; }
-.table_header { grid-area: header; }
-.table_body { grid-area: body; }
+.table_sidebar { 
+  grid-area: table_sidebar;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+.table_header { grid-area: table_header; }
+.table_body { grid-area: table_body; }
 
 
 .circle-with-text {
