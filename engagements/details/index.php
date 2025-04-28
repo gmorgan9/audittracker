@@ -25,7 +25,7 @@
 
                 <div class="pt-4"></div>
 
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn" style="background-color: rgb(32, 43, 93);">
                     Add New QA Comment
                 </button>
 
