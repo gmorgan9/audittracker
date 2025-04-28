@@ -102,30 +102,30 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Comments</th>
+                          <th scope="col">Sections</th>
+                          <th scope="col">Due Date</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Created On</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row">LivePerson - SOC 2 Type 2 2025</th>
+                          <td>0</td>
+                          <td>3</td>
+                          <td>May 5, 2025</td>
+                          <td>Completed</td>
+                          <td>Apr 12, 2025</td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>John</td>
-                          <td>Doe</td>
-                          <td>@social</td>
+                          <th scope="row">QuoteRush - SOC 2 Type 2 2025</th>
+                          <td>3</td>
+                          <td>1</td>
+                          <td>May 30, 2025</td>
+                          <td>In progress</td>
+                          <td>Apr 25, 2025</td>
                         </tr>
                       </tbody>
                     </table>
