@@ -101,7 +101,7 @@
 
             <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> 5/1/2024 through 4/31/2025</span>
 
-            <hr class="w-75" style="border: 2px solid;">
+            <hr style="border: 2px solid; width: 98%;">
 
 
                 <div class="table_content ms-5" style="width: 90%;">
