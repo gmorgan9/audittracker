@@ -36,7 +36,7 @@ html, body {
   grid:
     "table_sidebar table_header" 0.001fr
     "table_sidebar table_body" 1fr
-    / 0.5fr 1.5fr;
+    / 0.25fr 1.5fr;
   /* gap: 8px; */
 }
 
