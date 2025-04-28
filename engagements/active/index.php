@@ -94,6 +94,10 @@
         <!-- Table -->
             <div class="table_body ps-2">
 
+                <h6 class="pb-2">
+                    Active Engagements
+                </h6>
+
                 <table class="table table-hover">
                   <thead>
                     <tr>
