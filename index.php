@@ -223,9 +223,9 @@ foreach ($files as $file) {
                     Active Engagements
                 </h5>
                 <div class="card" style="width: 40rem; height: 31.5rem;">
-                    <div class="float-end">
+                    <div class="float-end pe-2">
                         <div class="d-flex justify-content-end gap-4">
-                          <div class="d-flex align-items-center gap-1">
+                          <div class="d-flex align-items-center gap-1" style="font-size: 12px;">
                             <div style="width: 10px; height: 10px; background-color: green; border-radius: 50%;"></div>
                             <span>Open</span>
                           </div>
