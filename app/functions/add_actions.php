@@ -32,7 +32,8 @@ if (isset($_POST['add_engagement'])) {
     $staff_2_dol = isset($_POST['staff_2_dol']) ? trim($_POST['staff_2_dol']) : "";
     
     // Default status (can modify this if you have dynamic status)
-    $status = 'Active'; 
+    // $status = 'Active'; 
+    $status = isset($_POST['status']) ? trim($_POST['status']) : "";
 
     // Prepare query
     $stmt = $conn->prepare(
