@@ -121,10 +121,14 @@
                         </tr>
 
                         <tr class="align-middle">
-                          <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
-                          <td>CC8.1-B</td>
-                          <td>Joseph Thorin</td>
-                          <td>Apr 12, 2025</td>
+                            <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
+                            <td>
+                                CC6.2-A
+                                <br>
+                                <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 2</span>
+                            </td>
+                            <td>Joseph Thorin</td>
+                            <td>Apr 12, 2025</td>
                         </tr>
 
                       </tbody>
