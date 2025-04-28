@@ -117,7 +117,7 @@
                       <tbody>
                         <tr class="align-middle">
                             <td>
-                                <a class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
                                 </a >
                             </td>
