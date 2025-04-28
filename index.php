@@ -25,9 +25,9 @@
 
                 <div class="pt-4"></div>
 
-                <a href="#" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
                     Add New Engagement
-                </a>
+                </button>
 
                 <div class="pt-4"></div>
 
