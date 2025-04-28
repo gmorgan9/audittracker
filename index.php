@@ -279,8 +279,14 @@ foreach ($files as $file) {
                                             echo $comment_rowtotal[0];
                                             ?>
                                         </span>
-                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); font-size: 12px; width: 80px;">2</span>
-                                        <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">0</span>
+                                        <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">
+                                            <?php
+                                            $sql3 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_id = '$id'";
+                                            $comment_result2 = mysqli_query($conn, $sql3);
+                                            $comment_rowtotal2 = mysqli_fetch_array($comment_result2);
+                                            echo $comment_rowtotal2[0];
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
                             </li>
