@@ -116,7 +116,11 @@
                       </thead>
                       <tbody>
                         <tr class="align-middle">
-                            <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span></td>
+                            <td>
+                                <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
+                                </a >
+                            </td>
                             <td>
                                 CC8.1-B
                                 <br>
