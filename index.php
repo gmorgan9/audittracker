@@ -255,9 +255,9 @@ foreach ($files as $file) {
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fw-bold mb-0 me-3"><?php echo $name; ?> &nbsp;<span class="text-secondary" style="font-size: 10px;">(<?php echo $type; ?>)</span></p>
                                     <div class="status_content">
-                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">3</span>
-                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">2</span>
-                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">0</span>
+                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">3</span>
+                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">2</span>
+                                        <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">0</span>
                                     </div>
                                 </div>
                             </li>
