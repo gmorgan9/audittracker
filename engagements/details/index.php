@@ -94,10 +94,10 @@
         <!-- Table -->
             <div class="table_body ps-2 pt-4">
 
-            <h5 class="d-flex align-items-center pb-2 ps-2">
+            <h3 class="d-flex align-items-center pb-2 ps-2">
                 <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">Active</span>
                 &nbsp; LivePerson - SOC 2 Type 2 2025
-            </h5>
+            </h3>
 
             <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> 5/1/2024 through 4/31/2025</span>
 
