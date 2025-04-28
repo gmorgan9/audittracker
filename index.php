@@ -25,9 +25,9 @@
 
                 <div class="pt-4"></div>
 
-                <button type="button" class="btn" style="background-color: rgb(55, 67, 118); color: white;">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
                     Add New Engagement
-                </button>
+                </a>
 
                 <div class="pt-4"></div>
 
@@ -246,6 +246,27 @@
 
             </div>
         <!-- end Right side -->
+
+
+        <!-- Modal -->
+            <div class="modal fade" id="add_engagement" data-bs-keyboard="false" tabindex="-1" aria-labelledby="add_engagement_label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="add_engagement_label">Add New Engagement</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- end Modal -->
 
       </section>
 
