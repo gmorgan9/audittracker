@@ -25,7 +25,7 @@
 
                 <div class="pt-4"></div>
 
-                <button type="button" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
                     Add New Engagement
                 </button>
 
