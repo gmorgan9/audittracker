@@ -112,40 +112,40 @@
                       </thead>
                       <tbody>
                         
-                      <tr class="align-middle" style="cursor: pointer;">
-  <th scope="row">
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      LivePerson - SOC 2 Type 2 2025 
-      <br>
-      <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
-    </a>
-  </th>
-  <td>
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span>
-    </a>
-  </td>
-  <td>
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span>
-    </a>
-  </td>
-  <td>
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      May 5, 2025
-    </a>
-  </td>
-  <td>
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span>
-    </a>
-  </td>
-  <td>
-    <a href="../details/" class="text-decoration-none text-dark d-block">
-      Apr 12, 2025
-    </a>
-  </td>
-</tr>
+                        <tr class="align-middle" style="cursor: pointer;">
+                            <th scope="row">
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    LivePerson - SOC 2 Type 2 2025 
+                                    <br>
+                                    <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
+                                </a>
+                            </th>
+                            <td>
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    May 5, 2025
+                                </a>
+                            </td>
+                            <td>
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="../details/" class="text-decoration-none text-dark d-block">
+                                    Apr 12, 2025
+                                </a>
+                            </td>
+                        </tr>
 
                         
 
