@@ -117,24 +117,24 @@
                       <tbody>
                         <tr class="align-middle" style="cursor: pointer;">
                             <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
                                 </a>
                             </td>
                             <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
                                     CC8.1-B
                                     <br>
                                     <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 0</span>
                                 </a>
                             </td>
                             <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
                                     Joseph Thorin
                                 </a>
                             </td>
                             <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
                                     Apr 12, 2025
                                 </a>
                             </td>
