@@ -254,7 +254,7 @@ foreach ($files as $file) {
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fw-bold mb-0 me-3"><?php echo $name; ?> &nbsp;<span class="text-secondary" style="font-size: 10px;">(<?php echo $type; ?>)</span></p>
-                                    <div class="progress" style="width: <?php echo $completed_percentage; ?>%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: <?php echo $completed_percentage; ?>%"><?php echo $completed_percentage; ?>%</div>
                                     </div>
                                 </div>
