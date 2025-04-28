@@ -25,8 +25,8 @@
 
                 <div class="pt-4"></div>
 
-                <button type="button" class="btn btn-secondary">
-                    Add New QA Comment <i class="bi bi-plus"></i>
+                <button type="button" class="btn btn-primary">
+                    Add New QA Comment
                 </button>
 
                 <div class="pt-4"></div>
