@@ -273,10 +273,10 @@ foreach ($files as $file) {
                                     <div class="status_content">
                                         <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql="SELECT count('1') FROM comments WHERE status='Open' && engagement_id='$id'";
-                                            $result=mysqli_query($conn,$sql);
-                                            $rowtotal=mysqli_fetch_array($result); 
-                                            echo "$rowtotal[0]";
+                                            $sql = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_id = '$id'";
+                                            $result = mysqli_query($conn, $sql);
+                                            $rowtotal = mysqli_fetch_array($result);
+                                            echo $rowtotal[0];
                                             ?>
                                         </span>
                                         <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); font-size: 12px; width: 80px;">2</span>
