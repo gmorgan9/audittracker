@@ -94,7 +94,7 @@
         <!-- Table -->
             <div class="table_body ps-2 pt-4">
 
-                <h5 class="pb-2">
+                <h5 class="pb-2 ps-2">
                     Active Engagements
                 </h5>
 
