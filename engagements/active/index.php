@@ -112,7 +112,7 @@
                       </thead>
                       <tbody>
                       <tr class="align-middle">
-                            <a href="../details/1" class="stretched-link"></a>
+                            <a href="../details/" class="stretched-link"></a>
                           <th scope="row">
                             LivePerson - SOC 2 Type 2 2025 
                             <br>
