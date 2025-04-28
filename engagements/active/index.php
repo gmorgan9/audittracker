@@ -113,8 +113,8 @@
                       <tbody>
                         <tr>
                           <th scope="row">LivePerson - SOC 2 Type 2 2025</th>
-                          <td><span class="badge" style="background-color: rgb(232,232,232); color: black; width: 80px;">0</span></td>
-                          <td><span class="badge" style="background-color: rgb(244,244,254); color: black; width: 80px;">3</span></td>
+                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(182,182,182); width: 80px;">0</span></td>
+                          <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(118,119,143); width: 80px;">3</span></td>
                           <td>May 5, 2025</td>
                           <td>Completed</td>
                           <td>Apr 12, 2025</td>
