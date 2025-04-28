@@ -94,9 +94,9 @@
         <!-- Table -->
             <div class="table_body ps-2 pt-4">
 
-                <h5 class="pb-2 ps-2">
+                <h3 class="pb-2 ps-2">
                     Active Engagements
-                </h5>
+                </h3>
 
                 <div class="table_content ms-5" style="width: 90%;">
                     <table class="table table-hover">
