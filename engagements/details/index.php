@@ -102,25 +102,24 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th scope="col">Name</th>
-                          <th scope="col">Comments</th>
-                          <th scope="col">Sections</th>
-                          <th scope="col">Due Date</th>
                           <th scope="col">Status</th>
+                          <th scope="col">Reference</th>
+                          <th scope="col">Comment By</th>
                           <th scope="col">Created On</th>
                         </tr>
                       </thead>
                       <tbody>
-                      <tr class="align-middle">
-                          <th scope="row">
-                            LivePerson - SOC 2 Type 2 2025 
-                            <br>
-                            <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
-                          </th>
-                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span></td>
-                          <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span></td>
-                          <td>May 5, 2025</td>
+                        <tr class="align-middle">
+                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span></td>
+                          <td>CC8.1-B</td>
+                          <td>Joseph Thorin</td>
+                          <td>Apr 12, 2025</td>
+                        </tr>
+
+                        <tr class="align-middle">
                           <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
+                          <td>CC8.1-B</td>
+                          <td>Joseph Thorin</td>
                           <td>Apr 12, 2025</td>
                         </tr>
 
