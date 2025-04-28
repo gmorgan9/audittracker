@@ -257,12 +257,98 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
-                  </div>
+                    <form action="" method="POST">
+                      <div class="modal-body">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="name" name="name">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="type" class="form-label">Type</label>
+                          <input type="text" class="form-control" id="type" name="type">
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="reporting_start" class="form-label">Reporting Start</label>
+                            <input type="date" class="form-control" id="reporting_start" name="reporting_start">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="reporting_end" class="form-label">Reporting End</label>
+                            <input type="date" class="form-control" id="reporting_end" name="reporting_end">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="reporting_as_of" class="form-label">Reporting As Of</label>
+                            <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="irl_due_date" class="form-label">IRL Due Date</label>
+                            <input type="date" class="form-control" id="irl_due_date" name="irl_due_date">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="evidence_due_date" class="form-label">Evidence Due Date</label>
+                            <input type="date" class="form-control" id="evidence_due_date" name="evidence_due_date">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="fieldwork_week" class="form-label">Fieldwork Week</label>
+                            <input type="date" class="form-control" id="fieldwork_week" name="fieldwork_week">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="leadsheet_due" class="form-label">Leadsheet Due</label>
+                            <input type="date" class="form-control" id="leadsheet_due" name="leadsheet_due">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="draft_date" class="form-label">Draft Date</label>
+                            <input type="date" class="form-control" id="draft_date" name="draft_date">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="final_date" class="form-label">Final Date</label>
+                            <input type="date" class="form-control" id="final_date" name="final_date">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="manager" class="form-label">Manager</label>
+                            <input type="text" class="form-control" id="manager" name="manager">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="senior" class="form-label">Senior</label>
+                            <input type="text" class="form-control" id="senior" name="senior">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="staff_1" class="form-label">Staff 1</label>
+                            <input type="text" class="form-control" id="staff_1" name="staff_1">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="staff_2" class="form-label">Staff 2</label>
+                            <input type="text" class="form-control" id="staff_2" name="staff_2">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                      </div>
+                    </form>
+
                 </div>
               </div>
             </div>
