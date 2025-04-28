@@ -98,7 +98,7 @@
                     Active Engagements
                 </h5>
 
-                <div class="table_content w-75 ms-5">
+                <div class="table_content ms-5" style="width: 90%;">
                     <table class="table table-hover">
                       <thead>
                         <tr>
