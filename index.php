@@ -336,7 +336,7 @@ foreach ($files as $file) {
                           <div class="col-md-6 mb-3">
                             <label for="status" class="form-label">Status</label>
                             <select class="form-select" id="status" name="status" required>
-                              <option selected>Choose...</option>
+                              <option>Choose...</option>
                               <option value="Draft">Draft</option>
                               <option value="Active">Active</option>
                               <option value="In Review">In Review</option>
