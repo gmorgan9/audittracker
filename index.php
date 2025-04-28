@@ -126,7 +126,14 @@ foreach ($files as $file) {
                         <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
                             <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex">
-                                    <h5 class="card-title mb-2">6 active</h5>
+                                    <h5 class="card-title mb-2">
+                                        <?php
+                                        $sql="SELECT count('1') FROM engagements WHERE status='Active'";
+                                        $result=mysqli_query($conn,$sql);
+                                        $rowtotal=mysqli_fetch_array($result); 
+                                        echo "$rowtotal[0] active";
+                                        ?>
+                                    </h5>
                                 </div>
                                 <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                           </div>
