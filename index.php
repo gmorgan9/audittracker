@@ -224,17 +224,45 @@ foreach ($files as $file) {
                 </h5>
                 <div class="card" style="width: 40rem; height: 31.5rem;">
                     <div class="card-body">
+                    <ul class="list-group list-group-flush">
 
-                        <ul class="list-group list-group-flush">
+                    <?php
+                    // Pagination variables
+                    $limit = 10; 
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $offset = ($page - 1) * $limit;
+                    
+                    $sql = "SELECT * FROM engagements WHERE status='Active' ORDER BY final_date DESC LIMIT $limit OFFSET $offset";
+                    $result = mysqli_query($conn, $sql);
+                    if($result) {
+                        $num_rows = mysqli_num_rows($result);
+                        if($num_rows > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $id                     = $row['id'];
+                                $idno                   = $row['idno'];
+                                $name                   = $row['name'];
+                                $type                   = $row['type'];
+                                $reporting_start        = $row['reporting_start'];
+                                $reporting_end          = $row['reporting_end'];
+                                $final_date             = $row['final_date'];
+
+                  
+                ?>
+
+                        
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">LivePerson 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
+                                    <p class="fw-bold mb-0 me-3"><?php echo $name; ?> &nbsp;<span class="text-secondary" style="font-size: 10px;">(<?php echo $type; ?>)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                         <div class="progress-bar" style="width: 25%">25%</div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
+
+
+                <?php }}} ?>
+                        
+                            <!-- <li class="list-group-item">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fw-bold mb-0 me-3">QuoteRush 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
                                     <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
@@ -258,7 +286,7 @@ foreach ($files as $file) {
                                     </div>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> -->
 
 
 
