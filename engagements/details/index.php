@@ -110,10 +110,14 @@
                       </thead>
                       <tbody>
                         <tr class="align-middle">
-                          <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span></td>
-                          <td>CC8.1-B</td>
-                          <td>Joseph Thorin</td>
-                          <td>Apr 12, 2025</td>
+                            <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span></td>
+                            <td>
+                                CC8.1-B
+                                <br>
+                                <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i></span>
+                            </td>
+                            <td>Joseph Thorin</td>
+                            <td>Apr 12, 2025</td>
                         </tr>
 
                         <tr class="align-middle">
