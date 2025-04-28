@@ -92,13 +92,13 @@
         <!-- end Header -->
 
         <!-- Table -->
-            <div class="table_body ps-2">
+            <div class="table_body ps-2 pt-4">
 
                 <h5 class="pb-2">
                     Active Engagements
                 </h5>
 
-                <div class="table_content w-75">
+                <div class="table_content w-75 ms-5">
                     <table class="table table-hover">
                       <thead>
                         <tr>
