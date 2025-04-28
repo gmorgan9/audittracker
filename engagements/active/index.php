@@ -124,8 +124,11 @@
                           <td>Apr 12, 2025</td>
                         </tr>
 
-                        <tr>
-                          <th scope="row">QuoteRush - SOC 2 Type 2 2025</th>
+                        <tr class="align-middle">
+                          <th scope="row">QuoteRush - SOC 2 Type 1 2025
+                            <br>
+                            <span class="text-secondary" style="font-size: 10px;">As of 4/31/2025</span>
+                          </th>
                           <td><span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">2</span></td>
                           <td><span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">5</span></td>
                           <td>May 30, 2025</td>
