@@ -111,8 +111,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <a href="../details/">
+                        
                             <tr class="align-middle">
+                            <a href="../details/">
                                 <th scope="row">
                                     LivePerson - SOC 2 Type 2 2025 
                                     <br>
@@ -123,8 +124,9 @@
                                 <td>May 5, 2025</td>
                                 <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
                                 <td>Apr 12, 2025</td>
+                                </a>
                             </tr>
-                        </a>
+                        
 
                         <tr class="align-middle">
                           <th scope="row">QuoteRush - SOC 2 Type 1 2025
