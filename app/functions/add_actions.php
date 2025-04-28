@@ -66,7 +66,7 @@ if (isset($_POST['add_engagement'])) {
     );
 
     if ($stmt->execute()) {
-        header('Location: ' . BASE_URL . '/');
+        header('Location: /');
         exit;
     } else {
         echo "Execute failed: " . $stmt->error;
