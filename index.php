@@ -221,6 +221,9 @@ foreach ($files as $file) {
 
                 <h5 class="ps-3 pb-3">
                     Active Engagements
+                </h5>
+                <div class="card" style="width: 40rem; height: 31.5rem;">
+                    <div class="card-body">
                     <div class="float-end">
                         <div class="d-flex justify-content-end gap-4">
                           <div class="d-flex align-items-center gap-1">
@@ -237,11 +240,6 @@ foreach ($files as $file) {
                           </div>
                         </div>
                     </div>
-
-
-                </h5>
-                <div class="card" style="width: 40rem; height: 31.5rem;">
-                    <div class="card-body">
                     <ul class="list-group list-group-flush">
 
                     <?php
