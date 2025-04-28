@@ -98,8 +98,8 @@
                 <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">Active</span>
                 &nbsp; LivePerson - SOC 2 Type 2 2025
             </h5>
-            
-            <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
+
+            <span class="text-secondary ps-2" style="font-size: 12px;">5/1/2024 through 4/31/2025</span>
 
 
                 <div class="table_content ms-5" style="width: 90%;">
