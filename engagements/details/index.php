@@ -114,7 +114,7 @@
                             <td>
                                 CC8.1-B
                                 <br>
-                                <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i></span>
+                                <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 0</span>
                             </td>
                             <td>Joseph Thorin</td>
                             <td>Apr 12, 2025</td>
