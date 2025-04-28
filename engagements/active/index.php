@@ -113,8 +113,8 @@
                       <tbody>
                         <tr>
                           <th scope="row">LivePerson - SOC 2 Type 2 2025</th>
-                          <td>0</td>
-                          <td>3</td>
+                          <td><span class="badge text-bg-secondary">0</span></td>
+                          <span class="badge text-bg-primary">3</span>
                           <td>May 5, 2025</td>
                           <td>Completed</td>
                           <td>Apr 12, 2025</td>
