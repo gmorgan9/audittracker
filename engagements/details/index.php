@@ -115,7 +115,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="align-middle">
+                        <tr class="align-middle" style="cursor: pointer;">
                             <td>
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
