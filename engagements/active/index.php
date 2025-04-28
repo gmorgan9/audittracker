@@ -92,7 +92,7 @@
         <!-- end Header -->
 
         <!-- Table -->
-            <div class="table_sidebar ps-2">
+            <div class="table_body ps-2">
 
                 <table class="table table-hover">
                   <thead>
