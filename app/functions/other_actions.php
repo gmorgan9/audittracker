@@ -42,38 +42,40 @@ if (isset($_POST['update_comment'])) {
 
 // Update Engagement
 
-if (isset($_POST['update_engagement'])) {
-    // Collect the form data
-    $name = $_POST['name'];
-    $type = $_POST['type'];
-    $status = $_POST['status'];
-    $reporting_start = $_POST['reporting_start'];
-    $reporting_end = $_POST['reporting_end'];
-    $reporting_as_of = $_POST['reporting_as_of'];
-    $irl_due_date = $_POST['irl_due_date'];
-    $evidence_due_date = $_POST['evidence_due_date'];
-    $fieldwork_week = $_POST['fieldwork_week'];
-    $leadsheet_due = $_POST['leadsheet_due'];
-    $draft_date = $_POST['draft_date'];
-    $final_date = $_POST['final_date'];
-    $manager = $_POST['manager'];
-    $senior = $_POST['senior'];
-    $staff_1 = $_POST['staff_1'];
-    $staff_2 = $_POST['staff_2'];
-    $senior_dol = $_POST['senior_dol'];
-    $staff_1_dol = $_POST['staff_1_dol'];
-    $staff_2_dol = $_POST['staff_2_dol'];
+function nullIfEmpty($value) {
+    return ($value === '' || $value === null) ? null : $value;
+}
 
-    // Validate required fields (adjust as needed)
+if (isset($_POST['update_engagement'])) {
+    // Collect and sanitize form data
+    $name = nullIfEmpty($_POST['name']);
+    $type = nullIfEmpty($_POST['type']);
+    $status = nullIfEmpty($_POST['status']);
+    $reporting_start = nullIfEmpty($_POST['reporting_start']);
+    $reporting_end = nullIfEmpty($_POST['reporting_end']);
+    $reporting_as_of = nullIfEmpty($_POST['reporting_as_of']);
+    $irl_due_date = nullIfEmpty($_POST['irl_due_date']);
+    $evidence_due_date = nullIfEmpty($_POST['evidence_due_date']);
+    $fieldwork_week = nullIfEmpty($_POST['fieldwork_week']);
+    $leadsheet_due = nullIfEmpty($_POST['leadsheet_due']);
+    $draft_date = nullIfEmpty($_POST['draft_date']);
+    $final_date = nullIfEmpty($_POST['final_date']);
+    $manager = nullIfEmpty($_POST['manager']);
+    $senior = nullIfEmpty($_POST['senior']);
+    $staff_1 = nullIfEmpty($_POST['staff_1']);
+    $staff_2 = nullIfEmpty($_POST['staff_2']);
+    $senior_dol = nullIfEmpty($_POST['senior_dol']);
+    $staff_1_dol = nullIfEmpty($_POST['staff_1_dol']);
+    $staff_2_dol = nullIfEmpty($_POST['staff_2_dol']);
+    $engagement_id = nullIfEmpty($_POST['engagement_id']);
+
+    // Validate required fields
     if (empty($name) || empty($type) || empty($status)) {
         echo "Name, Type, and Status are required.";
         exit;
     }
 
-    // Assume you have an $engagement_id for the WHERE clause
-    $engagement_id = $_POST['engagement_id'];
-
-    // SQL Update Query
+    // Prepare and execute SQL update
     $sql = "UPDATE engagements SET 
         name = ?, type = ?, status = ?, 
         reporting_start = ?, reporting_end = ?, reporting_as_of = ?, 
@@ -95,9 +97,8 @@ if (isset($_POST['update_engagement'])) {
         $engagement_id
     );
 
-    // Execute and handle result
     if ($stmt->execute()) {
-        header("Location: /"); // adjust the redirect as needed
+        header("Location: /");
         exit;
     } else {
         echo "Error updating engagement: " . $stmt->error;
