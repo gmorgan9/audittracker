@@ -241,17 +241,49 @@ foreach ($files as $file) {
                             </tr>
                           </thead>
                           <tbody>
+
+                          <?php
+                        // Pagination variables
+                        $limit = 10; 
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $offset = ($page - 1) * $limit;
+
+                        $comment_sql = "SELECT * FROM comments WHERE parent_comment_id=NULL AND engagement_idno='$id' ORDER BY created DESC LIMIT $limit OFFSET $offset";
+                        $comment_result = mysqli_query($conn, $comment_sql);
+                        if($comment_result) {
+                            $comment_num_rows = mysqli_num_rows($comment_result);
+                            if($comment_num_rows > 0) {
+                                while ($comment_row = mysqli_fetch_assoc($comment_result)) {
+                                    $comment_id                     = $comment_row['id'];
+                                    $comment_idno                   = $comment_row['idno'];
+                                    $comment_name                   = $comment_row['name'];
+                                    $comment_type                   = $comment_row['type'];
+                                    $comment_parent_comment_id      = $comment_row['parent_comment_id'];
+                                    $comment_reference              = $comment_row['reference'];
+                                    $comment_comment_by             = $comment_row['comment_by'];
+                                    $comment_status                 = $comment_row['status'];
+                                    $comment_created                = !empty($comment_row['created']) ? date("M j, Y", strtotime($comment_row['created'])) : '';
+                        ?>
                             <tr class="align-middle" style="cursor: pointer;">
                                 <td>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
+                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
+                                            <?php echo $comment_status; ?>
+                                        </span>
                                     </a>
                                 </td>
                                 <td>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                        CC8.1-B
+                                        <?php echo $comment_reference; ?>
                                         <br>
-                                        <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 0</span>
+                                        <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 
+                                            <?php
+                                            $comment_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id='$comment_id' AND status = 'Open' AND engagement_idno = '$id'";
+                                            $comment_result = mysqli_query($conn, $comment_count);
+                                            $comment_rowtotal = mysqli_fetch_array($comment_result);
+                                            echo $comment_rowtotal[0];
+                                            ?>
+                                        </span>
                                     </a>
                                 </td>
                                 <td>
@@ -276,6 +308,7 @@ foreach ($files as $file) {
                                 <td>Joseph Thorin</td>
                                 <td>Apr 12, 2025</td>
                             </tr>
+                            <?php }}} ?>
 
                           </tbody>
                         </table>
