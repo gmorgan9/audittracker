@@ -372,17 +372,21 @@ foreach ($files as $file) {
                         </div>
 
                         <div class="row">
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="senior_dol" class="form-label">Senior DOL</label>
                             <input type="text" class="form-control" id="senior_dol" name="senior_dol">
                           </div>
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="staff_1_dol" class="form-label">Staff 1 DOL</label>
                             <input type="text" class="form-control" id="staff_1_dol" name="staff_1_dol">
                           </div>
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
                             <input type="text" class="form-control" id="staff_2_dol" name="staff_2_dol">
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="number_sections" class="form-label">Number of Sections</label>
+                            <input type="text" class="form-control" id="number_sections" name="number_sections">
                           </div>
                         </div>
                       </div>
