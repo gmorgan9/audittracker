@@ -97,7 +97,15 @@ foreach ($files as $file) {
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $name; ?> - <?php echo $type; ?>
                                     <br>
-                                    <span class="text-secondary" style="font-size: 10px;"><?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
+                                    <?php if (empty($f_eng_reporting_start) && empty($f_eng_reporting_end)): ?>
+                                        <span class="text-secondary ps-2" style="font-size: 12px;">
+                                            As of <?php echo $f_eng_reporting_as_of; ?>
+                                        </span>
+                                    <?php else: ?>
+                                        <span class="text-secondary ps-2" style="font-size: 12px;">
+                                            <?php echo $f_eng_reporting_start; ?> through <?php echo $f_eng_reporting_end; ?>
+                                        </span>
+                                    <?php endif; ?>
                                 </a>
                             </th>
                             <td>
