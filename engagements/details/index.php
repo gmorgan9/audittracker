@@ -96,7 +96,7 @@
 
             <?php
             $id = $_GET['id'];
-            $eng_sql = "SELECT * FROM engagements WHERE id = $id";
+            $eng_sql = "SELECT * FROM engagements WHERE idno = $id";
             $eng_result = mysqli_query($conn, $eng_sql);
             if($eng_result) {
             $eng_num_rows = mysqli_num_rows($eng_result);
