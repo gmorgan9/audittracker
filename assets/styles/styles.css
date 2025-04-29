@@ -55,6 +55,21 @@ a:focus {
 .table_body { grid-area: table_body; }
 
 
+/* DETAILS PAGE */
+.details_layout {
+  width: 100%;
+
+  display: grid;
+  grid:
+    "details comments" 1fr
+    / 1fr 1fr;
+  /* gap: 8px; */
+}
+
+.details { grid-area: details; }
+.comments { grid-area: comments; }
+
+
 .circle-with-text {
   width: 35px; /* Adjust as needed */
   height: 35px; /* Adjust as needed */

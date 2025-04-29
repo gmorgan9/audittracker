@@ -131,15 +131,6 @@ foreach ($files as $file) {
                     $eng_created                = $eng_row['created'];
 
 
-                    // Split the name into parts and get initials
-                    // $name_parts = explode(" ", $client_primary_contact);
-                    // $first_initial = isset($name_parts[0]) ? strtoupper($name_parts[0][0]) : '';
-                    // $last_initial = isset($name_parts[1]) ? strtoupper($name_parts[1][0]) : '';
-                    // $primary_contact_initials = $first_initial . $last_initial;                    
-
-                    // $formatted_start = date("m/d/Y", strtotime($off_report_start));
-                    // $formatted_end = date("m/d/Y", strtotime($off_report_end));
-                    // $formatted_as_of = date("m/d/Y", strtotime($off_report_as_of));
                 }}}
             // }}
             ?>
@@ -154,7 +145,11 @@ foreach ($files as $file) {
 
             <hr style="border: 2px solid; width: 98%;">
 
+            <section class="details_layout">
+                <div class="details">
 
+                </div>
+                <div class="comments">
                 <div class="table_content ms-5" style="width: 90%;">
                     <table class="table table-hover">
                       <thead>
@@ -206,6 +201,11 @@ foreach ($files as $file) {
                     </table>
 
                 </div>
+
+                </div>
+            </section>
+
+
                 
 
             </div>  
