@@ -89,7 +89,7 @@ foreach ($files as $file) {
 
             
 
-            <span class="float-end">
+            <span class="float-end pe-5">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#engagement_update<?php echo $eng_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
             </span>
             <h3 class="d-flex align-items-center pb-2 ps-2">
