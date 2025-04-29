@@ -1,13 +1,13 @@
 <?php
 date_default_timezone_set('America/Denver');
-require_once "../app/database/connection.php"; // Ensure this is correct
-require_once "../path.php";
+require_once "../../app/database/connection.php"; // Ensure this is correct
+require_once "../../path.php";
 session_start();
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$files = glob("../app/functions/*.php");
+$files = glob("../../app/functions/*.php");
 foreach ($files as $file) {
     require_once $file;
 }
@@ -73,7 +73,7 @@ foreach ($files as $file) {
                         $page = isset($_GET['page']) ? $_GET['page'] : 1;
                         $offset = ($page - 1) * $limit;
 
-                        $sql = "SELECT * FROM engagements ORDER BY created DESC LIMIT $limit OFFSET $offset";
+                        $sql = "SELECT * FROM engagements WHERE ORDER BY created DESC LIMIT $limit OFFSET $offset";
                         $result = mysqli_query($conn, $sql);
                         if($result) {
                             $num_rows = mysqli_num_rows($result);
@@ -116,7 +116,7 @@ foreach ($files as $file) {
                         
                         <tr class="align-middle" style="cursor: pointer;">
                             <th scope="row">
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $name; ?> - <?php echo $type; ?>
                                     <br>
                                     <?php if (empty($f_reporting_start) && empty($f_reporting_end)): ?>
@@ -131,7 +131,7 @@ foreach ($files as $file) {
                                 </a>
                             </th>
                             <td>
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">
                                         <?php
                                         $comment_count = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_idno = '$idno'";
@@ -143,26 +143,26 @@ foreach ($files as $file) {
                                 </a>
                             </td>
                             <td>
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">
                                         <?php echo $number_sections; ?>
                                     </span>
                                 </a>
                             </td>
                             <td>
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $f_final_date; ?>
                                 </a>
                             </td>
                             <td>
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">
                                         <?php echo $status; ?>
                                     </span>
                                 </a>
                             </td>
                             <td>
-                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $f_created; ?>
                                 </a>
                             </td>
