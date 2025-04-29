@@ -150,7 +150,7 @@ foreach ($files as $file) {
                 &nbsp; <?php echo $eng_name; ?> - <?php echo $eng_type; ?>
             </h3>
 
-            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
+            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $eng_reporting_start; ?> through <?php echo $eng_reporting_end; ?></span>
 
             <hr style="border: 2px solid; width: 98%;">
 
