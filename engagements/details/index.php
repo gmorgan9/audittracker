@@ -322,7 +322,7 @@ foreach ($files as $file) {
                                 ?>
 
                                 <div class="modal fade" id="comment_details<?php echo$comment_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="staticBackdropLabel">Comment Details</h1>
@@ -353,9 +353,33 @@ foreach ($files as $file) {
                                                 </li>
                                             </ul>
                                             <hr>
-                                            <h6 class="pb-3">
+                                            <h5 class="pb-3">
                                                 Follow-up Comments
-                                            </h6>
+                                            </h5>
+                                            <?php
+                                            $p_comm_details_sql = "SELECT * FROM comments WHERE parent_comment_id = $comm_details_parent_comment_id";
+                                            $p_comm_details_result = mysqli_query($conn, $p_comm_details_sql);
+                                            if($p_comm_details_result) {
+                                            $p_comm_details_num_rows = mysqli_num_rows($p_comm_details_result);
+                                            if($p_comm_details_num_rows > 0) {
+                                                while ($p_comm_details_row = mysqli_fetch_assoc($p_comm_details_result)) {
+                                                    $p_comm_details_id                     = $p_comm_details_row['id'];
+                                                    $p_comm_details_idno                   = $p_comm_details_row['idno'];
+                                                    $p_comm_details_type                   = $p_comm_details_row['type'];
+                                                    $p_comm_details_parent_comment_id      = $p_comm_details_row['parent_comment_id'];
+                                                    $p_comm_details_reference              = $p_comm_details_row['reference'];
+                                                    $p_comm_details_comment                = $p_comm_details_row['comment'];
+                                                    $p_comm_details_comment_by             = $p_comm_details_row['comment_by'];
+                                                    $p_comm_details_status                 = $p_comm_details_row['status'];
+                                                    $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($cp_omm_details_row['created'])) : '';
+                                                
+                                            }} ?>
+                                        
+                                            <?php echo $p_comm_details_comment; ?>
+                                            
+
+                                            <?php } ?>
+                                            
                                         </div>
                                     </div>
                                   </div>
