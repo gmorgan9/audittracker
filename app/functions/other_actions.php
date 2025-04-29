@@ -4,6 +4,7 @@
 // Update comment
 if (isset($_POST['update_comment'])) {
     // Get the form data
+    $comment_id = $_POST['comment_id'];
     $reference = $_POST['reference'];
     $comment_by = $_POST['comment_by'];
     $status = $_POST['status'];
@@ -19,7 +20,7 @@ if (isset($_POST['update_comment'])) {
     }
 
     // Prepare the update query
-    $sql = "UPDATE comments SET reference = ?, comment_by = ?, status = ?, comment = ? WHERE comment_id = ?";
+    $sql = "UPDATE comments SET reference = ?, comment_by = ?, status = ?, comment = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
 
     // Bind the parameters

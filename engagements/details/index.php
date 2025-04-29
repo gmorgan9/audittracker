@@ -300,6 +300,8 @@ foreach ($files as $file) {
                                                 <label for="comment " class="form-label">Comment</label>
                                                 <textarea class="form-control" id="comment " name="comment" rows="5"><?php echo $comm_details_comment ; ?></textarea>
                                               </div>
+
+                                              <input type="hidden" name="comment_id" value="<?php echo $comm_details_id; ?>">
                                                     
                                             
                                                     
