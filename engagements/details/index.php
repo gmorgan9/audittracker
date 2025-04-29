@@ -216,9 +216,15 @@ foreach ($files as $file) {
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Staff</span>
                         <span class="">
-                            <?php echo $eng_staff_1; ?>, <?php echo $eng_staff_2; ?>
+                            <?php echo $eng_staff_1; ?>
                         </span>
                       </li>
+                      <?php if (!empty($eng_staff_2)) : ?>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">Additional Staff</span>
+                            <span><?php echo $eng_staff_2; ?></span>
+                          </li>
+                        <?php endif; ?>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Senior</span>
                         <span class="">
