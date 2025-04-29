@@ -18,7 +18,7 @@
         </li>
         <ul class="list-unstyled">
             <li class="ps-4 pb-3">
-                <a href="" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i>&nbsp;&nbsp;Draft</a>
+                <a href="<?php BASE_URL; ?>/engagements/draft/" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i>&nbsp;&nbsp;Draft</a>
             </li>
             <li class="ps-4 pb-3">
                 <a href="<?php BASE_URL; ?>/engagements/active/" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
