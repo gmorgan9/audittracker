@@ -151,7 +151,7 @@ foreach ($files as $file) {
                             </td>
                             <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
-                                    <?php echo $final_date; ?>
+                                    <?php echo $f_final_date; ?>
                                 </a>
                             </td>
                             <td>
@@ -163,7 +163,7 @@ foreach ($files as $file) {
                             </td>
                             <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
-                                    <?php echo $created; ?>
+                                    <?php echo $f_created; ?>
                                 </a>
                             </td>
                         </tr>
