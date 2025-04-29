@@ -111,45 +111,81 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php
+                        // Pagination variables
+                        $limit = 10; 
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $offset = ($page - 1) * $limit;
+
+                        $sql = "SELECT * FROM qa_comments WHERE engagement_id = '$off_id' && status!='Completed' ORDER BY qa_updated DESC LIMIT $limit OFFSET $offset";
+                        $result = mysqli_query($conn, $sql);
+                        if($result) {
+                            $num_rows = mysqli_num_rows($result);
+                            if($num_rows > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $id                     = $row['id'];
+                                    $idno                   = $row['idno'];
+                                    $name                   = $row['name'];
+                                    $type                   = $row['type'];
+                                    $final_date             = $row['final_date'];
+                                    $reporting_start        = $row['reporting_start'];
+                                    $reporting_end          = $row['reporting_end'];
+                                    $reporting_as_of        = $row['reporting_as_of'];
+                                    $number_sections        = $row['number_sections'];
+                                    $status                 = $row['status'];
+                                    $created                = $row['created'];
+                        ?>
                         
                         <tr class="align-middle" style="cursor: pointer;">
                             <th scope="row">
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    LivePerson - SOC 2 Type 2 2025 
+                                    <?php echo $name; ?> - <?php echo $type; ?>
                                     <br>
-                                    <span class="text-secondary" style="font-size: 10px;">5/1/2024 through 4/31/2025</span>
+                                    <span class="text-secondary" style="font-size: 10px;"><?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
                                 </a>
                             </th>
                             <td>
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">0</span>
+                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">
+                                        <?php
+                                        $comment_count = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_id = '$id'";
+                                        $comment_result = mysqli_query($conn, $comment_count);
+                                        $comment_rowtotal = mysqli_fetch_array($comment_result);
+                                        echo $comment_rowtotal[0];
+                                        ?>
+                                    </span>
                                 </a>
                             </td>
                             <td>
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">3</span>
+                                    <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">
+                                        <?php echo $number_sections; ?>
+                                    </span>
                                 </a>
                             </td>
                             <td>
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    May 5, 2025
+                                    <?php echo $final_date; ?>
                                 </a>
                             </td>
                             <td>
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span>
+                                    <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">
+                                        <?php echo $status; ?>
+                                    </span>
                                 </a>
                             </td>
                             <td>
                                 <a href="../details/" class="text-decoration-none text-dark d-block">
-                                    Apr 12, 2025
+                                    <?php echo $created; ?>
                                 </a>
                             </td>
                         </tr>
+                        <?php }}} ?>
 
                         
 
-                        <tr class="align-middle">
+                        <!-- <tr class="align-middle">
                           <th scope="row">QuoteRush - SOC 2 Type 1 2025
                             <br>
                             <span class="text-secondary" style="font-size: 10px;">As of 4/31/2025</span>
@@ -159,7 +195,7 @@
                           <td>May 30, 2025</td>
                           <td><span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109);">In progress</span></td>
                           <td>Apr 25, 2025</td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
 
