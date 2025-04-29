@@ -209,13 +209,20 @@ foreach ($files as $file) {
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Senior</span>
                         <span class="">
-                            <?php echo $eng_senior; ?>
+                            <?php echo $eng_senior; ?><br>
+                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_senior_dol; ?></span>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Staff</span>
                         <span class="">
                             <?php echo $eng_staff_1; ?>, <?php echo $eng_staff_2; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Senior</span>
+                        <span class="">
+                            <?php echo $eng_senior; ?>
                         </span>
                       </li>
                     </ul>
