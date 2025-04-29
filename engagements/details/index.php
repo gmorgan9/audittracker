@@ -347,7 +347,7 @@ foreach ($files as $file) {
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     Comment
-                                                    <span style="max-width: 250px;">
+                                                    <span style="max-width: 550px;">
                                                         <?php echo $comm_details_comment; ?>
                                                     </span>
                                                 </li>
