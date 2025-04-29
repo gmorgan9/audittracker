@@ -244,11 +244,11 @@ foreach ($files as $file) {
 
                           <?php
                         // Pagination variables
-                        // $limit = 10; 
-                        // $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                        // $offset = ($page - 1) * $limit;
+                        $limit = 10; 
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $offset = ($page - 1) * $limit;
 
-                        $comment_sql = "SELECT * FROM comments WHERE parent_comment_id IS NULL AND engagement_idno='$id' ORDER BY created DESC";
+                        $comment_sql = "SELECT * FROM comments WHERE parent_comment_id IS NULL AND engagement_idno='$id' ORDER BY created DESC LIMIT $limit OFFSET $offset";
                         $comment_result = mysqli_query($conn, $comment_sql);
                         if($comment_result) {
                             $comment_num_rows = mysqli_num_rows($comment_result);
@@ -278,9 +278,9 @@ foreach ($files as $file) {
                                         <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 
                                             <?php
                                             $comment_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id='$comment_id' AND status = 'Open' AND engagement_idno = '$id'";
-                                            $comment_result = mysqli_query($conn, $comment_count);
-                                            $comment_rowtotal = mysqli_fetch_array($comment_result);
-                                            echo $comment_rowtotal[0];
+                                            $comment_count_result = mysqli_query($conn, $comment_count_count);
+                                            $comment_count_rowtotal = mysqli_fetch_array($comment_count_result);
+                                            echo $comment_count_rowtotal[0];
                                             ?>
                                         </span>
                                     </a>
