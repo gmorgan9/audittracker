@@ -340,7 +340,7 @@ foreach ($files as $file) {
 
         <!-- Modal -->
             <div class="modal fade" id="add_engagement" data-bs-keyboard="false" tabindex="-1" aria-labelledby="add_engagement_label" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="add_engagement_label">Add New Engagement</h1>
@@ -368,20 +368,17 @@ foreach ($files as $file) {
                             <label for="reporting_end" class="form-label">Reporting End</label>
                             <input type="date" class="form-control" id="reporting_end" name="reporting_end">
                           </div>
-                        </div>
-
-                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="reporting_as_of" class="form-label">Reporting As Of</label>
                             <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of">
                           </div>
+                        </div>
+
+                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="irl_due_date" class="form-label">IRL Due Date</label>
                             <input type="date" class="form-control" id="irl_due_date" name="irl_due_date">
                           </div>
-                        </div>
-
-                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="evidence_due_date" class="form-label">Evidence Due Date</label>
                             <input type="date" class="form-control" id="evidence_due_date" name="evidence_due_date">
@@ -401,13 +398,13 @@ foreach ($files as $file) {
                             <label for="draft_date" class="form-label">Draft Date</label>
                             <input type="date" class="form-control" id="draft_date" name="draft_date">
                           </div>
-                        </div>
-
-                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="final_date" class="form-label">Final Date</label>
                             <input type="date" class="form-control" id="final_date" name="final_date">
                           </div>
+                        </div>
+
+                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="status" class="form-label">Status</label>
                             <select class="form-select" id="status" name="status" required>
@@ -432,9 +429,6 @@ foreach ($files as $file) {
                             <label for="staff_1" class="form-label">Staff 1</label>
                             <input type="text" class="form-control" id="staff_1" name="staff_1">
                           </div>
-                        </div>
-
-                        <div class="row">
                           <div class="col-md-6 mb-3">
                             <label for="staff_2" class="form-label">Staff 2</label>
                             <input type="text" class="form-control" id="staff_2" name="staff_2">
