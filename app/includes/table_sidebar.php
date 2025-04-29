@@ -21,13 +21,13 @@
                 <a href="" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i>&nbsp;&nbsp;Draft</a>
             </li>
             <li class="ps-4 pb-3">
-                <a href="engagements/active/" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
+                <a href="<?php BASE_URL; ?>/engagements/active/" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
             </li>
             <li class="ps-4 pb-3">
-                <a href="" class="text-decoration-none text-black"><i class="bi bi-eye"></i>&nbsp;&nbsp;In Review</a>
+                <a href="<?php BASE_URL; ?>/engagements/in-review/" class="text-decoration-none text-black"><i class="bi bi-eye"></i>&nbsp;&nbsp;In Review</a>
             </li>
             <li class="ps-4">
-                <a href="" class="text-decoration-none text-black"><i class="bi bi-archive"></i>&nbsp;&nbsp;Completed</a>
+                <a href="<?php BASE_URL; ?>/engagements/completed/" class="text-decoration-none text-black"><i class="bi bi-archive"></i>&nbsp;&nbsp;Completed</a>
             </li>
         </ul>
         <hr style="color: gray !important; width: 75% !important; text-align: center !important;">
@@ -35,9 +35,9 @@
             <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>&nbsp;&nbsp;Organization</a>
         </li>
         <ul class="list-unstyled">
-            <li class="ps-4 pb-3">
+            <!-- <li class="ps-4 pb-3">
                 <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase"></i>&nbsp;&nbsp;Clients</a>
-            </li>
+            </li> -->
             <li class="ps-4 pb-3">
                 <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear"></i>&nbsp;&nbsp;Users</a>
             </li>
