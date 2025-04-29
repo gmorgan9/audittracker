@@ -124,10 +124,10 @@ foreach ($files as $file) {
                                               <div class="col-md-6 mb-3">
                                                   <label for="status" class="form-label">Status</label>
                                                   <select class="form-select" id="status" name="status" required>
-                                                      <option value="Draft" <?php echo ($status == 'Draft') ? 'selected' : ''; ?>>Draft</option>
-                                                      <option value="Active" <?php echo ($status == 'Active') ? 'selected' : ''; ?>>Active</option>
-                                                      <option value="In Review" <?php echo ($status == 'In Review') ? 'selected' : ''; ?>>In Review</option>
-                                                      <option value="Completed" <?php echo ($status == 'Completed') ? 'selected' : ''; ?>>Completed</option>
+                                                      <option value="Draft" <?php echo ($eng_status == 'Draft') ? 'selected' : ''; ?>>Draft</option>
+                                                      <option value="Active" <?php echo ($eng_status == 'Active') ? 'selected' : ''; ?>>Active</option>
+                                                      <option value="In Review" <?php echo ($eng_status == 'In Review') ? 'selected' : ''; ?>>In Review</option>
+                                                      <option value="Completed" <?php echo ($eng_status == 'Completed') ? 'selected' : ''; ?>>Completed</option>
                                                   </select>
                                               </div>
 
