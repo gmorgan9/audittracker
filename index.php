@@ -340,7 +340,7 @@ foreach ($files as $file) {
 
         <!-- Modal -->
             <div class="modal fade" id="add_engagement" data-bs-keyboard="false" tabindex="-1" aria-labelledby="add_engagement_label" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="add_engagement_label">Add New Engagement</h1>
