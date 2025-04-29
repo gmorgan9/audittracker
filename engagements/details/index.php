@@ -101,14 +101,13 @@ foreach ($files as $file) {
             <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $eng_reporting_start; ?> through <?php echo $eng_reporting_end; ?></span>
 
             <!--Update Modal -->
-                <div class="modal fade" id="comment_update<?php //echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="comment_update<?php //echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Comment</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <!-- <div class="modal-body"> -->
                         <form action="" method="POST">
                           <div class="modal-body">
                             <div class="mb-3">
@@ -145,11 +144,9 @@ foreach ($files as $file) {
                             <button type="submit" name="update_comment" class="btn btn-primary">Update</button>
                           </div>
                         </form>
-
-                        <!-- </div> -->
                     </div>
                   </div>
-                </div>
+                </div> -->
             <!-- end Modal -->
 
             <hr style="border: 2px solid; width: 98%;">
