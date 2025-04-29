@@ -438,31 +438,107 @@ foreach ($files as $file) {
 
                                             <div class="row">
                                               <div class="col-md-6 mb-3">
-                                                <label for="type" class="form-label">Comment By</label>
-                                                <input type="text" class="form-control" id="comment_by" name="comment_by" value="<?php //echo $comm_details_comment_by; ?>">
+                                                <label for="type" class="form-label">Type</label>
+                                                <input type="text" class="form-control" id="type" name="type" value="<?php echo $eng_type; ?>">
                                               </div>
                                               <div class="col-md-6 mb-3">
                                                 <label for="status" class="form-label">Status</label>
                                                 <select class="form-select" id="status" name="status" required>
-                                                  <option value="Open" <?php //echo ($comm_details_status == 'Open') ? 'selected' : ''; ?>>Open</option>
-                                                  <option value="Closed" <?php //echo ($comm_details_status == 'Closed') ? 'selected' : ''; ?>>Closed</option>
+                                                  <option value="Draft">Draft</option>
+                                                  <option value="Active">Active</option>
+                                                  <option value="In Review">In Review</option>
+                                                  <option value="Completed">Compelted</option>
                                                 </select>
                                               </div>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label for="comment " class="form-label">Comment</label>
-                                                <textarea class="form-control" id="comment " name="comment" rows="5"><?php //echo $comm_details_comment ; ?></textarea>
+                                            <div class="row">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="reporting_start" class="form-label">Reporting Start</label>
+                                                <input type="date" class="form-control" id="reporting_start" name="reporting_start" value="<?php echo $eng_reporting_start; ?>">
                                               </div>
-                                              <input type="hidden" name="comment_id" value="<?php //echo $comm_details_id; ?>">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="reporting_end" class="form-label">Reporting End</label>
+                                                <input type="date" class="form-control" id="reporting_end" name="reporting_end" value="<?php echo $eng_reporting_end; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="reporting_as_of" class="form-label">Reporting As Of</label>
+                                                <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of" value="<?php echo $eng_reporting_as_of; ?>">
+                                              </div>
+                                            </div>
 
+                                            <div class="row">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="irl_due_date" class="form-label">IRL Due Date</label>
+                                                <input type="date" class="form-control" id="irl_due_date" name="irl_due_date" value="<?php echo $eng_irl_due_date; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="evidence_due_date" class="form-label">Evidence Due Date</label>
+                                                <input type="date" class="form-control" id="evidence_due_date" name="evidence_due_date" value="<?php echo $eng_evidence_due_date; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="fieldwork_week" class="form-label">Fieldwork Week</label>
+                                                <input type="date" class="form-control" id="fieldwork_week" name="fieldwork_week" value="<?php echo $eng_fieldwork_week; ?>">
+                                              </div>
+                                            </div>
 
+                                            <div class="row">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="leadsheet_due" class="form-label">Leadsheet Due</label>
+                                                <input type="date" class="form-control" id="leadsheet_due" name="leadsheet_due" value="<?php echo $eng_leadsheet_due; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="draft_date" class="form-label">Draft Date</label>
+                                                <input type="date" class="form-control" id="draft_date" name="draft_date" value="<?php echo $eng_draft_date; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="final_date" class="form-label">Final Date</label>
+                                                <input type="date" class="form-control" id="final_date" name="final_date" value="<?php echo $eng_final_date; ?>">
+                                              </div>
+                                            </div>
 
+                                            <div class="row">
 
+                                            </div>
+
+                                            <div class="row">
+                                              <div class="col-md-3 mb-3">
+                                                <label for="manager" class="form-label">Manager</label>
+                                                <input type="text" class="form-control" id="manager" name="manager" value="<?php echo $eng_manager; ?>">
+                                              </div>
+                                              <div class="col-md-3 mb-3">
+                                                <label for="senior" class="form-label">Senior</label>
+                                                <input type="text" class="form-control" id="senior" name="senior" value="<?php echo $eng_senior; ?>">
+                                              </div>
+                                              <div class="col-md-3 mb-3">
+                                                <label for="staff_1" class="form-label">Staff 1</label>
+                                                <input type="text" class="form-control" id="staff_1" name="staff_1" value="<?php echo $eng_staff_1; ?>">
+                                              </div>
+                                              <div class="col-md-3 mb-3">
+                                                <label for="staff_2" class="form-label">Staff 2</label>
+                                                <input type="text" class="form-control" id="staff_2" name="staff_2" value="<?php echo $eng_staff_2; ?>">
+                                              </div>
+                                            </div>
+
+                                            <div class="row">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="senior_dol" class="form-label">Senior DOL</label>
+                                                <input type="text" class="form-control" id="senior_dol" name="senior_dol" value="<?php echo $eng_senior_dol; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="staff_1_dol" class="form-label">Staff 1 DOL</label>
+                                                <input type="text" class="form-control" id="staff_1_dol" name="staff_1_dol" value="<?php echo $eng_staff_1_dol; ?>">
+                                              </div>
+                                              <div class="col-md-4 mb-3">
+                                                <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
+                                                <input type="text" class="form-control" id="staff_2_dol" name="staff_2_dol" value="<?php echo $eng_staff_2_dol; ?>">
+                                              </div>
+                                            </div>
+                                          </div>
 
                                           <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="update_comment" class="btn btn-primary">Update</button>
+                                            <button type="submit" name="update_engagement" class="btn btn-primary">Add</button>
                                           </div>
                                         </form>
                                     </div>
