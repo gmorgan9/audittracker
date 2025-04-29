@@ -81,16 +81,16 @@ foreach ($files as $file) {
                     $eng_number_sections        = $eng_row['number_sections'];
                     $eng_status                 = $eng_row['status'];
                     $eng_created                = $eng_row['created'];
-                    $eng_created                = !empty($eng_row['created']) ? date("M j, Y", strtotime($eng_row['created'])) : '';
-                    $eng_final_date             = !empty($eng_row['final_date']) ? date("M j, Y", strtotime($eng_row['final_date'])) : '';
+                    $f_eng_created              = !empty($eng_created) ? date("M j, Y", strtotime($eng_created)) : '';
+                    $f_eng_final_date           = !empty($eng_final_date) ? date("M j, Y", strtotime($eng_final_date)) : '';
                     $f_eng_reporting_start      = !empty($eng_reporting_start) ? date("M j, Y", strtotime($eng_reporting_start)) : '';
-                    $eng_reporting_end          = !empty($eng_row['reporting_end']) ? date("M j, Y", strtotime($eng_row['reporting_end'])) : '';
-                    $eng_reporting_as_of        = !empty($eng_row['reporting_as_of']) ? date("M j, Y", strtotime($eng_row['reporting_as_of'])) : '';
-                    $eng_irl_due_date           = !empty($eng_row['irl_due_date']) ? date("M j, Y", strtotime($eng_row['irl_due_date'])) : '';
-                    $eng_evidence_due_date      = !empty($eng_row['evidence_due_date']) ? date("M j, Y", strtotime($eng_row['evidence_due_date'])) : '';
-                    $eng_fieldwork_week         = !empty($eng_row['fieldwork_week']) ? date("M j, Y", strtotime($eng_row['fieldwork_week'])) : '';
-                    $eng_leadsheet_due          = !empty($eng_row['leadsheet_due']) ? date("M j, Y", strtotime($eng_row['leadsheet_due'])) : '';
-                    $eng_draft_date             = !empty($eng_row['draft_date']) ? date("M j, Y", strtotime($eng_row['draft_date'])) : '';
+                    $f_eng_reporting_end        = !empty($eng_reporting_end) ? date("M j, Y", strtotime($eng_reporting_end)) : '';
+                    $f_eng_reporting_as_of      = !empty($eng_reporting_as_of) ? date("M j, Y", strtotime($eng_reporting_as_of)) : '';
+                    $f_eng_irl_due_date         = !empty($eng_irl_due_date) ? date("M j, Y", strtotime($eng_irl_due_date)) : '';
+                    $f_eng_evidence_due_date    = !empty($eng_evidence_due_date) ? date("M j, Y", strtotime($eng_evidence_due_date)) : '';
+                    $f_eng_fieldwork_week       = !empty($eng_fieldwork_week) ? date("M j, Y", strtotime($eng_fieldwork_week)) : '';
+                    $f_eng_leadsheet_due        = !empty($eng_leadsheet_due) ? date("M j, Y", strtotime($eng_leadsheet_due)) : '';
+                    $f_eng_draft_date           = !empty($eng_draft_date) ? date("M j, Y", strtotime($eng_draft_date)) : '';
 
 
                 }}}
@@ -108,7 +108,7 @@ foreach ($files as $file) {
             </h3>
             
 
-            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $eng_reporting_start; ?> through <?php echo $eng_reporting_end; ?></span>
+            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $f_eng_reporting_start; ?> through <?php echo $f_eng_reporting_end; ?></span>
 
             
 
@@ -123,37 +123,37 @@ foreach ($files as $file) {
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">IRL Due Date</span>
                         <span class="">
-                            <?php echo $eng_irl_due_date; ?>
+                            <?php echo $f_eng_irl_due_date; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Evidence Due Date</span>
                         <span class="">
-                            <?php echo $eng_evidence_due_date; ?>
+                            <?php echo $f_eng_evidence_due_date; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Fieldwork Week</span>
                         <span class="">
-                            <?php echo $eng_fieldwork_week; ?>
+                            <?php echo $f_eng_fieldwork_week; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Leadsheet Due</span>
                         <span class="">
-                            <?php echo $eng_leadsheet_due; ?>
+                            <?php echo $f_eng_leadsheet_due; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Draft Date</span>
                         <span class="">
-                            <?php echo $eng_draft_date; ?>
+                            <?php echo $f_eng_draft_date; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Final date</span>
                         <span class="">
-                            <?php echo $eng_final_date; ?>
+                            <?php echo $f_eng_final_date; ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
