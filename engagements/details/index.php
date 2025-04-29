@@ -334,19 +334,19 @@ foreach ($files as $file) {
                                             </h5>
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    Comment by
+                                                    <span class="fw-semibold">Comment by</span>
                                                     <span class="">
                                                         <?php echo $comm_details_comment_by;?>
                                                     </span>
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    Created
+                                                    <span class="fw-semibold">Created</span>
                                                     <span class="">
                                                         <?php echo $comm_details_created; ?>
                                                     </span>
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    Comment
+                                                    <span class="fw-semibold">Comment</span>
                                                     <span style="max-width: 500px;">
                                                         <?php echo $comm_details_comment; ?>
                                                     </span>
