@@ -164,7 +164,7 @@ foreach ($files as $file) {
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">
                                         <?php
-                                        $comment_count = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_id = '$id'";
+                                        $comment_count = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_idno = '$idno'";
                                         $comment_result = mysqli_query($conn, $comment_count);
                                         $comment_rowtotal = mysqli_fetch_array($comment_result);
                                         echo $comment_rowtotal[0];
