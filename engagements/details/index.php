@@ -383,7 +383,7 @@ foreach ($files as $file) {
                                                 
                                                     
 
-                                                <?php }} ?>
+                                                <?php }} else { ?>
                                                     <div class="alert alert-secondary" role="alert">
                                                         No followup comments yet!
                                                     </div>
