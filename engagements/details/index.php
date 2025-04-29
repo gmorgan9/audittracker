@@ -89,14 +89,14 @@ foreach ($files as $file) {
 
             
 
-
+            <span class="float-end">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#engagement_update<?php echo $eng_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
+            </span>
             <h3 class="d-flex align-items-center pb-2 ps-2">
                 <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;"><?php echo $eng_status; ?></span>
                 &nbsp; <?php echo $eng_name; ?> - <?php echo $eng_type; ?>
             </h3>
-            <span class="float-end">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#engagement_update<?php echo $eng_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
-            </span>
+            
 
             <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $eng_reporting_start; ?> through <?php echo $eng_reporting_end; ?></span>
 
