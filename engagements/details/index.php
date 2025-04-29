@@ -122,17 +122,15 @@ foreach ($files as $file) {
                     $eng_idno                   = $eng_row['idno'];
                     $eng_name                   = $eng_row['name'];
                     $eng_type                   = $eng_row['type'];
-                    $eng_final_date             = $eng_row['final_date'];
-                    $eng_reporting_start        = $eng_row['reporting_start'];
-                    $eng_reporting_end          = $eng_row['reporting_end'];
-                    $eng_reporting_as_of        = $eng_row['reporting_as_of'];
-                    $eng_number_sections        = $eng_row['number_sections'];
-                    $eng_irl_due_date           = $eng_row['irl_due_date'];
-                    $eng_evidence_due_date      = $eng_row['evidence_due_date'];
-                    $eng_fieldwork_week         = $eng_row['fieldwork_week'];
-                    $eng_leadsheet_due          = $eng_row['leadsheet_due'];
-                    $eng_draft_date             = $eng_row['draft_date'];
-                    $eng_final_date             = $eng_row['final_date'];
+                    $eng_final_date             = !empty($eng_row['final_date']) ? date("M j, Y", strtotime($eng_row['final_date'])) : '';
+                    $eng_reporting_start        = !empty($eng_row['reporting_start']) ? date("M j, Y", strtotime($eng_row['reporting_start'])) : '';
+                    $eng_reporting_end          = !empty($eng_row['reporting_end']) ? date("M j, Y", strtotime($eng_row['reporting_end'])) : '';
+                    $eng_reporting_as_of        = !empty($eng_row['reporting_as_of']) ? date("M j, Y", strtotime($eng_row['reporting_as_of'])) : '';
+                    $eng_irl_due_date           = !empty($eng_row['irl_due_date']) ? date("M j, Y", strtotime($eng_row['irl_due_date'])) : '';
+                    $eng_evidence_due_date      = !empty($eng_row['evidence_due_date']) ? date("M j, Y", strtotime($eng_row['evidence_due_date'])) : '';
+                    $eng_fieldwork_week         = !empty($eng_row['fieldwork_week']) ? date("M j, Y", strtotime($eng_row['fieldwork_week'])) : '';
+                    $eng_leadsheet_due          = !empty($eng_row['leadsheet_due']) ? date("M j, Y", strtotime($eng_row['leadsheet_due'])) : '';
+                    $eng_draft_date             = !empty($eng_row['draft_date']) ? date("M j, Y", strtotime($eng_row['draft_date'])) : '';
                     $eng_manager                = $eng_row['manager'];
                     $eng_senior                 = $eng_row['senior'];
                     $eng_staff_1                = $eng_row['staff_1'];
@@ -140,8 +138,9 @@ foreach ($files as $file) {
                     $eng_senior_dol             = $eng_row['senior_dol'];
                     $eng_staff_1_dol            = $eng_row['staff_1_dol'];
                     $eng_staff_2_dol            = $eng_row['staff_2_dol'];
+                    $eng_number_sections        = $eng_row['number_sections'];
                     $eng_status                 = $eng_row['status'];
-                    $eng_created                = $eng_row['created'];
+                    $eng_created                = !empty($eng_row['created']) ? date("M j, Y", strtotime($eng_row['created'])) : '';
 
 
                 }}}
