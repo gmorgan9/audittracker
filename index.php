@@ -417,19 +417,19 @@ foreach ($files as $file) {
                         </div>
 
                         <div class="row">
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="manager" class="form-label">Manager</label>
                             <input type="text" class="form-control" id="manager" name="manager">
                           </div>
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="senior" class="form-label">Senior</label>
                             <input type="text" class="form-control" id="senior" name="senior">
                           </div>
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="staff_1" class="form-label">Staff 1</label>
                             <input type="text" class="form-control" id="staff_1" name="staff_1">
                           </div>
-                          <div class="col-md-4 mb-3">
+                          <div class="col-md-3 mb-3">
                             <label for="staff_2" class="form-label">Staff 2</label>
                             <input type="text" class="form-control" id="staff_2" name="staff_2">
                           </div>
