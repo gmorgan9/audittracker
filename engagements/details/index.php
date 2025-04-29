@@ -546,6 +546,9 @@ foreach ($files as $file) {
                                             </div>
                                           </div>
 
+                                          <input type="hidden" name="engagement_id" value="<?php echo $eng_id; ?>">
+
+
                                           <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" name="update_engagement" class="btn btn-primary">Add</button>
