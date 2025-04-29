@@ -277,7 +277,7 @@ foreach ($files as $file) {
                                         <br>
                                         <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 
                                             <?php
-                                            $comment_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id='$comment_id' AND status = 'Open' AND engagement_idno = '$id'";
+                                            $comment_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id=$comment_id AND status='Open'";
                                             $comment_result = mysqli_query($conn, $comment_count);
                                             $comment_rowtotal = mysqli_fetch_array($comment_result);
                                             echo $comment_rowtotal[0];
