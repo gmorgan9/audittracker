@@ -294,7 +294,7 @@ foreach ($files as $file) {
                                     <div class="status_content">
                                         <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql2 = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_id = '$id'";
+                                            $sql2 = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_idno = '$idno'";
                                             $comment_result = mysqli_query($conn, $sql2);
                                             $comment_rowtotal = mysqli_fetch_array($comment_result);
                                             echo $comment_rowtotal[0];
@@ -302,7 +302,7 @@ foreach ($files as $file) {
                                         </span>
                                         <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql3 = "SELECT COUNT('1') FROM comments WHERE status = 'In Review' AND engagement_id = '$id'";
+                                            $sql3 = "SELECT COUNT('1') FROM comments WHERE status = 'In Review' AND engagement_idno = '$idno'";
                                             $comment_result2 = mysqli_query($conn, $sql3);
                                             $comment_rowtotal2 = mysqli_fetch_array($comment_result2);
                                             echo $comment_rowtotal2[0];
@@ -310,7 +310,7 @@ foreach ($files as $file) {
                                         </span>
                                         <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql4 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_id = '$id'";
+                                            $sql4 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_idno = '$idno'";
                                             $comment_result3 = mysqli_query($conn, $sql4);
                                             $comment_rowtotal3 = mysqli_fetch_array($comment_result3);
                                             echo $comment_rowtotal3[0];
