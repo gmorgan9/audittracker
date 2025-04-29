@@ -259,7 +259,7 @@ foreach ($files as $file) {
                                     }}}
                                 ?>
 
-                                <div class="modal fade" id="comment_update<?php echo$comment_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="comment_update<?php echo$comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
