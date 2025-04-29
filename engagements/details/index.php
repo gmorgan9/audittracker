@@ -393,8 +393,13 @@ foreach ($files as $file) {
                                 </div>
                             <!-- end Modal -->
 
+                            
+
+                            
+
+                            <?php }}} ?>
                             <!--Update Modal -->
-                                <?php
+                            <?php
                                 $comm_details_sql = "SELECT * FROM comments WHERE id = $comment_id";
                                 $comm_details_result = mysqli_query($conn, $comm_details_sql);
                                 if($comm_details_result) {
@@ -468,10 +473,6 @@ foreach ($files as $file) {
                                   </div>
                                 </div>
                             <!-- end Modal -->
-
-                            
-
-                            <?php }}} ?>
 
                           </tbody>
                         </table>
