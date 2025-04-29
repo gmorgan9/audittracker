@@ -62,7 +62,7 @@ a:focus {
   display: grid;
   grid:
     "details comments" 1fr
-    / 1fr 1fr;
+    / .5fr 1fr;
   /* gap: 8px; */
 }
 
