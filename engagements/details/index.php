@@ -204,45 +204,37 @@ foreach ($files as $file) {
                                     $comment_status                 = $comment_row['status'];
                                     $comment_created                = !empty($comment_row['created']) ? date("M j, Y", strtotime($comment_row['created'])) : '';
                         ?>
-                            <tr class="align-middle" style="cursor: pointer;">
-                                <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
-                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
-                                            <?php echo $comment_status; ?>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
-                                        <?php echo $comment_reference; ?>
-                                        <br>
-                                        <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 
-                                            <?php
-                                            $comment_count_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id='$comment_id' AND status = 'Open' AND engagement_idno = '$id'";
-                                            $comment_count_result = mysqli_query($conn, $comment_count_count);
-                                            $comment_count_rowtotal = mysqli_fetch_array($comment_count_result);
-                                            echo $comment_count_rowtotal[0];
-                                            ?>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
-                                        <?php echo $comment_comment_by; ?>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
-                                        <?php echo $comment_created; ?>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
-                                    </a>
-                                </td>
-                            </tr>
+                            <tr class="align-middle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo $comment_id; ?>">
+    <td>
+        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
+            <?php echo $comment_status; ?>
+        </span>
+    </td>
+    <td>
+        <?php echo $comment_reference; ?>
+        <br>
+        <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 
+            <?php
+            $comment_count_count = "SELECT COUNT('1') FROM comments WHERE parent_comment_id='$comment_id' AND status = 'Open' AND engagement_idno = '$id'";
+            $comment_count_result = mysqli_query($conn, $comment_count_count);
+            $comment_count_rowtotal = mysqli_fetch_array($comment_count_result);
+            echo $comment_count_rowtotal[0];
+            ?>
+        </span>
+    </td>
+    <td>
+        <?php echo $comment_comment_by; ?>
+    </td>
+    <td>
+        <?php echo $comment_created; ?>
+    </td>
+    <td>
+        <!-- Keep the edit/delete modal separate -->
+        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo $comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_delete<?php echo $comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
+    </td>
+</tr>
+
 
 
                             <!--Update Modal -->
