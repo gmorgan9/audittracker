@@ -153,7 +153,7 @@ foreach ($files as $file) {
                     </h5>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <strong>IRL Due Date</strong>
+                        <span class="fw-semibold">IRL Due Date</span>
                         <span class="">
                             <?php echo $eng_irl_due_date; ?>
                         </span>
