@@ -256,7 +256,6 @@ foreach ($files as $file) {
                                 while ($comment_row = mysqli_fetch_assoc($comment_result)) {
                                     $comment_id                     = $comment_row['id'];
                                     $comment_idno                   = $comment_row['idno'];
-                                    $comment_name                   = $comment_row['name'];
                                     $comment_type                   = $comment_row['type'];
                                     $comment_parent_comment_id      = $comment_row['parent_comment_id'];
                                     $comment_reference              = $comment_row['reference'];
