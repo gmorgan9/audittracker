@@ -356,29 +356,35 @@ foreach ($files as $file) {
                                             <h5 class="pb-3">
                                                 Follow-up Comments
                                             </h5>
-                                            <?php
-                                            $p_comm_details_sql = "SELECT * FROM comments WHERE parent_comment_id = '$comm_details_id'";
-                                            $p_comm_details_result = mysqli_query($conn, $p_comm_details_sql);
-                                            if($p_comm_details_result) {
-                                            $p_comm_details_num_rows = mysqli_num_rows($p_comm_details_result);
-                                            if($p_comm_details_num_rows > 0) {
-                                                while ($p_comm_details_row = mysqli_fetch_assoc($p_comm_details_result)) {
-                                                    $p_comm_details_id                     = $p_comm_details_row['id'];
-                                                    $p_comm_details_idno                   = $p_comm_details_row['idno'];
-                                                    $p_comm_details_type                   = $p_comm_details_row['type'];
-                                                    $p_comm_details_parent_comment_id      = $p_comm_details_row['parent_comment_id'];
-                                                    $p_comm_details_reference              = $p_comm_details_row['reference'];
-                                                    $p_comm_details_comment                = $p_comm_details_row['comment'];
-                                                    $p_comm_details_comment_by             = $p_comm_details_row['comment_by'];
-                                                    $p_comm_details_status                 = $p_comm_details_row['status'];
-                                                    $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($p_comm_details_row['created'])) : '';
-                                                
-                                             ?>
-                                        
-                                            <?php echo $p_comm_details_comment; ?>
-                                            
+                                            <ul class="list-group list-group-flush">
+                                                <?php
+                                                $p_comm_details_sql = "SELECT * FROM comments WHERE parent_comment_id = '$comm_details_id'";
+                                                $p_comm_details_result = mysqli_query($conn, $p_comm_details_sql);
+                                                if($p_comm_details_result) {
+                                                $p_comm_details_num_rows = mysqli_num_rows($p_comm_details_result);
+                                                if($p_comm_details_num_rows > 0) {
+                                                    while ($p_comm_details_row = mysqli_fetch_assoc($p_comm_details_result)) {
+                                                        $p_comm_details_id                     = $p_comm_details_row['id'];
+                                                        $p_comm_details_idno                   = $p_comm_details_row['idno'];
+                                                        $p_comm_details_type                   = $p_comm_details_row['type'];
+                                                        $p_comm_details_parent_comment_id      = $p_comm_details_row['parent_comment_id'];
+                                                        $p_comm_details_reference              = $p_comm_details_row['reference'];
+                                                        $p_comm_details_comment                = $p_comm_details_row['comment'];
+                                                        $p_comm_details_comment_by             = $p_comm_details_row['comment_by'];
+                                                        $p_comm_details_status                 = $p_comm_details_row['status'];
+                                                        $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($p_comm_details_row['created'])) : '';
+                                                    
+                                                 ?>
+                                                    <li class="list-group-item">
+                                                        <span><?php echo $comment_by; ?> • <?php echo $p_comm_details_created; ?></span>
+                                                            <?php echo $p_comm_details_comment; ?>
+                                                    </li>
 
-                                            <?php }}} ?>
+                                                
+                                                    
+
+                                                <?php }}} ?>
+                                            </ul>
                                             
                                         </div>
                                     </div>
