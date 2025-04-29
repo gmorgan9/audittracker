@@ -66,7 +66,7 @@ foreach ($files as $file) {
                     $eng_reporting_start        = $eng_row['reporting_start'];
                     $eng_reporting_end          = $eng_row['reporting_end'];
                     $eng_reporting_as_of        = $eng_row['reporting_as_of'];
-                    $eng_irl_due_date           = $eng_row['irl_due_date '];
+                    $eng_irl_due_date           = $eng_row['irl_due_date'];
                     $eng_evidence_due_date      = $eng_row['evidence_due_date'];
                     $eng_fieldwork_week         = $eng_row['fieldwork_week'];
                     $eng_leadsheet_due          = $eng_row['leadsheet_due'];
