@@ -309,7 +309,7 @@ foreach ($files as $file) {
                           <span class="fw-semibold">Additional Staff</span>
                           <span class="">
                             <?php echo $eng_staff_2; ?><br>
-                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_2_dol; ?></span>
+                            <?php echo $eng_staff_2_dol; ?>
                           </span>
                         </li>
                        <?php endif; ?>
