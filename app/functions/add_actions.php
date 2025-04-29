@@ -30,6 +30,7 @@ if (isset($_POST['add_engagement'])) {
     $senior_dol = isset($_POST['senior_dol']) ? trim($_POST['senior_dol']) : "";
     $staff_1_dol = isset($_POST['staff_1_dol']) ? trim($_POST['staff_1_dol']) : "";
     $staff_2_dol = isset($_POST['staff_2_dol']) ? trim($_POST['staff_2_dol']) : "";
+    $number_sections = isset($_POST['number_sections']) ? trim($_POST['number_sections']) : "";
     
     // Default status (can modify this if you have dynamic status)
     // $status = 'Active'; 
@@ -57,6 +58,7 @@ if (isset($_POST['add_engagement'])) {
             senior_dol, 
             staff_1_dol, 
             staff_2_dol, 
+            number_sections,
             status
         ) VALUES (
             ?, 
@@ -64,7 +66,7 @@ if (isset($_POST['add_engagement'])) {
             NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), 
             NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), 
             NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), 
-            NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, '')
+            NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, '')
         )"
     );
     
@@ -94,6 +96,7 @@ if (isset($_POST['add_engagement'])) {
         $senior_dol,
         $staff_1_dol,
         $staff_2_dol,
+        $number_sections,
         $status
     );
 
