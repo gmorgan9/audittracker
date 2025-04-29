@@ -94,12 +94,47 @@
         <!-- Table -->
             <div class="table_body ps-2 pt-4">
 
+            <?php
+            $id = $_GET['id'];
+            $eng_sql = "SELECT * FROM engagements WHERE id = $id";
+            $eng_result = mysqli_query($conn, $eng_sql);
+            if($eng_result) {
+            $eng_num_rows = mysqli_num_rows($eng_result);
+            if($eng_num_rows > 0) {
+                while ($eng_row = mysqli_fetch_assoc($eng_result)) {
+                    $eng_id                     = $eng_row['id'];
+                    $eng_idno                   = $eng_row['idno'];
+                    $eng_name                   = $eng_row['name'];
+                    $eng_type                   = $eng_row['type'];
+                    $eng_final_date             = $eng_row['final_date'];
+                    $eng_reporting_start        = $eng_row['reporting_start'];
+                    $eng_reporting_end          = $eng_row['reporting_end'];
+                    $eng_reporting_as_of        = $eng_row['reporting_as_of'];
+                    $eng_number_sections        = $eng_row['number_sections'];
+                    $eng_status                 = $eng_row['status'];
+                    $eng_created                = $eng_row['created'];
+
+
+                    // Split the name into parts and get initials
+                    $name_parts = explode(" ", $client_primary_contact);
+                    $first_initial = isset($name_parts[0]) ? strtoupper($name_parts[0][0]) : '';
+                    $last_initial = isset($name_parts[1]) ? strtoupper($name_parts[1][0]) : '';
+                    $primary_contact_initials = $first_initial . $last_initial;                    
+
+                    // $formatted_start = date("m/d/Y", strtotime($off_report_start));
+                    // $formatted_end = date("m/d/Y", strtotime($off_report_end));
+                    // $formatted_as_of = date("m/d/Y", strtotime($off_report_as_of));
+                }}}
+            // }}
+            ?>
+
+
             <h3 class="d-flex align-items-center pb-2 ps-2">
-                <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;">Active</span>
-                &nbsp; LivePerson - SOC 2 Type 2 2025
+                <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;"><?php echo $eng_status; ?></span>
+                &nbsp; <?php echo $eng_name; ?> - <?php echo $eng_type; ?>
             </h3>
 
-            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> 5/1/2024 through 4/31/2025</span>
+            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
 
             <hr style="border: 2px solid; width: 98%;">
 
