@@ -357,7 +357,7 @@ foreach ($files as $file) {
                                                 Follow-up Comments
                                             </h5>
                                             <?php
-                                            $p_comm_details_sql = "SELECT * FROM comments WHERE parent_comment_id = '$comm_details_parent_comment_id'";
+                                            $p_comm_details_sql = "SELECT * FROM comments WHERE parent_comment_id = '$comm_details_id'";
                                             $p_comm_details_result = mysqli_query($conn, $p_comm_details_sql);
                                             if($p_comm_details_result) {
                                             $p_comm_details_num_rows = mysqli_num_rows($p_comm_details_result);
