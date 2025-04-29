@@ -147,62 +147,76 @@ foreach ($files as $file) {
 
             <section class="details_layout">
                 <div class="details">
-
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        A list item
+                        <span class="badge text-bg-primary rounded-pill">14</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        A second list item
+                        <span class="badge text-bg-primary rounded-pill">2</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        A third list item
+                        <span class="badge text-bg-primary rounded-pill">1</span>
+                      </li>
+                    </ul>
                 </div>
+
                 <div class="comments">
-                <div class="table_content ms-5" style="width: 90%;">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th scope="col">Status</th>
-                          <th scope="col">Reference</th>
-                          <th scope="col">Comment By</th>
-                          <th scope="col">Created On</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="align-middle" style="cursor: pointer;">
-                            <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                    CC8.1-B
+                    <div class="table_content ms-5" style="width: 90%;">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">Status</th>
+                              <th scope="col">Reference</th>
+                              <th scope="col">Comment By</th>
+                              <th scope="col">Created On</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="align-middle" style="cursor: pointer;">
+                                <td>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
+                                        <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">Draft</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
+                                        CC8.1-B
+                                        <br>
+                                        <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 0</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
+                                        Joseph Thorin
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
+                                        Apr 12, 2025
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr class="align-middle">
+                                <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
+                                <td>
+                                    CC6.2-A
                                     <br>
-                                    <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 0</span>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                    Joseph Thorin
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                    Apr 12, 2025
-                                </a>
-                            </td>
-                        </tr>
+                                    <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 2</span>
+                                </td>
+                                <td>Joseph Thorin</td>
+                                <td>Apr 12, 2025</td>
+                            </tr>
 
-                        <tr class="align-middle">
-                            <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
-                            <td>
-                                CC6.2-A
-                                <br>
-                                <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 2</span>
-                            </td>
-                            <td>Joseph Thorin</td>
-                            <td>Apr 12, 2025</td>
-                        </tr>
+                          </tbody>
+                        </table>
 
-                      </tbody>
-                    </table>
-
+                    </div>
                 </div>
 
-                </div>
             </section>
 
 
