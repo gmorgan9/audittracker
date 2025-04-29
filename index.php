@@ -251,10 +251,10 @@ foreach ($files as $file) {
                             <div style="width: 10px; height: 10px; background-color: rgb(224,242,238); border-radius: 50%;"></div>
                             <span>Open</span>
                           </div>
-                          <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 12px;">
+                          <!-- <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 12px;">
                             <div style="width: 10px; height: 10px; background-color: rgb(232,232,232); border-radius: 50%;"></div>
                             <span>In Review</span>
-                          </div>
+                          </div> -->
                           <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 12px;">
                             <div style="width: 10px; height: 10px; background-color: rgb(236,232,213); border-radius: 50%;"></div>
                             <span>Closed</span>
