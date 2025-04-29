@@ -307,9 +307,9 @@ foreach ($files as $file) {
                       <?php if (!empty($eng_staff_2)) : ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           <span class="fw-semibold">Additional Staff</span>
-                          <span class="">
+                          <span class="text-end">
                             <?php echo $eng_staff_2; ?><br>
-                            <?php echo $eng_staff_2_dol; ?>
+                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_2_dol; ?></span>
                           </span>
                         </li>
                        <?php endif; ?>
