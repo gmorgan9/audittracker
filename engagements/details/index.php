@@ -128,6 +128,18 @@ foreach ($files as $file) {
                     $eng_reporting_as_of        = $eng_row['reporting_as_of'];
                     $eng_number_sections        = $eng_row['number_sections'];
                     $eng_irl_due_date           = $eng_row['irl_due_date'];
+                    $eng_evidence_due_date      = $eng_row['evidence_due_date'];
+                    $eng_fieldwork_week         = $eng_row['fieldwork_week'];
+                    $eng_leadsheet_due          = $eng_row['leadsheet_due'];
+                    $eng_draft_date             = $eng_row['draft_date'];
+                    $eng_final_date             = $eng_row['final_date'];
+                    $eng_manager                = $eng_row['manager'];
+                    $eng_senior                 = $eng_row['senior'];
+                    $eng_staff_1                = $eng_row['staff_1'];
+                    $eng_staff_2                = $eng_row['staff_2'];
+                    $eng_senior_dol             = $eng_row['senior_dol'];
+                    $eng_staff_1_dol            = $eng_row['staff_1_dol'];
+                    $eng_staff_2_dol            = $eng_row['staff_2_dol'];
                     $eng_status                 = $eng_row['status'];
                     $eng_created                = $eng_row['created'];
 
@@ -159,17 +171,55 @@ foreach ($files as $file) {
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
-                        A second list item
-                        <span class="badge text-bg-primary rounded-pill">2</span>
+                        <span class="fw-semibold">Evidence Due Date</span>
+                        <span class="">
+                            <?php echo $eng_evidence_due_date; ?>
+                        </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
-                        A third list item
-                        <span class="badge text-bg-primary rounded-pill">1</span>
+                        <span class="fw-semibold">Fieldwork Week</span>
+                        <span class="">
+                            <?php echo $eng_fieldwork_week; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Leadsheet Due</span>
+                        <span class="">
+                            <?php echo $eng_leadsheet_due; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Draft Date</span>
+                        <span class="">
+                            <?php echo $eng_draft_date; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Final date</span>
+                        <span class="">
+                            <?php echo $eng_final_date; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Manager</span>
+                        <span class="">
+                            <?php echo $eng_manager; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Senior</span>
+                        <span class="">
+                            <?php echo $eng_senior; ?>
+                        </span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="fw-semibold">Staff</span>
+                        <span class="">
+                            <?php echo $eng_staff_1; ?>, <?php echo $eng_staff_2; ?>
+                        </span>
                       </li>
                     </ul>
                 </div>
-
-
 
                 <div class="comments">
                     <div class="table_content ms-5" style="width: 90%;">
