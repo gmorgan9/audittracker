@@ -68,6 +68,7 @@ if (isset($_POST['update_engagement'])) {
     $staff_1_dol = nullIfEmpty($_POST['staff_1_dol']);
     $staff_2_dol = nullIfEmpty($_POST['staff_2_dol']);
     $engagement_id = nullIfEmpty($_POST['engagement_id']);
+    $number_sections = nullIfEmpty($_POST['number_sections']);
 
     // Validate required fields
     if (empty($name) || empty($type) || empty($status)) {
@@ -82,7 +83,7 @@ if (isset($_POST['update_engagement'])) {
         irl_due_date = ?, evidence_due_date = ?, fieldwork_week = ?, 
         leadsheet_due = ?, draft_date = ?, final_date = ?, 
         manager = ?, senior = ?, staff_1 = ?, staff_2 = ?, 
-        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?
+        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?, number_sections = ?
         WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
@@ -93,7 +94,7 @@ if (isset($_POST['update_engagement'])) {
         $irl_due_date, $evidence_due_date, $fieldwork_week, 
         $leadsheet_due, $draft_date, $final_date, 
         $manager, $senior, $staff_1, $staff_2, 
-        $senior_dol, $staff_1_dol, $staff_2_dol, 
+        $senior_dol, $staff_1_dol, $staff_2_dol, $number_sections,
         $engagement_id
     );
 
