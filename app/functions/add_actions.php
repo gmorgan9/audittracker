@@ -76,7 +76,7 @@ if (isset($_POST['add_engagement'])) {
     }
 
     $stmt->bind_param(
-        "ssssssssssssssssssss",
+        "sssssssssssssssssssss",
         $e_idno,
         $name,
         $type,

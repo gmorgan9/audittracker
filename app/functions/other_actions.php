@@ -88,7 +88,7 @@ if (isset($_POST['update_engagement'])) {
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "sssssssssssssssssssi", 
+        "ssssssssssssssssssssi", 
         $name, $type, $status, 
         $reporting_start, $reporting_end, $reporting_as_of, 
         $irl_due_date, $evidence_due_date, $fieldwork_week, 
