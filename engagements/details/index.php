@@ -204,7 +204,7 @@ foreach ($files as $file) {
                                     $comment_status                 = $comment_row['status'];
                                     $comment_created                = !empty($comment_row['created']) ? date("M j, Y", strtotime($comment_row['created'])) : '';
                         ?>
-                            <tr class="align-middle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo $comment_id; ?>">
+                            <tr class="align-middle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#comment_details_<?php echo $comment_id; ?>">
                                 <td>
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
                                         <?php echo $comment_status; ?>
@@ -259,7 +259,7 @@ foreach ($files as $file) {
                                     }}}
                                 ?>
 
-                                <div class="modal fade" id="comment_update<?php echo$comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="comment_update<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -336,7 +336,7 @@ foreach ($files as $file) {
                                     }}}
                                 ?>
 
-                                <div class="modal fade" id="comment_details<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="comment_details_<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
