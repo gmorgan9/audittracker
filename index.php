@@ -360,15 +360,15 @@ foreach ($files as $file) {
                         </div>
 
                         <div class="row">
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-4 mb-3">
                             <label for="reporting_start" class="form-label">Reporting Start</label>
                             <input type="date" class="form-control" id="reporting_start" name="reporting_start">
                           </div>
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-4 mb-3">
                             <label for="reporting_end" class="form-label">Reporting End</label>
                             <input type="date" class="form-control" id="reporting_end" name="reporting_end">
                           </div>
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-4 mb-3">
                             <label for="reporting_as_of" class="form-label">Reporting As Of</label>
                             <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of">
                           </div>
