@@ -147,7 +147,7 @@ foreach ($files as $file) {
             <hr style="border: 2px solid; width: 98%;">
 
             <section class="details_layout">
-                <div class="details ps-2">
+                <div class="details ps-2 pe-4 me-4 border-end">
                     <h5 class="">
                         Engagement Details
                     </h5>
@@ -169,7 +169,7 @@ foreach ($files as $file) {
                     </ul>
                 </div>
 
-                
+
 
                 <div class="comments">
                     <div class="table_content ms-5" style="width: 90%;">

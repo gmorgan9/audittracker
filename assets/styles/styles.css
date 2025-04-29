@@ -66,10 +66,7 @@ a:focus {
   /* gap: 8px; */
 }
 
-.details { 
-  grid-area: details;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
+.details { grid-area: details; }
 .comments { grid-area: comments; }
 
 
