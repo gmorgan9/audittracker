@@ -129,9 +129,9 @@ foreach ($files as $file) {
                       <tbody>
                         <?php
                         // Pagination variables
-                        // $limit = 10; 
-                        // $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                        // $offset = ($page - 1) * $limit;
+                        $limit = 10; 
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $offset = ($page - 1) * $limit;
 
                         $sql = "SELECT * FROM engagements WHERE status='Active' ORDER BY created DESC LIMIT $limit OFFSET $offset";
                         $result = mysqli_query($conn, $sql);
