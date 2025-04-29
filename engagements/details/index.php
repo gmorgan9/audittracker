@@ -278,14 +278,14 @@ foreach ($files as $file) {
                                         <form action="" method="POST">
                                           <div class="modal-body">
                                             <div class="mb-3">
-                                              <label for="name" class="form-label">Reference</label>
-                                              <input type="text" class="form-control" id="name" name="name" value="<?php echo $comm_details_reference; ?>">
+                                              <label for="reference" class="form-label">Reference</label>
+                                              <input type="text" class="form-control" id="reference" name="reference" value="<?php echo $comm_details_reference; ?>">
                                             </div>
                                                     
                                             <div class="row">
                                               <div class="col-md-6 mb-3">
-                                                <label for="type" class="form-label">Type</label>
-                                                <input type="text" class="form-control" id="type" name="type">
+                                                <label for="type" class="form-label">Comment By</label>
+                                                <input type="text" class="form-control" id="comment_by" name="comment_by">
                                               </div>
                                               <div class="col-md-6 mb-3">
                                                 <label for="status" class="form-label">Status</label>
@@ -295,11 +295,10 @@ foreach ($files as $file) {
                                                 </select>
                                               </div>
                                             </div>
-                                                    
                                             
                                             <div class="mb-3">
-                                                <label for="comm_details_comment " class="form-label">comm_details_parent_comment_id</label>
-                                                <textarea class="form-control" id="comm_details_comment " name="comm_details_comment" rows="5"><?php echo $comm_details_comment ; ?></textarea>
+                                                <label for="comment " class="form-label">Comment</label>
+                                                <textarea class="form-control" id="comment " name="comment" rows="5"><?php echo $comm_details_comment ; ?></textarea>
                                               </div>
                                                     
                                             
@@ -308,7 +307,7 @@ foreach ($files as $file) {
                                                     
                                           <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="add_engagement" class="btn btn-primary">Add</button>
+                                            <button type="submit" name="update_comment" class="btn btn-primary">Update</button>
                                           </div>
                                         </form>
 
