@@ -146,8 +146,8 @@ foreach ($files as $file) {
             <hr style="border: 2px solid; width: 98%;">
 
             <section class="details_layout">
-                <div class="details">
-                    <h5>
+                <div class="details ps-2">
+                    <h5 class="">
                         Engagement Details
                     </h5>
                     <ul class="list-group list-group-flush">
