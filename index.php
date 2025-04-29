@@ -163,7 +163,6 @@ foreach ($files as $file) {
                                         $due_count_rowtotal=mysqli_fetch_array($due_count_result); 
                                         echo "$due_count_rowtotal[0] due";
                                         ?>
-                                      0 due
                                     </h5>
                                 </div>
                                 <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
