@@ -87,9 +87,31 @@ foreach ($files as $file) {
                                     $reporting_start        = $row['reporting_start'];
                                     $reporting_end          = $row['reporting_end'];
                                     $reporting_as_of        = $row['reporting_as_of'];
+                                    $irl_due_date           = $row['irl_due_date'];
+                                    $evidence_due_date      = $row['evidence_due_date'];
+                                    $fieldwork_week         = $row['fieldwork_week'];
+                                    $leadsheet_due          = $row['leadsheet_due'];
+                                    $draft_date             = $row['draft_date'];
+                                    $manager                = $row['manager'];
+                                    $senior                 = $row['senior'];
+                                    $staff_1                = $row['staff_1'];
+                                    $staff_2                = $row['staff_2'];
+                                    $senior_dol             = $row['senior_dol'];
+                                    $staff_1_dol            = $row['staff_1_dol'];
+                                    $staff_2_dol            = $row['staff_2_dol'];
                                     $number_sections        = $row['number_sections'];
                                     $status                 = $row['status'];
                                     $created                = $row['created'];
+                                    $f_created              = !empty($created) ? date("M j, Y", strtotime($created)) : '';
+                                    $f_final_date           = !empty($final_date) ? date("M j, Y", strtotime($final_date)) : '';
+                                    $f_reporting_start      = !empty($reporting_start) ? date("M j, Y", strtotime($reporting_start)) : '';
+                                    $f_reporting_end        = !empty($reporting_end) ? date("M j, Y", strtotime($reporting_end)) : '';
+                                    $f_reporting_as_of      = !empty($reporting_as_of) ? date("M j, Y", strtotime($reporting_as_of)) : '';
+                                    $f_irl_due_date         = !empty($irl_due_date) ? date("M j, Y", strtotime($irl_due_date)) : '';
+                                    $f_evidence_due_date    = !empty($evidence_due_date) ? date("M j, Y", strtotime($evidence_due_date)) : '';
+                                    $f_fieldwork_week       = !empty($fieldwork_week) ? date("M j, Y", strtotime($fieldwork_week)) : '';
+                                    $f_leadsheet_due        = !empty($leadsheet_due) ? date("M j, Y", strtotime($leadsheet_due)) : '';
+                                    $f_draft_date           = !empty($draft_date) ? date("M j, Y", strtotime($draft_date)) : '';
                         ?>
                         
                         <tr class="align-middle" style="cursor: pointer;">
@@ -97,7 +119,15 @@ foreach ($files as $file) {
                                 <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $name; ?> - <?php echo $type; ?>
                                     <br>
-                                    <span class="text-secondary" style="font-size: 10px;"><?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
+                                    <?php if (empty($f_reporting_start) && empty($f_reporting_end)): ?>
+                                        <span class="text-secondary ps-2" style="font-size: 12px;">
+                                            As of <?php echo $f_reporting_as_of; ?>
+                                        </span>
+                                    <?php else: ?>
+                                        <span class="text-secondary ps-2" style="font-size: 12px;">
+                                            <?php echo $f_reporting_start; ?> through <?php echo $f_reporting_end; ?>
+                                        </span>
+                                    <?php endif; ?>
                                 </a>
                             </th>
                             <td>
@@ -121,7 +151,7 @@ foreach ($files as $file) {
                             </td>
                             <td>
                                 <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
-                                    <?php echo $final_date; ?>
+                                    <?php echo $f_final_date; ?>
                                 </a>
                             </td>
                             <td>
@@ -133,7 +163,7 @@ foreach ($files as $file) {
                             </td>
                             <td>
                                 <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
-                                    <?php echo $created; ?>
+                                    <?php echo $f_created; ?>
                                 </a>
                             </td>
                         </tr>
