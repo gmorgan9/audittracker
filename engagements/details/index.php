@@ -287,26 +287,16 @@ foreach ($files as $file) {
                                 </td>
                                 <td>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                        Joseph Thorin
+                                        <?php echo $comment_comment_by; ?>
                                     </a>
                                 </td>
                                 <td>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none text-dark d-block">
-                                        Apr 12, 2025
+                                        <?php echo $comment_created; ?>
                                     </a>
                                 </td>
                             </tr>
 
-                            <tr class="align-middle">
-                                <td><span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">Completed</span></td>
-                                <td>
-                                    CC6.2-A
-                                    <br>
-                                    <span class="text-secondary" style="font-size: 10px;"><i class="bi bi-chat-square"></i> 2</span>
-                                </td>
-                                <td>Joseph Thorin</td>
-                                <td>Apr 12, 2025</td>
-                            </tr>
                             <?php }}} ?>
 
                           </tbody>
