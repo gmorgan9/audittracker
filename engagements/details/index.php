@@ -240,8 +240,11 @@ foreach ($files as $file) {
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo $comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#comment_delete<?php echo $comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
 
-                                    <!--Update Modal -->
-                                <?php
+                                    
+                                </td>
+                            </tr>
+                            <!--Update Modal -->
+                            <?php
                                 $comm_details_sql = "SELECT * FROM comments WHERE id = $comment_id";
                                 $comm_details_result = mysqli_query($conn, $comm_details_sql);
                                 if($comm_details_result) {
@@ -315,8 +318,6 @@ foreach ($files as $file) {
                                   </div>
                                 </div>
                             <!-- end Modal -->
-                                </td>
-                            </tr>
 
                             
 
