@@ -312,29 +312,25 @@ foreach ($files as $file) {
                                         $comm_details_type                   = $comm_details_row['type'];
                                         $comm_details_parent_comment_id      = $comm_details_row['parent_comment_id'];
                                         $comm_details_reference              = $comm_details_row['reference'];
+                                        $comm_details_comment                = $comm_details_row['comment'];
                                         $comm_details_comment_by             = $comm_details_row['comment_by'];
                                         $comm_details_status                 = $comm_details_row['status'];
                                         $comm_details_created                = !empty($comm_details_row['created']) ? date("M j, Y", strtotime($comm_details_row['created'])) : '';
                                     
                                     
                                     }}}
-                                // }}
                                 ?>
 
                                 <div class="modal fade" id="comment_details<?php echo$comment_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Comment Details</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                      </div>
-                                      <div class="modal-body">
-                                        ...
-                                      </div>
-                                      <!-- <div class="modal-footer"> -->
-                                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                                        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
-                                      <!-- </div> -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Comment Details</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <?php echo $comm_details_comment; ?>
+                                        </div>
                                     </div>
                                   </div>
                                 </div>
