@@ -172,7 +172,16 @@ foreach ($files as $file) {
                             <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex">
                                     <!-- <p class="card-text me-2">00</p> -->
-                                    <h5 class="card-title mb-2">0 Overdue <i class="bi bi-dash-square-fill" style="color: rgb(173,174,183) !important;"></i></h5>
+                                    <h5 class="card-title mb-2">
+                                      <?php
+                                        $overdue_count_sql = "SELECT COUNT('1') FROM engagements WHERE final_date < CURDATE()";
+                                        $overdue_count_result = mysqli_query($conn, $overdue_count_sql);
+                                        $overdue_count_rowtotal = mysqli_fetch_array($overdue_count_result);
+                                        echo "$overdue_count_rowtotal[0] overdue";
+                                      ?>
+                                       
+                                      <i class="bi bi-dash-square-fill" style="color: rgb(173,174,183) !important;"></i>
+                                    </h5>
                                 </div>
                                 <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                             </div>
