@@ -160,7 +160,7 @@ foreach ($files as $file) {
 
             <section class="details_layout">
                 <div class="details ps-2 pe-5 border-end">
-                    <h5 class="">
+                    <h5 class="pb-3">
                         Engagement Details
                     </h5>
                     <ul class="list-group list-group-flush">
