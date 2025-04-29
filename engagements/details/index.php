@@ -305,11 +305,13 @@ foreach ($files as $file) {
                         </span>
                       </li>
                       <?php if (!empty($eng_staff_2)) : ?>
-                          <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span class="fw-semibold">Additional Staff</span>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <span class="fw-semibold">Additional Staff</span>
+                          <span class="">
                             <?php echo $eng_staff_2; ?><br>
                             <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_2_dol; ?></span>
-                          </li>
+                          </span>
+                        </li>
                        <?php endif; ?>
                     </ul>
                 </div>
