@@ -244,11 +244,11 @@ foreach ($files as $file) {
 
                           <?php
                         // Pagination variables
-                        $limit = 10; 
-                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                        $offset = ($page - 1) * $limit;
+                        // $limit = 10; 
+                        // $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        // $offset = ($page - 1) * $limit;
 
-                        $comment_sql = "SELECT * FROM comments WHERE parent_comment_id IS NULL AND engagement_idno='$id' ORDER BY created DESC LIMIT $limit OFFSET $offset";
+                        $comment_sql = "SELECT * FROM comments WHERE parent_comment_id IS NULL AND engagement_idno='$id' ORDER BY created DESC";
                         $comment_result = mysqli_query($conn, $comment_sql);
                         if($comment_result) {
                             $comment_num_rows = mysqli_num_rows($comment_result);
