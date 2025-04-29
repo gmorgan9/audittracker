@@ -371,7 +371,7 @@ foreach ($files as $file) {
                                                     $p_comm_details_comment                = $p_comm_details_row['comment'];
                                                     $p_comm_details_comment_by             = $p_comm_details_row['comment_by'];
                                                     $p_comm_details_status                 = $p_comm_details_row['status'];
-                                                    $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($cp_omm_details_row['created'])) : '';
+                                                    $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($p_comm_details_row['created'])) : '';
                                                 
                                              ?>
                                         
