@@ -452,14 +452,15 @@ foreach ($files as $file) {
                                                 <input type="text" class="form-control" id="type" name="type" value="<?php echo $eng_type; ?>">
                                               </div>
                                               <div class="col-md-6 mb-3">
-                                                <label for="status" class="form-label">Status</label>
-                                                <select class="form-select" id="status" name="status" required>
-                                                  <option value="Draft">Draft</option>
-                                                  <option value="Active">Active</option>
-                                                  <option value="In Review">In Review</option>
-                                                  <option value="Completed">Compelted</option>
-                                                </select>
+                                                  <label for="status" class="form-label">Status</label>
+                                                  <select class="form-select" id="status" name="status" required>
+                                                      <option value="Draft" <?php echo ($status == 'Draft') ? 'selected' : ''; ?>>Draft</option>
+                                                      <option value="Active" <?php echo ($status == 'Active') ? 'selected' : ''; ?>>Active</option>
+                                                      <option value="In Review" <?php echo ($status == 'In Review') ? 'selected' : ''; ?>>In Review</option>
+                                                      <option value="Completed" <?php echo ($status == 'Completed') ? 'selected' : ''; ?>>Completed</option>
+                                                  </select>
                                               </div>
+
                                             </div>
 
                                             <div class="row">
