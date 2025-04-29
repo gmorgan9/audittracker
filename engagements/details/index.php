@@ -237,10 +237,10 @@ foreach ($files as $file) {
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
-                                    <!-- <a class="badge text-bg-success text-decoration-none me-1" style="font-size: 14px;" href="<?php //echo BASE_URL; ?>/asset/update/?id=<?php //echo $comment_idno; ?>">Edit</a>
-                                    <a class="badge text-bg-danger text-decoration-none" style="font-size: 14px;" href="<?php //echo BASE_URL; ?>/asset/delete/?id=<?php //echo $comment_idno; ?>">Delete</a> -->
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_details<?php echo$comment_id; ?>" class="text-decoration-none text-dark d-block">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
+                                    </a>
                                 </td>
                             </tr>
 
