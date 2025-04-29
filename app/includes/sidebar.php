@@ -3,7 +3,7 @@
         Logo Here
     </h1>
     <div class="pt-4"></div>
-    <button type="button" class="btn" style="background-color: rgb(55, 67, 118); color: white;">
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
         Add New Engagement
     </button>
     <div class="pt-4"></div>
@@ -35,9 +35,6 @@
             <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>&nbsp;&nbsp;Organization</a>
         </li>
         <ul class="list-unstyled">
-            <!-- <li class="ps-4 pb-3">
-                <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase"></i>&nbsp;&nbsp;Clients</a>
-            </li> -->
             <li class="ps-4 pb-3">
                 <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear"></i>&nbsp;&nbsp;Users</a>
             </li>
