@@ -329,24 +329,33 @@ foreach ($files as $file) {
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
+                                            <h5 class="pb-3">
+                                                Original Comment
+                                            </h5>
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     Comment by
-                                                    <span class="badge text-bg-primary rounded-pill"><?php echo $comm_details_comment_by;?> </span>
+                                                    <span class="">
+                                                        <?php echo $comm_details_comment_by;?>
+                                                    </span>
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     Created
-                                                    <span class="badge text-bg-primary rounded-pill">
+                                                    <span class="">
                                                         <?php echo $comm_details_created; ?>
                                                     </span>
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     Comment
-                                                    <span class="badge text-bg-primary rounded-pill">
+                                                    <span class="">
                                                         <?php echo $comm_details_comment; ?>
                                                     </span>
                                                 </li>
                                             </ul>
+                                            <hr>
+                                            <h6 class="pb-3">
+                                                Follow-up Comments
+                                            </h6>
                                         </div>
                                     </div>
                                   </div>
