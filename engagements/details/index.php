@@ -147,6 +147,9 @@ foreach ($files as $file) {
 
             <section class="details_layout">
                 <div class="details">
+                    <h5>
+                        Engagement Details
+                    </h5>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         A list item
