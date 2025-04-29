@@ -336,6 +336,9 @@ foreach ($files as $file) {
                                     }}}
                                 ?>
 
+                                <?php if (!isset($comm_details_id)) {
+                                    echo "<!-- Modal not rendered because \$comm_details_id is undefined -->";
+                                } ?>
                                 <div class="modal fade" id="comment_details_<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content">
