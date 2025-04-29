@@ -141,7 +141,14 @@ foreach ($files as $file) {
                         <div class="card me-4 mb-4" style="width: 18rem; height: 6rem;">
                             <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex">
-                                    <h5 class="card-title mb-2">3 in review</h5>
+                                    <h5 class="card-title mb-2">
+                                      <?php
+                                        $review_count_sql="SELECT count('1') FROM engagements WHERE status='In Review'";
+                                        $review_count_result=mysqli_query($conn,$review_count_sql);
+                                        $review_count_rowtotal=mysqli_fetch_array($review_count_result); 
+                                        echo "$review_count_rowtotal[0] in review";
+                                        ?>
+                                    </h5>
                                 </div>
                                 <p class="card-subtitle text-secondary" style="font-size: 12px !important;">at the moment</p>
                             </div>
@@ -149,7 +156,15 @@ foreach ($files as $file) {
                         <div class="card me-4" style="width: 18rem; height: 6rem;">
                             <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex">
-                                    <h5 class="card-title mb-2">0 due</h5>
+                                    <h5 class="card-title mb-2">
+                                      <?php
+                                        $due_count_sql = "SELECT COUNT('1') FROM engagements WHERE final_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)";
+                                        $due_count_result=mysqli_query($conn,$due_count_sql);
+                                        $due_count_rowtotal=mysqli_fetch_array($due_count_result); 
+                                        echo "$due_count_rowtotal[0] due";
+                                        ?>
+                                      0 due
+                                    </h5>
                                 </div>
                                 <p class="card-subtitle text-secondary" style="font-size: 12px !important;">in the next 7 days</p>
                             </div>
@@ -302,34 +317,6 @@ foreach ($files as $file) {
 
                 <?php }}} ?>
                         
-                            <!-- <li class="list-group-item">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">QuoteRush 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
-                                    <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 32%">32%</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">Cedar Financial 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
-                                    <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 25%; background-color: orange;">25%</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <p class="fw-bold mb-0 me-3">Foxit 2025 &nbsp;<span class="text-secondary" style="font-size: 10px;">(SOC 2 Type 2)</span></p>
-                                    <div class="progress" style="width: 50%;" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: 25%">25%</div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul> -->
-
-
-
                     </div>
                 </div>
 
