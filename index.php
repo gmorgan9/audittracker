@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Denver');
 require_once "app/database/connection.php"; // Ensure this is correct
-// require_once "../path.php";
+require_once "path.php";
 session_start();
 
 ini_set('display_errors', 1);
@@ -32,67 +32,7 @@ foreach ($files as $file) {
 
     <section class="layout">
 
-        <!-- Sidebar -->
-            <div class="sidebar ps-2">
-                <h1>
-                    Logo Here
-                </h1>
-
-                <div class="pt-4"></div>
-
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#add_engagement" style="background-color: rgb(55, 67, 118); color: white;">
-                    Add New Engagement
-                </button>
-
-                <div class="pt-4"></div>
-
-                <ul class="list-unstyled ps-4">
-                    <li class="">
-                        <a href="/" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>
-                        &nbsp;&nbsp;Dashboard</a>
-                    </li>
-
-                    <hr style="color: gray !important; width: 75% !important; text-align: center !important;">
-
-                    <li class="pb-3">
-                        <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-folder" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>&nbsp;&nbsp;Engagements</a>
-                    </li>
-                    <ul class="list-unstyled">
-                        <li class="ps-4 pb-3">
-                            <a href="engagements/draft/" class="text-decoration-none text-black"><i class="bi bi-vector-pen"></i>&nbsp;&nbsp;Draft</a>
-                        </li>
-                        <li class="ps-4 pb-3">
-                            <a href="engagements/active/" class="text-decoration-none text-black"><i class="bi bi-check-circle"></i>&nbsp;&nbsp;Active</a>
-                        </li>
-                        <li class="ps-4 pb-3">
-                            <a href="engagements/in-review/" class="text-decoration-none text-black"><i class="bi bi-eye"></i>&nbsp;&nbsp;In Review</a>
-                        </li>
-                        <li class="ps-4">
-                            <a href="" class="text-decoration-none text-black"><i class="bi bi-archive"></i>&nbsp;&nbsp;Completed</a>
-                        </li>
-                    </ul>
-
-                    <hr style="color: gray !important; width: 75% !important; text-align: center !important;">
-
-                    <li class="pb-3">
-                        <a href="" class="text-decoration-none text-black fw-bold"><i class="bi bi-diagram-3" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>&nbsp;&nbsp;Organization</a>
-                    </li>
-                    <ul class="list-unstyled">
-                        <li class="ps-4 pb-3">
-                            <a href="" class="text-decoration-none text-black"><i class="bi bi-briefcase"></i>&nbsp;&nbsp;Clients</a>
-                        </li>
-                        <li class="ps-4 pb-3">
-                            <a href="" class="text-decoration-none text-black"><i class="bi bi-person-gear"></i>&nbsp;&nbsp;Users</a>
-                        </li>
-                        <li class="ps-4">
-                            <a href="" class="text-decoration-none text-black"><i class="bi bi-gear"></i>&nbsp;&nbsp;Settings</a>
-                        </li>
-                    </ul>
-
-                </ul>
-
-            </div>
-        <!-- end Sidebar -->
+    <?php include(ROOT_PATH . "/app/includes/sidebar.php"); ?>
 
         <!-- Header -->
             <div class="header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
