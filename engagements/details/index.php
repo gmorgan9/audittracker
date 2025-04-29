@@ -178,6 +178,7 @@ foreach ($files as $file) {
                               <th scope="col">Reference</th>
                               <th scope="col">Comment By</th>
                               <th scope="col">Created On</th>
+                              <th scope="col">Actions</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -235,6 +236,11 @@ foreach ($files as $file) {
                                         <?php echo $comment_created; ?>
                                     </a>
                                 </td>
+                                <td>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo$comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
+                                    <!-- <a class="badge text-bg-success text-decoration-none me-1" style="font-size: 14px;" href="<?php //echo BASE_URL; ?>/asset/update/?id=<?php //echo $comment_idno; ?>">Edit</a>
+                                    <a class="badge text-bg-danger text-decoration-none" style="font-size: 14px;" href="<?php //echo BASE_URL; ?>/asset/delete/?id=<?php //echo $comment_idno; ?>">Delete</a> -->
+                                </td>
                             </tr>
 
 
@@ -290,6 +296,10 @@ foreach ($files as $file) {
                                                     <span style="max-width: 500px;">
                                                         <?php echo $comm_details_comment; ?>
                                                     </span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span class="fw-semibold">Actions</span>
+
                                                 </li>
                                             </ul>
                                             <hr>
