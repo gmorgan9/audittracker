@@ -373,12 +373,12 @@ foreach ($files as $file) {
                                                     $p_comm_details_status                 = $p_comm_details_row['status'];
                                                     $p_comm_details_created                = !empty($p_comm_details_row['created']) ? date("M j, Y", strtotime($cp_omm_details_row['created'])) : '';
                                                 
-                                            }} ?>
+                                            } ?>
                                         
                                             <?php echo $p_comm_details_comment; ?>
                                             
 
-                                            <?php } ?>
+                                            <?php }} ?>
                                             
                                         </div>
                                     </div>
