@@ -285,7 +285,7 @@ foreach ($files as $file) {
                                             <div class="row">
                                               <div class="col-md-6 mb-3">
                                                 <label for="type" class="form-label">Comment By</label>
-                                                <input type="text" class="form-control" id="comment_by" name="comment_by">
+                                                <input type="text" class="form-control" id="comment_by" name="comment_by" value="<?php echo $comm_details_comment; ?>">
                                               </div>
                                               <div class="col-md-6 mb-3">
                                                 <label for="status" class="form-label">Status</label>
