@@ -94,14 +94,14 @@ foreach ($files as $file) {
                         
                         <tr class="align-middle" style="cursor: pointer;">
                             <th scope="row">
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $name; ?> - <?php echo $type; ?>
                                     <br>
                                     <span class="text-secondary" style="font-size: 10px;"><?php echo $reporting_start; ?> through <?php echo $reporting_end; ?></span>
                                 </a>
                             </th>
                             <td>
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130); width: 80px;">
                                         <?php
                                         $comment_count = "SELECT COUNT('1') FROM comments WHERE status = 'Open' AND engagement_idno = '$idno'";
@@ -113,26 +113,26 @@ foreach ($files as $file) {
                                 </a>
                             </td>
                             <td>
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">
                                         <?php echo $number_sections; ?>
                                     </span>
                                 </a>
                             </td>
                             <td>
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $final_date; ?>
                                 </a>
                             </td>
                             <td>
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131);">
                                         <?php echo $status; ?>
                                     </span>
                                 </a>
                             </td>
                             <td>
-                                <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
+                                <a href="<?php BASE_URL; ?>/engagements/details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $created; ?>
                                 </a>
                             </td>
