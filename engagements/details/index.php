@@ -152,8 +152,8 @@ foreach ($files as $file) {
                         Engagement Details
                     </h5>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
-                        IRL Due Date
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>IRL Due Date</strong>
                         <span class="">
                             <?php echo $eng_irl_due_date; ?>
                         </span>
