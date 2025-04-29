@@ -9,7 +9,7 @@
     <div class="pt-4"></div>
     <ul class="list-unstyled ps-4">
         <li class="">
-            <a href="/" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>
+            <a href="<?php BASE_URL; ?>/" class="text-decoration-none text-black fw-bold"><i class="bi bi-columns-gap" style="-webkit-text-stroke: 1px;color: rgb(55, 67, 118);"></i>
             &nbsp;&nbsp;Dashboard</a>
         </li>
         <hr style="color: gray !important; width: 75% !important; text-align: center !important;">
