@@ -240,7 +240,16 @@ foreach ($files as $file) {
             </h3>
             
 
-            <span class="text-secondary ps-2" style="font-size: 12px;"><strong>Reporting Period:</strong> <?php echo $f_eng_reporting_start; ?> through <?php echo $f_eng_reporting_end; ?></span>
+            <?php if (empty($f_eng_reporting_start) && empty($f_eng_reporting_end)): ?>
+                <span class="text-secondary ps-2" style="font-size: 12px;">
+                    <strong>Reporting Period:</strong> As of <?php echo $f_eng_reporting_as_of; ?>
+                </span>
+            <?php else: ?>
+                <span class="text-secondary ps-2" style="font-size: 12px;">
+                    <strong>Reporting Period:</strong> <?php echo $f_eng_reporting_start; ?> through <?php echo $f_eng_reporting_end; ?>
+                </span>
+            <?php endif; ?>
+
 
             
 
