@@ -268,18 +268,18 @@ foreach ($files as $file) {
                                 ?>
 
                                 <div class="modal fade" id="comment_update<?php echo$comment_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                                  <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Comment Details</h1>
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Comment</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <!-- <div class="modal-body"> -->
                                         <form action="" method="POST">
                                           <div class="modal-body">
                                             <div class="mb-3">
-                                              <label for="name" class="form-label">Name</label>
-                                              <input type="text" class="form-control" id="name" name="name">
+                                              <label for="name" class="form-label">Reference</label>
+                                              <input type="text" class="form-control" id="name" name="name" value="<?php echo $comm_details_reference; ?>">
                                             </div>
                                                     
                                             <div class="row">
@@ -290,27 +290,18 @@ foreach ($files as $file) {
                                               <div class="col-md-6 mb-3">
                                                 <label for="status" class="form-label">Status</label>
                                                 <select class="form-select" id="status" name="status" required>
-                                                  <option value="Draft">Draft</option>
-                                                  <option value="Active">Active</option>
-                                                  <option value="In Review">In Review</option>
-                                                  <option value="Completed">Compelted</option>
+                                                  <option value="Open">Open</option>
+                                                  <option value="Closed">Closed</option>
                                                 </select>
                                               </div>
                                             </div>
                                                     
                                             <div class="row">
-                                              <div class="col-md-4 mb-3">
-                                                <label for="reporting_start" class="form-label">Reporting Start</label>
-                                                <input type="date" class="form-control" id="reporting_start" name="reporting_start">
+                                              <div class="col-md-6 mb-3">
+                                                <label for="reporting_start" class="form-label">comm_details_parent_comment_id</label>
+                                                <input type="date" class="form-control" id="comm_details_parent_comment_id" name="comm_details_parent_comment_id" value="<?php echo $comm_details_parent_comment_id; ?>">
                                               </div>
-                                              <div class="col-md-4 mb-3">
-                                                <label for="reporting_end" class="form-label">Reporting End</label>
-                                                <input type="date" class="form-control" id="reporting_end" name="reporting_end">
-                                              </div>
-                                              <div class="col-md-4 mb-3">
-                                                <label for="reporting_as_of" class="form-label">Reporting As Of</label>
-                                                <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of">
-                                              </div>
+                                              
                                             </div>
                                                     
                                             <div class="row">
