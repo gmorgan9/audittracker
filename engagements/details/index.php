@@ -303,6 +303,12 @@ foreach ($files as $file) {
                                               </div>
                                               
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="comm_details_comment " class="form-label">comm_details_parent_comment_id</label>
+                                                <textarea class="form-control" id="comm_details_comment " name="comm_details_comment">
+                                                    <?php echo $comm_details_comment ; ?>
+                                                </textarea>
+                                              </div>
                                                     
                                             <div class="row">
                                               <div class="col-md-4 mb-3">
