@@ -329,7 +329,24 @@ foreach ($files as $file) {
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <?php echo $comm_details_comment; ?>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Comment by
+                                                    <span class="badge text-bg-primary rounded-pill"><?php echo $comm_details_comment_by;?> </span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Created
+                                                    <span class="badge text-bg-primary rounded-pill">
+                                                        <?php echo $comm_details_created; ?>
+                                                    </span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Comment
+                                                    <span class="badge text-bg-primary rounded-pill">
+                                                        <?php echo $comm_details_comment; ?>
+                                                    </span>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                   </div>
