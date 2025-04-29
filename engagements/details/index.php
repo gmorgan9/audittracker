@@ -1,13 +1,13 @@
 <?php
 date_default_timezone_set('America/Denver');
-require_once "../../app/database/connection.php"; // Ensure this is correct
+require_once ROOT_PATH . "/app/database/connection.php"; // Ensure this is correct
 require_once "../../path.php";
 session_start();
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$files = glob("../../app/functions/*.php");
+$files = glob(ROOT_PATH . "/app/functions/*.php");
 foreach ($files as $file) {
     require_once $file;
 }
