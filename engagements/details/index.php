@@ -127,6 +127,7 @@ foreach ($files as $file) {
                     $eng_reporting_end          = $eng_row['reporting_end'];
                     $eng_reporting_as_of        = $eng_row['reporting_as_of'];
                     $eng_number_sections        = $eng_row['number_sections'];
+                    $eng_irl_due_date           = $eng_row['irl_due_date'];
                     $eng_status                 = $eng_row['status'];
                     $eng_created                = $eng_row['created'];
 
@@ -151,9 +152,11 @@ foreach ($files as $file) {
                         Engagement Details
                     </h5>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        A list item
-                        <span class="badge text-bg-primary rounded-pill">14</span>
+                      <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+                        IRL Due Date
+                        <span class="">
+                            <?php echo $eng_irl_due_date; ?>
+                        </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         A second list item
