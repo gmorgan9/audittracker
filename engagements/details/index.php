@@ -376,7 +376,7 @@ foreach ($files as $file) {
                                                     
                                                  ?>
                                                     <li class="list-group-item">
-                                                        <span><?php echo $comment_by; ?> • <?php echo $p_comm_details_created; ?></span>
+                                                        <span class="text-secondary fw-semibold" style="font-size: 12px;"><?php echo $p_comm_details_comment_by; ?> • <?php echo $p_comm_details_created; ?></span> <br>
                                                             <?php echo $p_comm_details_comment; ?>
                                                     </li>
 
