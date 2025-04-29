@@ -102,7 +102,7 @@ foreach ($files as $file) {
             <span class="float-end pe-5 pt-4">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#engagement_update<?php echo $eng_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
                 <!-- ENG Update Modal -->
-                <div class="modal fade" id="engagement_update<?php echo $eng_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="engagement_update<?php echo $eng_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -228,7 +228,7 @@ foreach ($files as $file) {
                                     </div>
                                   </div>
                                 </div>
-                            <!-- end Modal -->
+                <!-- end Modal -->
             </span>
             <h3 class="d-flex align-items-center pb-2 ps-2">
                 <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px;"><?php echo $eng_status; ?></span>
@@ -307,7 +307,7 @@ foreach ($files as $file) {
                       <?php if (!empty($eng_staff_2)) : ?>
                           <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="fw-semibold">Additional Staff</span>
-                            <span><?php echo $eng_staff_2; ?></span><br>
+                            <?php echo $eng_staff_2; ?><br>
                             <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_2_dol; ?></span>
                           </li>
                        <?php endif; ?>
