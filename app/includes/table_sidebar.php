@@ -1,4 +1,4 @@
-<div class="sidebar ps-2">
+<div class="table_sidebar ps-2">
     <h1>
         Logo Here
     </h1>
