@@ -239,6 +239,82 @@ foreach ($files as $file) {
                                     <!-- Keep the edit/delete modal separate -->
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo $comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#comment_delete<?php echo $comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
+
+                                    <!--Update Modal -->
+                                <?php
+                                $comm_details_sql = "SELECT * FROM comments WHERE id = $comment_id";
+                                $comm_details_result = mysqli_query($conn, $comm_details_sql);
+                                if($comm_details_result) {
+                                $comm_details_num_rows = mysqli_num_rows($comm_details_result);
+                                if($comm_details_num_rows > 0) {
+                                    while ($comm_details_row = mysqli_fetch_assoc($comm_details_result)) {
+                                        $comm_details_id                     = $comm_details_row['id'];
+                                        $comm_details_idno                   = $comm_details_row['idno'];
+                                        $comm_details_type                   = $comm_details_row['type'];
+                                        $comm_details_parent_comment_id      = $comm_details_row['parent_comment_id'];
+                                        $comm_details_reference              = $comm_details_row['reference'];
+                                        $comm_details_comment                = $comm_details_row['comment'];
+                                        $comm_details_comment_by             = $comm_details_row['comment_by'];
+                                        $comm_details_status                 = $comm_details_row['status'];
+                                        $comm_details_created                = !empty($comm_details_row['created']) ? date("M j, Y", strtotime($comm_details_row['created'])) : '';
+                                    
+                                    
+                                    }}}
+                                ?>
+
+                                <div class="modal fade" id="comment_update<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Comment</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <!-- <div class="modal-body"> -->
+                                        <form action="" method="POST">
+                                          <div class="modal-body">
+                                            <div class="mb-3">
+                                              <label for="reference" class="form-label">Reference</label>
+                                              <input type="text" class="form-control" id="reference" name="reference" value="<?php echo $comm_details_reference; ?>">
+                                            </div>
+                                                    
+                                            <div class="row">
+                                              <div class="col-md-6 mb-3">
+                                                <label for="type" class="form-label">Comment By</label>
+                                                <input type="text" class="form-control" id="comment_by" name="comment_by" value="<?php echo $comm_details_comment_by; ?>">
+                                              </div>
+                                              <div class="col-md-6 mb-3">
+                                                <label for="status" class="form-label">Status</label>
+                                                <select class="form-select" id="status" name="status" required>
+                                                  <option value="Open" <?php echo ($comm_details_status == 'Open') ? 'selected' : ''; ?>>Open</option>
+                                                  <option value="Closed" <?php echo ($comm_details_status == 'Closed') ? 'selected' : ''; ?>>Closed</option>
+                                                </select>
+
+                                              </div>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="comment " class="form-label">Comment</label>
+                                                <textarea class="form-control" id="comment " name="comment" rows="5"><?php echo $comm_details_comment ; ?></textarea>
+                                              </div>
+
+                                              <input type="hidden" name="comment_id" value="<?php echo $comm_details_id; ?>">
+                                                    
+                                            
+                                                    
+                                    
+                                                    
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" name="update_comment" class="btn btn-primary">Update</button>
+                                          </div>
+                                        </form>
+
+                                            
+                                        <!-- </div> -->
+                                    </div>
+                                  </div>
+                                </div>
+                            <!-- end Modal -->
                                 </td>
                             </tr>
 
@@ -398,81 +474,7 @@ foreach ($files as $file) {
                             
 
                             <?php }}} ?>
-                            <!--Update Modal -->
-                            <?php
-                                $comm_details_sql = "SELECT * FROM comments WHERE id = $comment_id";
-                                $comm_details_result = mysqli_query($conn, $comm_details_sql);
-                                if($comm_details_result) {
-                                $comm_details_num_rows = mysqli_num_rows($comm_details_result);
-                                if($comm_details_num_rows > 0) {
-                                    while ($comm_details_row = mysqli_fetch_assoc($comm_details_result)) {
-                                        $comm_details_id                     = $comm_details_row['id'];
-                                        $comm_details_idno                   = $comm_details_row['idno'];
-                                        $comm_details_type                   = $comm_details_row['type'];
-                                        $comm_details_parent_comment_id      = $comm_details_row['parent_comment_id'];
-                                        $comm_details_reference              = $comm_details_row['reference'];
-                                        $comm_details_comment                = $comm_details_row['comment'];
-                                        $comm_details_comment_by             = $comm_details_row['comment_by'];
-                                        $comm_details_status                 = $comm_details_row['status'];
-                                        $comm_details_created                = !empty($comm_details_row['created']) ? date("M j, Y", strtotime($comm_details_row['created'])) : '';
-                                    
-                                    
-                                    }}}
-                                ?>
-
-                                <div class="modal fade" id="comment_update<?php echo $comm_details_id; ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Comment</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <!-- <div class="modal-body"> -->
-                                        <form action="" method="POST">
-                                          <div class="modal-body">
-                                            <div class="mb-3">
-                                              <label for="reference" class="form-label">Reference</label>
-                                              <input type="text" class="form-control" id="reference" name="reference" value="<?php echo $comm_details_reference; ?>">
-                                            </div>
-                                                    
-                                            <div class="row">
-                                              <div class="col-md-6 mb-3">
-                                                <label for="type" class="form-label">Comment By</label>
-                                                <input type="text" class="form-control" id="comment_by" name="comment_by" value="<?php echo $comm_details_comment_by; ?>">
-                                              </div>
-                                              <div class="col-md-6 mb-3">
-                                                <label for="status" class="form-label">Status</label>
-                                                <select class="form-select" id="status" name="status" required>
-                                                  <option value="Open" <?php echo ($comm_details_status == 'Open') ? 'selected' : ''; ?>>Open</option>
-                                                  <option value="Closed" <?php echo ($comm_details_status == 'Closed') ? 'selected' : ''; ?>>Closed</option>
-                                                </select>
-
-                                              </div>
-                                            </div>
-                                            
-                                            <div class="mb-3">
-                                                <label for="comment " class="form-label">Comment</label>
-                                                <textarea class="form-control" id="comment " name="comment" rows="5"><?php echo $comm_details_comment ; ?></textarea>
-                                              </div>
-
-                                              <input type="hidden" name="comment_id" value="<?php echo $comm_details_id; ?>">
-                                                    
-                                            
-                                                    
-                                    
-                                                    
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="update_comment" class="btn btn-primary">Update</button>
-                                          </div>
-                                        </form>
-
-                                            
-                                        <!-- </div> -->
-                                    </div>
-                                  </div>
-                                </div>
-                            <!-- end Modal -->
+                            
 
                           </tbody>
                         </table>
