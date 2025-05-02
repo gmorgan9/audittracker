@@ -1,7 +1,7 @@
 <?php
 
 // DELETE COMMENT AND CHILD COMMENTS
-if (isset($_GET['id']) && isset($_GET['eidno'])) {
+if (isset($_GET['id'])) {
     // Get the parent comment ID and engagement ID
     $comment_id = $_GET['id'];
     $engagement_idno = $_GET['eidno'];
