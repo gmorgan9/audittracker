@@ -33,7 +33,7 @@ foreach ($files as $file) {
 
     <section class="table_layout">
 
-        <?php include(ROOT_PATH . "/app/includes/table_sidebar.php"); ?>
+        <?php include(ROOT_PATH . "/app/includes/detail_sidebar.php"); ?>
 
         <!-- Header -->
             <div class="table_header d-flex align-items-center justify-content-end" style="height: 60px; background-color: rgb(236,241,247);">
@@ -487,7 +487,6 @@ foreach ($files as $file) {
                                 while ($comment_row = mysqli_fetch_assoc($comment_result)) {
                                     $comment_id                     = $comment_row['id'];
                                     $comment_idno                   = $comment_row['idno'];
-                                    $comment_type                   = $comment_row['type'];
                                     $comment_parent_comment_id      = $comment_row['parent_comment_id'];
                                     $comment_reference              = $comment_row['reference'];
                                     $comment_comment_by             = $comment_row['comment_by'];
@@ -614,7 +613,6 @@ foreach ($files as $file) {
                                     while ($comm_details_row = mysqli_fetch_assoc($comm_details_result)) {
                                         $comm_details_id                     = $comm_details_row['id'];
                                         $comm_details_idno                   = $comm_details_row['idno'];
-                                        $comm_details_type                   = $comm_details_row['type'];
                                         $comm_details_parent_comment_id      = $comm_details_row['parent_comment_id'];
                                         $comm_details_reference              = $comm_details_row['reference'];
                                         $comm_details_comment                = $comm_details_row['comment'];
