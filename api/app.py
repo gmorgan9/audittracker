@@ -31,18 +31,6 @@ def upload_data():
             # Generate a unique ID (IDNO)
             e_idno = random.randint(1000000, 9999999)
 
-            # Sanitize the input, converting empty strings to None
-            def sanitize(value):
-                return value if value != '' else None
-
-            # Roles with corresponding DOL fields
-            roles = {
-                'manager': {'name': row['manager'], 'dol': None},
-                'senior': {'name': row['senior'], 'dol': row['senior_dol']},
-                'staff_1': {'name': row['staff_1'], 'dol': row['staff_1_dol']},
-                'staff_2': {'name': row['staff_2'], 'dol': row['staff_2_dol']}
-            }
-
             # Prepare the SQL query for insertion into the engagements table
             sql = """
                 INSERT INTO engagements (
@@ -60,35 +48,24 @@ def upload_data():
                 row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
             )
 
-            # Log the SQL query and values being inserted
-            print(f"Executing SQL: {sql}")
-            print(f"With values: {values}")
+            # Execute the SQL query to insert data
+            cursor.execute(sql, values)
 
-            # Start transaction for both inserts
-            try:
-                cursor.execute(sql, values)
-                
-                # Insert into assigned_sections for Garrett Morgan if any DOL is present
-                for role, data in roles.items():
-                    if data['name'] == 'Garrett Morgan' and data['dol']:
-                        sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
-                        for section in sections:
-                            insert_stmt = """
-                            INSERT INTO assigned_sections (engagement_idno, section, employee, status)
-                            VALUES (%s, %s, %s, %s)
-                            """
-                            cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
+            # Insert into assigned_sections for Garrett Morgan if any DOL is present
+            for role, data in row.items():
+                if 'dol' in role.lower() and data:  # Check if there's any DOL data
+                    insert_stmt = """
+                    INSERT INTO assigned_sections (engagement_idno, section, employee, status)
+                    VALUES (%s, %s, %s, %s)
+                    """
+                    sections = [section.strip() for section in data.split(',') if section.strip()]
+                    for section in sections:
+                        cursor.execute(insert_stmt, (e_idno, section, row['manager'], 'Assigned'))
 
-                # Commit only if both inserts were successful
-                conn.commit()
-                rows_inserted.append(row)
-            except mysql.connector.Error as e:
-                print(f"Failed to insert row into engagements: {row}")
-                print(f"MySQL Error: {e}")
-                rows_failed.append((row, str(e)))  # Add to failed rows
-                conn.rollback()  # Rollback the transaction on error
+            # Commit the transaction
+            conn.commit()
+            rows_inserted.append(row)
 
-        # Return response
         return jsonify({
             'message': 'Data uploaded successfully',
             'rows_inserted': len(rows_inserted),
@@ -96,8 +73,8 @@ def upload_data():
             'failed_rows': rows_failed
         }), 200
 
-    except Exception as e:
-        conn.rollback()
+    except mysql.connector.Error as e:
+        conn.rollback()  # Rollback if any error occurs
         return jsonify({'error': str(e)}), 500
 
     finally:
