@@ -30,6 +30,7 @@ def upload_data():
         for row in data:
             # Generate unique ID
             e_idno = random.randint(1000000, 9999999)
+            status = 'Active'
 
             # Insert into engagements table
             sql = """
@@ -37,8 +38,8 @@ def upload_data():
                     idno, name, type, reporting_start, reporting_end, reporting_as_of,
                     irl_due_date, evidence_due_date, fieldwork_week, leadsheet_due,
                     draft_date, final_date, manager, senior, staff_1, staff_2,
-                    senior_dol, staff_1_dol, staff_2_dol
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    senior_dol, staff_1_dol, staff_2_dol, status
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
                 e_idno,
@@ -47,7 +48,7 @@ def upload_data():
                 row.get('evidence_due_date'), row.get('fieldwork_week'), row.get('leadsheet_due'),
                 row.get('draft_date'), row.get('final_date'), row.get('manager'),
                 row.get('senior'), row.get('staff_1'), row.get('staff_2'),
-                row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
+                row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol'), status
             )
 
             cursor.execute(sql, values)
