@@ -116,26 +116,14 @@ if (isset($_POST['update_engagement'])) {
             $dol_sections = explode(',', $staff_1_dol);
         } elseif ($staff_2 === $user && !empty($staff_2_dol)) {
             $dol_sections = explode(',', $staff_2_dol);
-        } else {
-            // User no longer assigned - delete all their assigned sections
-            $delete_all_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-            $delete_all_stmt->bind_param("is", $engagement_id, $user);
-            $delete_all_stmt->execute();
-            $delete_all_stmt->close();
-
-            header("Location: /");
-            exit;
         }
 
-        // Normalize dol_sections
+        // Normalize dol_sections to ensure matching
         $dol_sections = array_map(function($s) {
             return strtoupper(trim($s));
         }, $dol_sections);
 
-        // Only keep sections assigned AND part of DOL
-        $valid_sections = array_intersect($assigned_sections, $dol_sections);
-
-        // Fetch and normalize current assignments from DB
+        // Fetch and normalize current assignments from DB for the user
         $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND employee = ?";
         $stmt2 = $conn->prepare($query);
         $stmt2->bind_param("is", $engagement_id, $user);
@@ -147,24 +135,24 @@ if (isset($_POST['update_engagement'])) {
         }
         $stmt2->close();
 
-        // Diff
-        $to_add = array_diff($valid_sections, $current_sections);
-        $to_remove = array_diff($current_sections, $valid_sections);
+        // Check sections to delete (if they are assigned but not part of DOL)
+        $sections_to_remove = array_diff($current_sections, $dol_sections);
 
-        // Add new
-        foreach ($to_add as $section) {
-            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
-            $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
-            $insert_stmt->execute();
-            $insert_stmt->close();
-        }
-
-        // Remove old
-        foreach ($to_remove as $section) {
+        // Remove sections that are in the DB but not in DOL
+        foreach ($sections_to_remove as $section) {
             $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
             $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
             $delete_stmt->execute();
             $delete_stmt->close();
+        }
+
+        // Add sections that are in the DOL but not assigned in the DB
+        $sections_to_add = array_diff($dol_sections, $current_sections);
+        foreach ($sections_to_add as $section) {
+            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
+            $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
+            $insert_stmt->execute();
+            $insert_stmt->close();
         }
 
         header("Location: /");
