@@ -41,12 +41,15 @@ def upload_data():
                 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
-                e_idno, row['name'], row['type'], row.get('reporting_start'), row.get('reporting_end'),
-                row.get('reporting_as_of'), row.get('irl_due_date'), row.get('evidence_due_date'),
-                row.get('fieldwork_week'), row.get('leadsheet_due'), row.get('draft_date'),
-                row.get('final_date'), row.get('manager'), row.get('senior'), row.get('staff_1'),
-                row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
+                e_idno,
+                row.get('name'), row.get('type'), row.get('reporting_start'),
+                row.get('reporting_end'), row.get('reporting_as_of'), row.get('irl_due_date'),
+                row.get('evidence_due_date'), row.get('fieldwork_week'), row.get('leadsheet_due'),
+                row.get('draft_date'), row.get('final_date'), row.get('manager'),
+                row.get('senior'), row.get('staff_1'), row.get('staff_2'),
+                row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
             )
+
 
             # Execute the SQL query to insert data
             cursor.execute(sql, values)
