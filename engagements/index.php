@@ -99,7 +99,7 @@ foreach ($files as $file) {
                                     $senior_dol             = $row['senior_dol'];
                                     $staff_1_dol            = $row['staff_1_dol'];
                                     $staff_2_dol            = $row['staff_2_dol'];
-                                    $number_sections        = $row['number_sections'];
+                                    // $number_sections        = $row['number_sections'];
                                     $status                 = $row['status'];
                                     $created                = $row['created'];
                                     $f_created              = !empty($created) ? date("M j, Y", strtotime($created)) : '';
@@ -142,13 +142,13 @@ foreach ($files as $file) {
                                     </span>
                                 </a>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">
-                                        <?php echo $number_sections; ?>
+                                        <?php //echo $number_sections; ?>
                                     </span>
                                 </a>
-                            </td>
+                            </td> -->
                             <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $f_final_date; ?>
