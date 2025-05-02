@@ -44,11 +44,11 @@ def upload_data():
             }
 
             # Calculate number of sections for Garrett Morgan
-            number_sections = 0
-            for role, data in roles.items():
-                if data['name'] == 'Garrett Morgan' and data['dol']:
-                    sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
-                    number_sections += len(sections)
+            # number_sections = 0
+            # for role, data in roles.items():
+            #     if data['name'] == 'Garrett Morgan' and data['dol']:
+            #         sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
+            #         number_sections += len(sections)
 
             # Prepare the SQL query for insertion
             sql = """
@@ -56,16 +56,15 @@ def upload_data():
                     idno, name, type, reporting_start, reporting_end, reporting_as_of,
                     irl_due_date, evidence_due_date, fieldwork_week, leadsheet_due,
                     draft_date, final_date, manager, senior, staff_1, staff_2,
-                    senior_dol, staff_1_dol, staff_2_dol, number_sections
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %i)
+                    senior_dol, staff_1_dol, staff_2_dol
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
                 e_idno, row['name'], row['type'], row.get('reporting_start'), row.get('reporting_end'),
                 row.get('reporting_as_of'), row.get('irl_due_date'), row.get('evidence_due_date'),
                 row.get('fieldwork_week'), row.get('leadsheet_due'), row.get('draft_date'),
                 row.get('final_date'), row.get('manager'), row.get('senior'), row.get('staff_1'),
-                row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol'),
-                number_sections
+                row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
             )
 
             # Log the SQL query and values being inserted
