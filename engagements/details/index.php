@@ -731,22 +731,27 @@ foreach ($files as $file) {
                     <form action="" method="POST">
                       <div class="modal-body">
                         <div class="mb-3">
-                          <label for="name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="name" name="name">
+                          <label for="reference" class="form-label">Reference</label>
+                          <input type="text" class="form-control" id="reference" name="reference">
                         </div>
 
+                        <?php
+                        // Assume $engagement_idno is already defined
+                        $stmt = $pdo->prepare("SELECT id, reference FROM comments WHERE parent_comment_id IS NULL AND engagement_idno = ?");
+                        $stmt->execute([$eng_idno]);
+                        $parentComments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        ?>
+
                         <div class="row">
-                          <div class="col-md-6 mb-3">
-                            <label for="type" class="form-label">Type</label>
-                            <input type="text" class="form-control" id="type" name="type">
-                          </div>
-                          <div class="col-md-6 mb-3">
-                            <label for="status" class="form-label">Status</label>
-                            <select class="form-select" id="status" name="status" required>
-                              <option value="Draft">Draft</option>
-                              <option value="Active">Active</option>
-                              <option value="In Review">In Review</option>
-                              <option value="Completed">Compelted</option>
+                          <div class="mb-3">
+                            <label for="parent_id" class="form-label">Parent Comment (Optional)</label>
+                            <select class="form-select" id="parent_id" name="parent_id">
+                              <option value="">None</option>
+                              <?php foreach ($parentComments as $comment): ?>
+                                <option value="<?= htmlspecialchars($comment['id']) ?>">
+                                  <?= htmlspecialchars(substr($comment['reference'], 0, 60)) ?>...
+                                </option>
+                              <?php endforeach; ?>
                             </select>
                           </div>
                         </div>
