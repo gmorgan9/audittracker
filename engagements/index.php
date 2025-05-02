@@ -142,13 +142,18 @@ foreach ($files as $file) {
                                     </span>
                                 </a>
                             </td>
-                            <!-- <td>
+                            <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <span class="badge" style="background-color: rgb(244,244,254); color: rgb(89, 90, 108); width: 80px;">
-                                        <?php //echo $number_sections; ?>
+                                        <?php
+                                        $sections_count = "SELECT COUNT('1') FROM assigned_sections WHERE engagement_idno = '$idno'";
+                                        $sections_result = mysqli_query($conn, $sections_count);
+                                        $sections_rowtotal = mysqli_fetch_array($sections_result);
+                                        echo $sections_rowtotal[0];
+                                        ?>
                                     </span>
                                 </a>
-                            </td> -->
+                            </td>
                             <td>
                                 <a href="../details/?id=<?php echo $idno; ?>" class="text-decoration-none text-dark d-block">
                                     <?php echo $f_final_date; ?>
