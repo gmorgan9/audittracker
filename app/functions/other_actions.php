@@ -62,7 +62,6 @@ if (isset($_POST['update_engagement'])) {
     $senior = nullIfEmpty($_POST['senior']);
     $staff_1 = nullIfEmpty($_POST['staff_1']);
     $staff_2 = nullIfEmpty($_POST['staff_2']);
-    $manager_dol = nullIfEmpty($_POST['manager_dol']);
     $senior_dol = nullIfEmpty($_POST['senior_dol']);
     $staff_1_dol = nullIfEmpty($_POST['staff_1_dol']);
     $staff_2_dol = nullIfEmpty($_POST['staff_2_dol']);
@@ -82,18 +81,18 @@ if (isset($_POST['update_engagement'])) {
         irl_due_date = ?, evidence_due_date = ?, fieldwork_week = ?, 
         leadsheet_due = ?, draft_date = ?, final_date = ?, 
         manager = ?, senior = ?, staff_1 = ?, staff_2 = ?, 
-        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?, manager_dol = ?
+        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?
         WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "ssssssssssssssssssssi", 
+        "sssssssssssssssssssi", 
         $name, $type, $status, 
         $reporting_start, $reporting_end, $reporting_as_of, 
         $irl_due_date, $evidence_due_date, $fieldwork_week, 
         $leadsheet_due, $draft_date, $final_date, 
         $manager, $senior, $staff_1, $staff_2, 
-        $senior_dol, $staff_1_dol, $staff_2_dol, $manager_dol,
+        $senior_dol, $staff_1_dol, $staff_2_dol,
         $engagement_id
     );
 
