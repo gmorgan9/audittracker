@@ -94,6 +94,9 @@ foreach ($files as $file) {
 
 
                 }}}
+
+                // Close the connection
+$conn->close();
             // }}
             ?>
 
