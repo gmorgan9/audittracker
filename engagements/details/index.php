@@ -315,34 +315,34 @@ foreach ($files as $file) {
                         <span class="fw-semibold">Staff</span>
                         <span class="text-end">
                             <?php echo $eng_staff_1; ?><br>
-                            <span class="text-secondary" style="font-size: 12px;">
                             <?php
-// Assume $conn is your database connection
-$sections = explode(',', $eng_staff_1_dol);
-$sections = array_map('trim', $sections);
+$assigned_list = [];
 
-foreach ($sections as $section) {
-    $section_upper = strtoupper($section);
-    $stmt = $conn->prepare("SELECT status FROM assigned_sections WHERE engagement_idno = ? AND employee = ? AND section = ?");
-    $stmt->bind_param("iss", $engagement_id, $eng_staff_1, $section_upper);
-    $stmt->execute();
-    $stmt->bind_result($status);
+$stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+$stmt->bind_param("is", $engagement_id, $eng_staff_1);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $section = strtoupper(trim($row['section']));
+    $status = strtolower(trim($row['status']));
     
-    $color_class = 'text-muted'; // default
-    if ($stmt->fetch()) {
-        if (strtolower($status) === 'assigned') {
-            $color_class = 'text-warning'; // Yellow
-        } elseif (strtolower($status) === 'completed') {
-            $color_class = 'text-success'; // Green
-        }
+    if ($status === 'assigned') {
+        $color_class = 'text-warning'; // Yellow
+    } elseif ($status === 'completed') {
+        $color_class = 'text-success'; // Green
+    } else {
+        $color_class = 'text-muted'; // Fallback
     }
-    $stmt->close();
 
-    echo "<span class='$color_class' style='font-size: 12px;'>$section_upper</span><br>";
+    $assigned_list[] = "<span class='$color_class'>$section</span>";
 }
+
+$stmt->close();
+
+echo implode(', ', $assigned_list);
 ?>
 
-                            </span>
                         </span>
                       </li>
                       <?php if (!empty($eng_staff_2)) : ?>
