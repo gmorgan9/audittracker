@@ -311,13 +311,32 @@ foreach ($files as $file) {
                             <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_senior_dol; ?></span>
                         </span>
                       </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span class="fw-semibold">Staff</span>
-                        <span class="text-end">
-                            <?php echo $eng_staff_1; ?><br>
-                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_1_dol; ?></span>
-                        </span>
-                      </li>
+                        <?php
+                        // Assume $conn is your database connection
+                        $sections = explode(',', $eng_staff_1_dol);
+                        $sections = array_map('trim', $sections);
+
+                        foreach ($sections as $section) {
+                            $section_upper = strtoupper($section);
+                            $stmt = $conn->prepare("SELECT status FROM assigned_sections WHERE engagement_idno = ? AND employee = ? AND section = ?");
+                            $stmt->bind_param("iss", $engagement_id, $eng_staff_1, $section_upper);
+                            $stmt->execute();
+                            $stmt->bind_result($status);
+
+                            $color_class = 'text-muted'; // default
+                            if ($stmt->fetch()) {
+                                if (strtolower($status) === 'assigned') {
+                                    $color_class = 'text-warning'; // Yellow
+                                } elseif (strtolower($status) === 'completed') {
+                                    $color_class = 'text-success'; // Green
+                                }
+                            }
+                            $stmt->close();
+                          
+                            echo "<span class='$color_class' style='font-size: 12px;'>$section_upper</span><br>";
+                        }
+                        ?>
+
                       <?php if (!empty($eng_staff_2)) : ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           <span class="fw-semibold">Additional Staff</span>
