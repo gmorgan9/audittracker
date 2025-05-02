@@ -109,6 +109,7 @@ if (isset($_POST['update_engagement'])) {
     if ($stmt->execute()) {
         // ====== Maintain assigned_sections table ======
         $user = "Garrett Morgan";
+        $status = "Assigned";
         $dol_sections = [];
 
         if ($senior === $user && !empty($senior_dol)) {
@@ -150,8 +151,8 @@ if (isset($_POST['update_engagement'])) {
         // Add sections that are in the DOL but not assigned in the DB
         $sections_to_add = array_diff($dol_sections, $current_sections);
         foreach ($sections_to_add as $section) {
-            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
-            $insert_stmt->bind_param("iss", $engagement_idno, $section, $user);
+            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee, status) VALUES (?, ?, ?, ?)");
+            $insert_stmt->bind_param("isss", $engagement_idno, $section, $user, $status);
             $insert_stmt->execute();
             $insert_stmt->close();
         }
