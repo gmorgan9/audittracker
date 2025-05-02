@@ -2,22 +2,28 @@
 include_once '../../../path.php';
 include_once ROOT_PATH . '/app/database/connection.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $idno = $_GET['eidno'];
+if (isset($_GET['id']) && isset($_GET['eidno'])) {
+    $id = $_GET['id'];       // This is the parent comment ID to delete
+    $idno = $_GET['eidno'];  // This is the engagement ID for redirect
 
-    $stmt = mysqli_prepare($conn, "DELETE FROM comments WHERE idno = ?");
-    mysqli_stmt_bind_param($stmt, 'i', $id);
+    // Delete child comments first
+    $childStmt = mysqli_prepare($conn, "DELETE FROM comments WHERE parent_comment_id = ?");
+    mysqli_stmt_bind_param($childStmt, 'i', $id);
+    mysqli_stmt_execute($childStmt);
+    mysqli_stmt_close($childStmt);
 
-    if (mysqli_stmt_execute($stmt)) {
+    // Then delete the parent comment
+    $parentStmt = mysqli_prepare($conn, "DELETE FROM comments WHERE id = ?");
+    mysqli_stmt_bind_param($parentStmt, 'i', $id);
+
+    if (mysqli_stmt_execute($parentStmt)) {
+        mysqli_stmt_close($parentStmt);
         header("Location: " . BASE_URL . "/engagements/details/?id=" . $idno . "&deleted=true");
         exit;
     } else {
-        echo "Error deleting record: " . mysqli_error($conn);
+        echo "Error deleting parent comment: " . mysqli_error($conn);
     }
-
-    mysqli_stmt_close($stmt);
 } else {
-    echo "ID not provided.";
+    echo "ID or engagement ID not provided.";
 }
 ?>
