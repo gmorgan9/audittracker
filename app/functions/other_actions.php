@@ -43,7 +43,7 @@ if (isset($_POST['update_comment'])) {
 
 // UPDATE SECTION STATUS
 // Update section status (assigned/completed)
-if (isset($_POST['section_id']) && isset($_POST['status'])) {
+if (isset($_POST['update_comment'])) {
     // Get the form data
     $section_id = $_POST['section_id'];
     $status = $_POST['status']; // New status (assigned or completed)

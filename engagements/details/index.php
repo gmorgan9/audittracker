@@ -432,12 +432,12 @@ foreach ($files as $file) {
               $button_text = ($status === 'assigned') ? 'Mark as Completed' : 'Unmark as Completed';
           ?>
             <!-- Form for each section -->
-            <form method="POST" action="other_actions.php">
+            <form method="POST">
               <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
                 <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
                 <input type="hidden" name="section_id" value="<?= $section_id ?>">
                 <input type="hidden" name="status" value="<?= ($status === 'assigned') ? 'completed' : 'assigned' ?>">
-                <button type="submit" class="btn <?= $button_class ?> btn-sm">
+                <button type="submit" name="" class="btn <?= $button_class ?> btn-sm">
                   <?= $button_text ?>
                 </button>
               </div>
