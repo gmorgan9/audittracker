@@ -63,7 +63,7 @@ if (isset($_POST['update_section'])) {
 
     // Execute the query and handle the result
     if ($stmt->execute()) {
-        header("Location: " . $_SERVER['PHP_SELF']);
+        echo "<script>window.location.reload();</script>";
         // exit;
     } else {
         echo "Error updating section status: " . $stmt->error;
