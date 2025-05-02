@@ -730,10 +730,17 @@ foreach ($files as $file) {
                   <div class="modal-body">
                     <form action="" method="POST">
                       <div class="modal-body">
-                        <div class="mb-3">
-                          <label for="reference" class="form-label">Reference</label>
-                          <input type="text" class="form-control" id="reference" name="reference">
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="reference" class="form-label">Reference</label>
+                            <input type="text" class="form-control" id="reference" name="reference">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="type" class="form-label">Comment By</label>
+                            <input type="text" class="form-control" id="comment_by" name="comment_by">
+                          </div>
                         </div>
+                        
 
                         <?php
                         // Assuming you already have a database connection in $conn
@@ -760,36 +767,15 @@ foreach ($files as $file) {
                           </div>
                         </div>
 
+                        
 
-                        <div class="row">
-                          <div class="col-md-4 mb-3">
-                            <label for="reporting_start" class="form-label">Reporting Start</label>
-                            <input type="date" class="form-control" id="reporting_start" name="reporting_start">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="reporting_end" class="form-label">Reporting End</label>
-                            <input type="date" class="form-control" id="reporting_end" name="reporting_end">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="reporting_as_of" class="form-label">Reporting As Of</label>
-                            <input type="date" class="form-control" id="reporting_as_of" name="reporting_as_of">
-                          </div>
+
+                        <div class="mb-3">
+                          <label for="comment " class="form-label">Comment</label>
+                          <textarea class="form-control" id="comment " name="comment" rows="5"></textarea>
                         </div>
 
-                        <div class="row">
-                          <div class="col-md-4 mb-3">
-                            <label for="irl_due_date" class="form-label">IRL Due Date</label>
-                            <input type="date" class="form-control" id="irl_due_date" name="irl_due_date">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="evidence_due_date" class="form-label">Evidence Due Date</label>
-                            <input type="date" class="form-control" id="evidence_due_date" name="evidence_due_date">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="fieldwork_week" class="form-label">Fieldwork Week</label>
-                            <input type="date" class="form-control" id="fieldwork_week" name="fieldwork_week">
-                          </div>
-                        </div>
+                        
 
                         <div class="row">
                           <div class="col-md-4 mb-3">
