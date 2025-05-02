@@ -78,7 +78,7 @@ foreach ($files as $file) {
                     $eng_senior_dol             = $eng_row['senior_dol'];
                     $eng_staff_1_dol            = $eng_row['staff_1_dol'];
                     $eng_staff_2_dol            = $eng_row['staff_2_dol'];
-                    $eng_number_sections        = $eng_row['number_sections'];
+                    // $eng_number_sections        = $eng_row['number_sections'];
                     $eng_status                 = $eng_row['status'];
                     $eng_created                = $eng_row['created'];
                     $f_eng_created              = !empty($eng_created) ? date("M j, Y", strtotime($eng_created)) : '';
@@ -214,10 +214,10 @@ foreach ($files as $file) {
                                                 <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
                                                 <input type="text" class="form-control" id="staff_2_dol" name="staff_2_dol" value="<?php echo $eng_staff_2_dol; ?>">
                                               </div>
-                                              <div class="col-md-3 mb-3">
+                                              <!-- <div class="col-md-3 mb-3">
                                                 <label for="number_sections" class="form-label">Number of Sections</label>
-                                                <input type="text" class="form-control" id="number_sections" name="number_sections" value="<?php echo $eng_number_sections; ?>">
-                                              </div>
+                                                <input type="text" class="form-control" id="number_sections" name="number_sections" value="<?php //echo $eng_number_sections; ?>">
+                                              </div> -->
                                             </div>
                                           </div>
 
