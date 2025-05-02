@@ -384,10 +384,10 @@ foreach ($files as $file) {
                             <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
                             <input type="text" class="form-control" id="staff_2_dol" name="staff_2_dol">
                           </div>
-                          <div class="col-md-3 mb-3">
+                          <!-- <div class="col-md-3 mb-3">
                             <label for="number_sections" class="form-label">Number of Sections</label>
                             <input type="text" class="form-control" id="number_sections" name="number_sections">
-                          </div>
+                          </div> -->
                         </div>
                       </div>
 
