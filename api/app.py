@@ -68,8 +68,9 @@ def upload_data():
                 number_sections
             )
 
-            # Log the SQL query before executing it
-            print(f"Executing SQL: {cursor.mogrify(sql, values)}")
+            # Log the SQL query and values being inserted
+            print(f"Executing SQL: {sql}")
+            print(f"With values: {values}")
 
             # Execute the insert statement
             try:
