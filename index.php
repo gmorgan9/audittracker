@@ -234,7 +234,7 @@ foreach ($files as $file) {
                                     <div class="status_content">
                                         <span class="badge" style="background-color: rgb(224,242,238); color: rgb(118, 135, 131); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql2 = "SELECT COUNT('1') FROM assigned_sections WHERE status = 'Completed' AND engagement_idno = '$idno'";
+                                            $sql2 = "SELECT COUNT('1') FROM assigned_sections WHERE status = 'completed' AND engagement_idno = '$idno'";
                                             $result2 = mysqli_query($conn, $sql2);
                                             $rowtotal2 = mysqli_fetch_array($result2);
                                             echo $rowtotal2[0];
@@ -256,13 +256,13 @@ foreach ($files as $file) {
                                         </span> -->
                                         <span class="badge" style="background-color: rgb(236,232,213); color: rgb(154, 145, 109); font-size: 12px; width: 80px;">
                                             <?php
-                                            $sql4 = "SELECT COUNT('1') FROM comments WHERE status = 'open' AND engagement_idno = '$idno'";
+                                            $sql4 = "SELECT COUNT('1') FROM comments WHERE status = 'closed' AND engagement_idno = '$idno'";
                                             $result4 = mysqli_query($conn, $sql4);
                                             $rowtotal4 = mysqli_fetch_array($result4);
                                             echo $rowtotal4[0];
                                             ?> / 
                                             <?php
-                                            $sql5 = "SELECT COUNT('1') FROM comments WHERE status = 'Closed' AND engagement_idno = '$idno'";
+                                            $sql5 = "SELECT COUNT('1') FROM comments WHERE engagement_idno = '$idno'";
                                             $result5 = mysqli_query($conn, $sql5);
                                             $rowtotal5 = mysqli_fetch_array($result5);
                                             echo $rowtotal5[0];
