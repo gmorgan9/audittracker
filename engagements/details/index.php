@@ -407,7 +407,6 @@ foreach ($files as $file) {
                     </ul>
 
 
-                    <!-- Modal for Garrett Morgan -->
                     <div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -416,9 +415,9 @@ foreach ($files as $file) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="list-group">
+        <div class="list-group" id="assigned-sections-list">
           <?php
-          $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+          $stmt = $conn->prepare("SELECT section, status, id FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
           $gm = 'Garrett Morgan';
           $stmt->bind_param("is", $eng_idno, $gm);
           $stmt->execute();
@@ -427,14 +426,22 @@ foreach ($files as $file) {
           <?php while ($row = $result->fetch_assoc()):
               $section = strtoupper(trim($row['section']));
               $status = strtolower(trim($row['status']));
+              $section_id = $row['id']; // Section ID to update the status
               $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
               $button_class = ($status === 'assigned') ? 'btn-success' : 'btn-outline-secondary';
-              $button_text = ($status === 'assigned') ? 'Completed' : 'Uncomplete';
+              $button_text = ($status === 'assigned') ? 'Mark as Completed' : 'Unmark as Completed';
           ?>
-            <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
-              <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
-              <button class="btn <?= $button_class ?> btn-sm" disabled><?= $button_text ?></button>
-            </div>
+            <!-- Form for each section -->
+            <form method="POST" action="other_actions.php">
+              <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
+                <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
+                <input type="hidden" name="section_id" value="<?= $section_id ?>">
+                <input type="hidden" name="status" value="<?= ($status === 'assigned') ? 'completed' : 'assigned' ?>">
+                <button type="submit" class="btn <?= $button_class ?> btn-sm">
+                  <?= $button_text ?>
+                </button>
+              </div>
+            </form>
           <?php endwhile; ?>
           <?php $stmt->close(); ?>
         </div>
@@ -442,6 +449,7 @@ foreach ($files as $file) {
     </div>
   </div>
 </div>
+
 
 
 

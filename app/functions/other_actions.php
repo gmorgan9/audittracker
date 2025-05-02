@@ -41,6 +41,41 @@ if (isset($_POST['update_comment'])) {
 // END UPDATE COMMENT
 
 
+// UPDATE SECTION STATUS
+// Update section status (assigned/completed)
+if (isset($_POST['section_id']) && isset($_POST['status'])) {
+    // Get the form data
+    $section_id = $_POST['section_id'];
+    $status = $_POST['status']; // New status (assigned or completed)
+
+    // Basic validation
+    if (empty($section_id) || empty($status)) {
+        echo "Section ID and status are required!";
+        exit;
+    }
+
+    // Prepare the update query
+    $sql = "UPDATE assigned_sections SET status = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    // Bind the parameters
+    $stmt->bind_param("si", $status, $section_id);
+
+    // Execute the query and handle the result
+    if ($stmt->execute()) {
+        echo 'success'; // Return success for the AJAX request
+    } else {
+        echo "Error updating section status: " . $stmt->error;
+    }
+
+    // Clean up
+    $stmt->close();
+    $conn->close();
+}
+// END UPDATE SECTION STATUS
+
+
+
 
 
 
