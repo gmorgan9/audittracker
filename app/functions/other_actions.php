@@ -102,9 +102,7 @@ if (isset($_POST['update_engagement'])) {
         $user = "Garrett Morgan";
         $dol_sections = [];
 
-        if ($manager === $user && !empty($manager_dol)) {
-            $dol_sections = explode(',', $manager_dol);
-        } elseif ($senior === $user && !empty($senior_dol)) {
+        if ($senior === $user && !empty($senior_dol)) {
             $dol_sections = explode(',', $senior_dol);
         } elseif ($staff_1 === $user && !empty($staff_1_dol)) {
             $dol_sections = explode(',', $staff_1_dol);
