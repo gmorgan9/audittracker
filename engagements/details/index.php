@@ -435,9 +435,9 @@ foreach ($files as $file) {
             <form method="POST">
               <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
                 <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
-                <input type="hidden" name="section_id" value="<?= $section_id ?>">
-                <input type="hidden" name="status" value="<?= ($status === 'assigned') ? 'completed' : 'assigned' ?>">
-                <button type="submit" name="" class="btn <?= $button_class ?> btn-sm">
+                <input type="text" name="section_id" value="<?= $section_id ?>">
+                <input type="text" name="status" value="<?= ($status === 'assigned') ? 'completed' : 'assigned' ?>">
+                <button type="submit" name="update_section" class="btn <?= $button_class ?> btn-sm">
                   <?= $button_text ?>
                 </button>
               </div>
