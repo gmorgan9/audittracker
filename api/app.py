@@ -43,13 +43,6 @@ def upload_data():
                 'staff_2': {'name': row['staff_2'], 'dol': row['staff_2_dol']}
             }
 
-            # Calculate number of sections for Garrett Morgan
-            # number_sections = 0
-            # for role, data in roles.items():
-            #     if data['name'] == 'Garrett Morgan' and data['dol']:
-            #         sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
-            #         number_sections += len(sections)
-
             # Prepare the SQL query for insertion
             sql = """
                 INSERT INTO engagements (
