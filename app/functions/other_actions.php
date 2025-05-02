@@ -64,7 +64,7 @@ if (isset($_POST['update_section'])) {
     // Execute the query and handle the result
     if ($stmt->execute()) {
         echo "<script>window.location.reload();</script>";
-        // exit;
+        exit;
     } else {
         echo "Error updating section status: " . $stmt->error;
     }
