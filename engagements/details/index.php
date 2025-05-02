@@ -532,7 +532,6 @@ foreach ($files as $file) {
                                             while ($comm_details_row = mysqli_fetch_assoc($comm_details_result)) {
                                                 $comm_details_id                     = $comm_details_row['id'];
                                                 $comm_details_idno                   = $comm_details_row['idno'];
-                                                $comm_details_type                   = $comm_details_row['type'];
                                                 $comm_details_parent_comment_id      = $comm_details_row['parent_comment_id'];
                                                 $comm_details_reference              = $comm_details_row['reference'];
                                                 $comm_details_comment                = $comm_details_row['comment'];
