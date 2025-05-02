@@ -31,12 +31,9 @@ if (isset($_POST['add_engagement'])) {
     $staff_1_dol = isset($_POST['staff_1_dol']) ? trim($_POST['staff_1_dol']) : "";
     $staff_2_dol = isset($_POST['staff_2_dol']) ? trim($_POST['staff_2_dol']) : "";
     $number_sections = isset($_POST['number_sections']) ? trim($_POST['number_sections']) : "";
-    
-    // Default status (can modify this if you have dynamic status)
-    // $status = 'Active'; 
     $status = isset($_POST['status']) ? trim($_POST['status']) : "";
 
-    // Prepare query
+    // Prepare insert into engagements table
     $stmt = $conn->prepare(
         "INSERT INTO engagements (
             idno, 
@@ -69,7 +66,6 @@ if (isset($_POST['add_engagement'])) {
             NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, ''), NULLIF(?, '')
         )"
     );
-    
 
     if (!$stmt) {
         die("Prepare failed: " . $conn->error);
@@ -101,6 +97,36 @@ if (isset($_POST['add_engagement'])) {
     );
 
     if ($stmt->execute()) {
+        // ✅ Check who Garrett Morgan is and assign their DOL sections
+        $roles = [
+            'manager' => ['name' => $manager, 'dol' => null],
+            'senior' => ['name' => $senior, 'dol' => $senior_dol],
+            'staff_1' => ['name' => $staff_1, 'dol' => $staff_1_dol],
+            'staff_2' => ['name' => $staff_2, 'dol' => $staff_2_dol],
+        ];
+
+        foreach ($roles as $role => $data) {
+            if ($data['name'] === 'Garrett Morgan' && !empty($data['dol'])) {
+                $sections = explode(',', $data['dol']);
+                foreach ($sections as $section) {
+                    $section = trim($section);
+                    if (!empty($section)) {
+                        $insert_stmt = $conn->prepare(
+                            "INSERT INTO assigned_sections (engagement_idno, section, employee, status) 
+                             VALUES (?, ?, ?, ?)"
+                        );
+                        if ($insert_stmt) {
+                            $assigned_status = 'Assigned';
+                            $insert_stmt->bind_param("ssss", $e_idno, $section, $data['name'], $assigned_status);
+                            $insert_stmt->execute();
+                            $insert_stmt->close();
+                        }
+                    }
+                }
+            }
+        }
+
+        // ✅ Redirect after everything is done
         header('Location: /');
         exit;
     } else {
@@ -110,6 +136,7 @@ if (isset($_POST['add_engagement'])) {
     $stmt->close();
 }
 // end Add Engagement
+
 
 
 
