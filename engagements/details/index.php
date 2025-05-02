@@ -333,7 +333,7 @@ foreach ($files as $file) {
                                       } elseif ($status === 'completed') {
                                           $color_class = 'text-success'; // Green
                                       } else {
-                                          $color_class = 'text-muted'; // Fallback
+                                          $color_class = 'text-secondary'; // Fallback
                                       }
                                     
                                       $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
