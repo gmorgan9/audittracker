@@ -736,25 +736,30 @@ foreach ($files as $file) {
                         </div>
 
                         <?php
-                        // Assume $engagement_idno is already defined
-                        $stmt = $pdo->prepare("SELECT id, reference FROM comments WHERE parent_comment_id IS NULL AND engagement_idno = ?");
-                        $stmt->execute([$eng_idno]);
-                        $parentComments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        // Assuming you already have a database connection in $conn
+                        // And the current engagement_idno is available in $engagement_idno
+                                                                    
+                        $sql = "SELECT id, reference FROM comments WHERE engagement_idno = ? AND parent_comment_id IS NULL ORDER BY id ASC";
+                        $stmt = mysqli_prepare($conn, $sql);
+                        mysqli_stmt_bind_param($stmt, 's', $eng_idno);
+                        mysqli_stmt_execute($stmt);
+                        $result = mysqli_stmt_get_result($stmt);
                         ?>
-
+                        
                         <div class="row">
                           <div class="mb-3">
-                            <label for="parent_id" class="form-label">Parent Comment (Optional)</label>
-                            <select class="form-select" id="parent_id" name="parent_id">
-                              <option value="">None</option>
-                              <?php foreach ($parentComments as $comment): ?>
-                                <option value="<?= htmlspecialchars($comment['id']) ?>">
-                                  <?= htmlspecialchars(substr($comment['reference'], 0, 60)) ?>...
+                            <label for="parent_comment_id" class="form-label">Parent Comment</label>
+                            <select class="form-select" id="parent_comment_id" name="parent_comment_id">
+                              <option value="">None (Top-level comment)</option>
+                              <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                                <option value="<?php echo htmlspecialchars($row['id']); ?>">
+                                  <?php echo htmlspecialchars(substr($row['reference'], 0, 50)); ?>
                                 </option>
-                              <?php endforeach; ?>
+                              <?php endwhile; ?>
                             </select>
                           </div>
                         </div>
+
 
                         <div class="row">
                           <div class="col-md-4 mb-3">
