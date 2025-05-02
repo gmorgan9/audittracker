@@ -20,7 +20,7 @@ def generate_unique_idno(cursor):
         if cursor.fetchone()[0] == 0:
             return e_idno
 
-# Sanitize empty strings to None
+# Sanitize empty strings to None, ensuring null values are properly handled
 def sanitize(value):
     return value if value != '' else None
 
