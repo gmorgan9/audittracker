@@ -68,17 +68,17 @@ def upload_data():
                 number_sections
             )
 
-            # Log the row data being inserted
-            print(f"Inserting row: {values}")
+            # Log the SQL query before executing it
+            print(f"Executing SQL: {cursor.mogrify(sql, values)}")
 
             # Execute the insert statement
             try:
                 cursor.execute(sql, values)
                 conn.commit()
                 rows_inserted.append(row)  # Add to successful rows
-            except Exception as e:
-                print(f"Failed to insert row: {row}")
-                print(f"Error: {str(e)}")
+            except mysql.connector.Error as e:
+                print(f"Failed to insert row into engagements: {row}")
+                print(f"MySQL Error: {e}")
                 rows_failed.append((row, str(e)))  # Add to failed rows
 
             # Insert into assigned_sections for Garrett Morgan if any DOL is present
@@ -93,9 +93,9 @@ def upload_data():
                         try:
                             cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
                             conn.commit()
-                        except Exception as e:
+                        except mysql.connector.Error as e:
                             print(f"Failed to insert section {section} for row {row}")
-                            print(f"Error: {str(e)}")
+                            print(f"MySQL Error: {e}")
                             rows_failed.append((row, str(e)))
 
         return jsonify({
