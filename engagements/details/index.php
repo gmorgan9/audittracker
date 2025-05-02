@@ -408,7 +408,7 @@ foreach ($files as $file) {
 
 
                     <!-- Modal for Garrett Morgan -->
-<div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -416,29 +416,32 @@ foreach ($files as $file) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?php
-        // $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-        // $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
-        // $stmt->execute();
-        // $result = $stmt->get_result();
-        // $modal_list = [];
-        // while ($row = $result->fetch_assoc()) {
-        //     $section = strtoupper(trim($row['section']));
-        //     $status = strtolower(trim($row['status']));
-        //     $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
-        //     $modal_list[] = "<span class='$color_class' style='font-size: 14px;'>$section</span>";
-        // }
-        // $stmt->close();
-        // $count = count($modal_list);
-        // foreach ($modal_list as $i => $item) {
-        //     echo $item;
-        //     if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 14px;'>, </span>";
-        // }
-        ?>
+        <div class="list-group">
+          <?php
+          $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+          $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
+          $stmt->execute();
+          $result = $stmt->get_result();
+          while ($row = $result->fetch_assoc()) {
+              $section = strtoupper(trim($row['section']));
+              $status = strtolower(trim($row['status']));
+              $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+              $button_class = ($status === 'assigned') ? 'btn-success' : 'btn-outline-secondary';
+              $button_text = ($status === 'assigned') ? 'Completed' : 'Uncomplete';
+
+              echo "<div class='d-flex justify-content-between align-items-center mb-2 list-group-item'>";
+              echo "  <span class='$color_class fw-semibold'>$section</span>";
+              echo "  <button class='btn $button_class btn-sm' disabled>$button_text</button>";
+              echo "</div>";
+          }
+          $stmt->close();
+          ?>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
