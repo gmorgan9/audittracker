@@ -63,7 +63,7 @@ if (isset($_POST['update_section'])) {
 
     // Execute the query and handle the result
     if ($stmt->execute()) {
-        echo 'success'; // Return success for the AJAX request
+        header("Location: /");
     } else {
         echo "Error updating section status: " . $stmt->error;
     }
