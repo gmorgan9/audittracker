@@ -419,28 +419,30 @@ foreach ($files as $file) {
         <div class="list-group">
           <?php
           $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-          $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
+          $gm = 'Garrett Morgan';
+          $stmt->bind_param("is", $eng_idno, $gm);
           $stmt->execute();
           $result = $stmt->get_result();
-          while ($row = $result->fetch_assoc()) {
+          ?>
+          <?php while ($row = $result->fetch_assoc()):
               $section = strtoupper(trim($row['section']));
               $status = strtolower(trim($row['status']));
               $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
               $button_class = ($status === 'assigned') ? 'btn-success' : 'btn-outline-secondary';
               $button_text = ($status === 'assigned') ? 'Completed' : 'Uncomplete';
-
-              echo "<div class='d-flex justify-content-between align-items-center mb-2 list-group-item'>";
-              echo "  <span class='$color_class fw-semibold'>$section</span>";
-              echo "  <button class='btn $button_class btn-sm' disabled>$button_text</button>";
-              echo "</div>";
-          }
-          $stmt->close();
           ?>
+            <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
+              <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
+              <button class="btn <?= $button_class ?> btn-sm" disabled><?= $button_text ?></button>
+            </div>
+          <?php endwhile; ?>
+          <?php $stmt->close(); ?>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
