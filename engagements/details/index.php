@@ -520,7 +520,7 @@ foreach ($files as $file) {
                                 <td>
                                     <!-- Keep the edit/delete modal separate -->
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#comment_update<?php echo $comment_id; ?>" class="badge text-bg-success text-decoration-none me-1">Edit</a>
-                                    <a href="<?php BASE_URL; ?>/engagements/details/delete/?id=<?php echo $comment_id; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
+                                    <a href="<?php BASE_URL; ?>/engagements/details/delete/?id=<?php echo $comment_idno; ?>" class="badge text-bg-danger text-decoration-none">Delete</a>
 
                                     <!--Update Modal -->
                                         <?php
