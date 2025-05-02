@@ -6,7 +6,7 @@ app = Flask(__name__)
 # MySQL connection
 def get_db_connection():
     return mysql.connector.connect(
-        host='your-db-host',
+        host='localhost',
         user='dbuser',
         password='DBuser123!',
         database='audittracker'
