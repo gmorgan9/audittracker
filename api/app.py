@@ -49,24 +49,19 @@ def upload_data():
 
             # Insert into engagements table
             sql = """
-            INSERT INTO engagements (
-                idno, name, type, reporting_start, reporting_end, reporting_as_of,
-                irl_due_date, evidence_due_date, fieldwork_week, leadsheet_due,
-                draft_date, final_date, manager, senior, staff_1, staff_2,
-                senior_dol, staff_1_dol, staff_2_dol, number_sections, status
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO engagements (
+                    name, type, reporting_start, reporting_end, reporting_as_of,
+                    irl_due_date, evidence_due_date, fieldwork_week, leadsheet_due,
+                    draft_date, final_date, manager, senior, staff_1, staff_2,
+                    senior_dol, staff_1_dol, staff_2_dol
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
-                e_idno, sanitize(row['name']), sanitize(row['type']),
-                sanitize(row['reporting_start']), sanitize(row['reporting_end']),
-                sanitize(row['reporting_as_of']), sanitize(row['irl_due_date']),
-                sanitize(row['evidence_due_date']), sanitize(row['fieldwork_week']),
-                sanitize(row['leadsheet_due']), sanitize(row['draft_date']),
-                sanitize(row['final_date']), sanitize(row['manager']),
-                sanitize(row['senior']), sanitize(row['staff_1']),
-                sanitize(row['staff_2']), sanitize(row['senior_dol']),
-                sanitize(row['staff_1_dol']), sanitize(row['staff_2_dol']),
-                garrett_section_count, sanitize(row.get('status', ''))
+                row['name'], row['type'], row.get('reporting_start'), row.get('reporting_end'),
+                row.get('reporting_as_of'), row.get('irl_due_date'), row.get('evidence_due_date'),
+                row.get('fieldwork_week'), row.get('leadsheet_due'), row.get('draft_date'),
+                row.get('final_date'), row.get('manager'), row.get('senior'), row.get('staff_1'),
+                row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
             )
             cursor.execute(sql, values)
 
