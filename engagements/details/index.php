@@ -319,7 +319,7 @@ foreach ($files as $file) {
 $assigned_list = [];
 
 $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-$stmt->bind_param("is", $engagement_id, $eng_staff_1);
+$stmt->bind_param("is", $eng_idno, $eng_staff_1);
 $stmt->execute();
 $result = $stmt->get_result();
 
