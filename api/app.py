@@ -38,7 +38,7 @@ def upload_data():
                     irl_due_date, evidence_due_date, fieldwork_week, leadsheet_due,
                     draft_date, final_date, manager, senior, staff_1, staff_2,
                     senior_dol, staff_1_dol, staff_2_dol
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
                 e_idno,
