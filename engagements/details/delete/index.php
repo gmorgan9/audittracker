@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     mysqli_stmt_bind_param($stmt, 'i', $id);
 
     if (mysqli_stmt_execute($stmt)) {
-        // header("Location: " . BASE_URL . "/comments/index.php?deleted=true");
+        header("Location: " . BASE_URL . "/engagements/details/?deleted=true");
         exit;
     } else {
         echo "Error deleting record: " . mysqli_error($conn);

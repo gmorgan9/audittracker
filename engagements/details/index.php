@@ -708,10 +708,14 @@ foreach ($files as $file) {
                             
 
                             <?php }}} ?>
+                            <?php if (isset($_GET['deleted']) && $_GET['deleted'] === 'true'): ?>
+                              <div class="alert alert-success">Comment successfully deleted.</div>
+                            <?php endif; ?>
                             
 
                           </tbody>
                         </table>
+
 
                     </div>
                 </div>
@@ -790,6 +794,7 @@ foreach ($files as $file) {
 
             </div>  
         <!-- end Table -->
+         
 
       </section>
 
