@@ -417,23 +417,23 @@ foreach ($files as $file) {
       </div>
       <div class="modal-body">
         <?php
-        $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-        $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $modal_list = [];
-        while ($row = $result->fetch_assoc()) {
-            $section = strtoupper(trim($row['section']));
-            $status = strtolower(trim($row['status']));
-            $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
-            $modal_list[] = "<span class='$color_class' style='font-size: 14px;'>$section</span>";
-        }
-        $stmt->close();
-        $count = count($modal_list);
-        foreach ($modal_list as $i => $item) {
-            echo $item;
-            if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 14px;'>, </span>";
-        }
+        // $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+        // $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
+        // $stmt->execute();
+        // $result = $stmt->get_result();
+        // $modal_list = [];
+        // while ($row = $result->fetch_assoc()) {
+        //     $section = strtoupper(trim($row['section']));
+        //     $status = strtolower(trim($row['status']));
+        //     $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+        //     $modal_list[] = "<span class='$color_class' style='font-size: 14px;'>$section</span>";
+        // }
+        // $stmt->close();
+        // $count = count($modal_list);
+        // foreach ($modal_list as $i => $item) {
+        //     echo $item;
+        //     if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 14px;'>, </span>";
+        // }
         ?>
       </div>
     </div>
