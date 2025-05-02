@@ -78,6 +78,11 @@ if (isset($_POST['update_engagement'])) {
         exit;
     }
 
+    // Normalize assigned_sections from the form
+    $assigned_sections = array_map(function($s) {
+        return strtoupper(trim($s));
+    }, $assigned_sections);
+
     // Prepare and execute engagement update
     $sql = "UPDATE engagements SET 
         name = ?, type = ?, status = ?, 
@@ -118,18 +123,19 @@ if (isset($_POST['update_engagement'])) {
             $delete_all_stmt->execute();
             $delete_all_stmt->close();
 
-            // Redirect after cleanup
             header("Location: /");
             exit;
         }
 
-        // Clean up whitespace
-        $dol_sections = array_map('trim', $dol_sections);
+        // Normalize dol_sections
+        $dol_sections = array_map(function($s) {
+            return strtoupper(trim($s));
+        }, $dol_sections);
 
         // Only keep sections assigned AND part of DOL
         $valid_sections = array_intersect($assigned_sections, $dol_sections);
 
-        // Fetch current assignments
+        // Fetch and normalize current assignments from DB
         $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND employee = ?";
         $stmt2 = $conn->prepare($query);
         $stmt2->bind_param("is", $engagement_id, $user);
@@ -137,15 +143,15 @@ if (isset($_POST['update_engagement'])) {
         $result = $stmt2->get_result();
         $current_sections = [];
         while ($row = $result->fetch_assoc()) {
-            $current_sections[] = $row['section'];
+            $current_sections[] = strtoupper(trim($row['section']));
         }
         $stmt2->close();
 
-        // Determine additions/removals
+        // Diff
         $to_add = array_diff($valid_sections, $current_sections);
         $to_remove = array_diff($current_sections, $valid_sections);
 
-        // Add new sections
+        // Add new
         foreach ($to_add as $section) {
             $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
             $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
@@ -153,7 +159,7 @@ if (isset($_POST['update_engagement'])) {
             $insert_stmt->close();
         }
 
-        // Remove obsolete sections
+        // Remove old
         foreach ($to_remove as $section) {
             $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
             $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
@@ -161,7 +167,6 @@ if (isset($_POST['update_engagement'])) {
             $delete_stmt->close();
         }
 
-        // ====== END assigned_sections update ======
         header("Location: /");
         exit;
     } else {
