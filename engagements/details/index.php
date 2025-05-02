@@ -772,7 +772,7 @@ foreach ($files as $file) {
                           <textarea class="form-control" id="comment " name="comment" rows="5"></textarea>
                         </div>
 
-                        <input type="text" class="form-control" id="engagement_idno" name="engagement_idno" value="<?php echo $eng_idno; ?>">
+                        <input type="hidden" class="form-control" id="engagement_idno" name="engagement_idno" value="<?php echo $eng_idno; ?>">
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="add_comment" class="btn btn-primary">Add</button>
