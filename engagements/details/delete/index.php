@@ -7,10 +7,10 @@ if (isset($_GET['id'])) {
     $engagement_idno = $_GET['eidno'];
 
     // Validate input
-    if (empty($comment_id) || empty($engagement_idno)) {
-        echo "Comment ID and Engagement ID are required!";
-        exit;
-    }
+    // if (empty($comment_id) || empty($engagement_idno)) {
+    //     echo "Comment ID and Engagement ID are required!";
+    //     exit;
+    // }
 
     // Step 1: Delete child comments
     $sql_child = "DELETE FROM comments WHERE parent_comment_id = ?";
