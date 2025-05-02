@@ -309,7 +309,7 @@ foreach ($files as $file) {
                           <span class="fw-semibold">Senior</span>
                           <span class="text-end">
                             <?php echo ($eng_senior === 'Garrett Morgan')
-                              ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_senior . '</a>'
+                              ? '<a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_senior . '</a>'
                               : $eng_senior; ?><br>
                             <?php
                             if ($eng_senior === 'Garrett Morgan') {
@@ -342,7 +342,7 @@ foreach ($files as $file) {
                           <span class="fw-semibold">Staff</span>
                           <span class="text-end">
                             <?php echo ($eng_staff_1 === 'Garrett Morgan')
-                              ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_1 . '</a>'
+                              ? '<a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_1 . '</a>'
                               : $eng_staff_1; ?><br>
                             <?php
                             if ($eng_staff_1 === 'Garrett Morgan') {
@@ -376,7 +376,7 @@ foreach ($files as $file) {
                             <span class="fw-semibold">Additional Staff</span>
                             <span class="text-end">
                               <?php echo ($eng_staff_2 === 'Garrett Morgan')
-                                ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_2 . '</a>'
+                                ? '<a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_2 . '</a>'
                                 : $eng_staff_2; ?><br>
                               <?php
                               if ($eng_staff_2 === 'Garrett Morgan') {
@@ -408,47 +408,47 @@ foreach ($files as $file) {
 
 
                     <div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="garrettModalLabel">Assigned Sections: Garrett Morgan</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="list-group" id="assigned-sections-list">
-          <?php
-          $stmt = $conn->prepare("SELECT section, status, id FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-          $gm = 'Garrett Morgan';
-          $stmt->bind_param("is", $eng_idno, $gm);
-          $stmt->execute();
-          $result = $stmt->get_result();
-          ?>
-          <?php while ($row = $result->fetch_assoc()):
-              $section = strtoupper(trim($row['section']));
-              $status = strtolower(trim($row['status']));
-              $section_id = $row['id']; // Section ID to update the status
-              $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
-              $button_class = ($status === 'assigned') ? 'btn-success' : 'btn-outline-secondary';
-              $button_text = ($status === 'assigned') ? 'Mark as Completed' : 'Unmark as Completed';
-          ?>
-            <!-- Form for each section -->
-            <form method="POST">
-              <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
-                <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
-                <input type="hidden" name="section_id" value="<?= $section_id ?>">
-                <input type="hidden" name="status" value="<?= ($status === 'Assigned') ? 'Completed' : 'Assigned' ?>">
-                <button type="submit" name="update_section" class="btn <?= $button_class ?> btn-sm">
-                  <?= $button_text ?>
-                </button>
-              </div>
-            </form>
-          <?php endwhile; ?>
-          <?php $stmt->close(); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="garrettModalLabel">Assigned Sections: Garrett Morgan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="list-group" id="assigned-sections-list">
+                              <?php
+                              $stmt = $conn->prepare("SELECT section, status, id FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                              $gm = 'Garrett Morgan';
+                              $stmt->bind_param("is", $eng_idno, $gm);
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              ?>
+                              <?php while ($row = $result->fetch_assoc()):
+                                  $section = strtoupper(trim($row['section']));
+                                  $status = strtolower(trim($row['status']));
+                                  $section_id = $row['id']; // Section ID to update the status
+                                  $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+                                  $button_class = ($status === 'assigned') ? 'btn-success' : 'btn-outline-secondary';
+                                  $button_text = ($status === 'assigned') ? 'Mark as Completed' : 'Unmark as Completed';
+                              ?>
+                                <!-- Form for each section -->
+                                <form method="POST">
+                                  <div class="d-flex justify-content-between align-items-center mb-2 list-group-item">
+                                    <span class="<?= $color_class ?> fw-semibold"><?= htmlspecialchars($section) ?></span>
+                                    <input type="hidden" name="section_id" value="<?= $section_id ?>">
+                                    <input type="hidden" name="status" value="<?= ($status === 'Assigned') ? 'Completed' : 'Assigned' ?>">
+                                    <button type="submit" name="update_section" class="btn <?= $button_class ?> btn-sm">
+                                      <?= $button_text ?>
+                                    </button>
+                                  </div>
+                                </form>
+                              <?php endwhile; ?>
+                              <?php $stmt->close(); ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
 
 
