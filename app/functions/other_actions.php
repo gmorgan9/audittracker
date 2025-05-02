@@ -68,7 +68,8 @@ if (isset($_POST['update_engagement'])) {
     $staff_1_dol = nullIfEmpty($_POST['staff_1_dol']);
     $staff_2_dol = nullIfEmpty($_POST['staff_2_dol']);
     $engagement_id = nullIfEmpty($_POST['engagement_id']);
-    $number_sections = nullIfEmpty($_POST['number_sections']);
+
+    $assigned_sections = isset($_POST['assigned_sections']) ? $_POST['assigned_sections'] : [];
 
     // Validate required fields
     if (empty($name) || empty($type) || empty($status)) {
@@ -83,22 +84,73 @@ if (isset($_POST['update_engagement'])) {
         irl_due_date = ?, evidence_due_date = ?, fieldwork_week = ?, 
         leadsheet_due = ?, draft_date = ?, final_date = ?, 
         manager = ?, senior = ?, staff_1 = ?, staff_2 = ?, 
-        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?, number_sections = ?
+        senior_dol = ?, staff_1_dol = ?, staff_2_dol = ?
         WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "ssssssssssssssssssssi", 
+        "ssssssssssssssssssss", 
         $name, $type, $status, 
         $reporting_start, $reporting_end, $reporting_as_of, 
         $irl_due_date, $evidence_due_date, $fieldwork_week, 
         $leadsheet_due, $draft_date, $final_date, 
         $manager, $senior, $staff_1, $staff_2, 
-        $senior_dol, $staff_1_dol, $staff_2_dol, $number_sections,
+        $senior_dol, $staff_1_dol, $staff_2_dol,
         $engagement_id
     );
 
     if ($stmt->execute()) {
+        // ====== Maintain assigned_sections table ======
+        $user = "Garrett Morgan";
+
+        // Determine Garrett's role and DOL sections
+        $dol_sections = [];
+
+        if ($manager === $user && !empty($manager_dol)) $dol_sections = explode(',', $manager_dol);
+        elseif ($senior === $user && !empty($senior_dol)) $dol_sections = explode(',', $senior_dol);
+        elseif ($staff_1 === $user && !empty($staff_1_dol)) $dol_sections = explode(',', $staff_1_dol);
+        elseif ($staff_2 === $user && !empty($staff_2_dol)) $dol_sections = explode(',', $staff_2_dol);
+
+        // Clean up spaces
+        $dol_sections = array_map('trim', $dol_sections);
+
+        // Only keep the assigned sections that Garrett should actually have based on DOL
+        $valid_sections = array_intersect($assigned_sections, $dol_sections);
+
+        // Fetch current assignments from DB
+        $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND user = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("is", $engagement_id, $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $current_sections = [];
+        while ($row = $result->fetch_assoc()) {
+            $current_sections[] = $row['section'];
+        }
+
+        // Determine sections to add and remove
+        $to_add = array_diff($valid_sections, $current_sections);
+        $to_remove = array_diff($current_sections, $valid_sections);
+
+        // Add new ones
+        foreach ($to_add as $section) {
+            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, user) VALUES (?, ?, ?)");
+            $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
+            $insert_stmt->execute();
+            $insert_stmt->close();
+        }
+
+        // Remove ones no longer assigned
+        foreach ($to_remove as $section) {
+            $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND user = ?");
+            $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
+            $delete_stmt->execute();
+            $delete_stmt->close();
+        }
+
+        // ====== END assigned_sections update ======
+
         header("Location: /");
         exit;
     } else {
@@ -108,3 +160,4 @@ if (isset($_POST['update_engagement'])) {
     $stmt->close();
     $conn->close();
 }
+
