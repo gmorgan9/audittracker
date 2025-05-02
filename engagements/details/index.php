@@ -222,6 +222,7 @@ foreach ($files as $file) {
                                           </div>
 
                                           <input type="hidden" name="engagement_id" value="<?php echo $eng_id; ?>">
+                                          <input type="hidden" name="engagement_idno" value="<?php echo $eng_idno; ?>">
 
 
                                           <div class="modal-footer">

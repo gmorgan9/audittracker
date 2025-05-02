@@ -70,6 +70,7 @@ if (isset($_POST['update_engagement'])) {
     $staff_1_dol = nullIfEmpty($_POST['staff_1_dol']);
     $staff_2_dol = nullIfEmpty($_POST['staff_2_dol']);
     $engagement_id = nullIfEmpty($_POST['engagement_id']);
+    $engagement_idno = nullIfEmpty($_POST['engagement_idno']);
     $assigned_sections = isset($_POST['assigned_sections']) ? $_POST['assigned_sections'] : [];
 
     // Validate required fields
@@ -78,12 +79,7 @@ if (isset($_POST['update_engagement'])) {
         exit;
     }
 
-    // Normalize assigned_sections from the form
-    $assigned_sections = array_map(function($s) {
-        return strtoupper(trim($s));
-    }, $assigned_sections);
-
-    // Prepare and execute engagement update
+    // Prepare and execute SQL update
     $sql = "UPDATE engagements SET 
         name = ?, type = ?, status = ?, 
         reporting_start = ?, reporting_end = ?, reporting_as_of = ?, 
@@ -118,43 +114,45 @@ if (isset($_POST['update_engagement'])) {
             $dol_sections = explode(',', $staff_2_dol);
         }
 
-        // Normalize dol_sections to ensure matching
-        $dol_sections = array_map(function($s) {
-            return strtoupper(trim($s));
-        }, $dol_sections);
+        // Clean up spaces
+        $dol_sections = array_map('trim', $dol_sections);
 
-        // Fetch and normalize current assignments from DB for the user
+        // Only consider assigned sections that match DOL
+        $valid_sections = array_intersect($assigned_sections, $dol_sections);
+
+        // Fetch current assignments
         $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND employee = ?";
         $stmt2 = $conn->prepare($query);
-        $stmt2->bind_param("is", $engagement_id, $user);
+        $stmt2->bind_param("is", $engagement_idno, $user);
         $stmt2->execute();
         $result = $stmt2->get_result();
         $current_sections = [];
         while ($row = $result->fetch_assoc()) {
-            $current_sections[] = strtoupper(trim($row['section']));
+            $current_sections[] = $row['section'];
         }
         $stmt2->close();
 
-        // Check sections to delete (if they are assigned but not part of DOL)
-        $sections_to_remove = array_diff($current_sections, $dol_sections);
+        // Calculate diffs
+        $to_add = array_diff($valid_sections, $current_sections);
+        $to_remove = array_diff($current_sections, $valid_sections);
 
-        // Remove sections that are in the DB but not in DOL
-        foreach ($sections_to_remove as $section) {
-            $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
-            $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
-            $delete_stmt->execute();
-            $delete_stmt->close();
-        }
-
-        // Add sections that are in the DOL but not assigned in the DB
-        $sections_to_add = array_diff($dol_sections, $current_sections);
-        foreach ($sections_to_add as $section) {
+        // Add missing sections
+        foreach ($to_add as $section) {
             $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
-            $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
+            $insert_stmt->bind_param("iss", $engagement_idno, $section, $user);
             $insert_stmt->execute();
             $insert_stmt->close();
         }
 
+        // Remove no-longer-valid sections
+        foreach ($to_remove as $section) {
+            $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
+            $delete_stmt->bind_param("iss", $engagement_idno, $section, $user);
+            $delete_stmt->execute();
+            $delete_stmt->close();
+        }
+
+        // ====== END assigned_sections update ======
         header("Location: /");
         exit;
     } else {
