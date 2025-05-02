@@ -157,8 +157,8 @@ if (isset($_POST['add_engagement'])) {
         // Sanitize and validate input data
         $engagement_idno = isset($_POST['engagement_idno']) ? trim($_POST['engagement_idno']) : ""; 
         $comment_by = isset($_POST['comment_by']) ? trim($_POST['comment_by']) : "";
-        $reference = isset($_POST['control']) ? trim($_POST['control']) : "";
-        $comment = isset($_POST['qa_comment']) ? trim($_POST['qa_comment']) : "";
+        $reference = isset($_POST['reference']) ? trim($_POST['reference']) : "";
+        $comment = isset($_POST['comment']) ? trim($_POST['comment']) : "";
         $parent_comment_id = isset($_POST['parent_comment_id']) ? trim($_POST['parent_comment_id']) : "";
         $status = "open";
 
