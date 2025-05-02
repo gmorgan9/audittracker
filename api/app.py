@@ -23,6 +23,9 @@ def upload_data():
     conn = get_db_connection()
     cursor = conn.cursor()
 
+    rows_inserted = []  # Keep track of successfully inserted rows
+    rows_failed = []  # Keep track of rows that fail
+
     try:
         for row in data:
             # Generate a unique ID (IDNO)
@@ -47,7 +50,7 @@ def upload_data():
                     sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
                     number_sections += len(sections)
 
-            # Insert into engagements table
+            # Prepare the SQL query for insertion
             sql = """
                 INSERT INTO engagements (
                     idno, name, type, reporting_start, reporting_end, reporting_as_of,
@@ -64,7 +67,19 @@ def upload_data():
                 row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol'),
                 number_sections
             )
-            cursor.execute(sql, values)
+
+            # Log the row data being inserted
+            print(f"Inserting row: {values}")
+
+            # Execute the insert statement
+            try:
+                cursor.execute(sql, values)
+                conn.commit()
+                rows_inserted.append(row)  # Add to successful rows
+            except Exception as e:
+                print(f"Failed to insert row: {row}")
+                print(f"Error: {str(e)}")
+                rows_failed.append((row, str(e)))  # Add to failed rows
 
             # Insert into assigned_sections for Garrett Morgan if any DOL is present
             for role, data in roles.items():
@@ -75,10 +90,20 @@ def upload_data():
                         INSERT INTO assigned_sections (engagement_idno, section, employee, status)
                         VALUES (%s, %s, %s, %s)
                         """
-                        cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
+                        try:
+                            cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
+                            conn.commit()
+                        except Exception as e:
+                            print(f"Failed to insert section {section} for row {row}")
+                            print(f"Error: {str(e)}")
+                            rows_failed.append((row, str(e)))
 
-        conn.commit()
-        return jsonify({'message': 'Data inserted successfully'}), 200
+        return jsonify({
+            'message': 'Data uploaded successfully',
+            'rows_inserted': len(rows_inserted),
+            'rows_failed': len(rows_failed),
+            'failed_rows': rows_failed
+        }), 200
 
     except Exception as e:
         conn.rollback()
