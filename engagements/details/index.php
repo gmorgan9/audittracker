@@ -307,8 +307,30 @@ foreach ($files as $file) {
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span class="fw-semibold">Senior</span>
                         <span class="text-end">
-                            <?php echo $eng_senior; ?><br>
-                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_senior_dol; ?></span>
+                          <?php echo $eng_senior; ?><br>
+                          <?php
+                          if ($eng_senior === 'Garrett Morgan') {
+                              $assigned_list = [];
+                              $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                              $stmt->bind_param("is", $eng_idno, $eng_senior);
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              while ($row = $result->fetch_assoc()) {
+                                  $section = strtoupper(trim($row['section']));
+                                  $status = strtolower(trim($row['status']));
+                                  $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+                                  $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
+                              }
+                              $stmt->close();
+                              $count = count($assigned_list);
+                              foreach ($assigned_list as $i => $item) {
+                                  echo $item;
+                                  if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
+                              }
+                          } else {
+                              echo "<span class='text-secondary' style='font-size: 12px;'>$eng_senior_dol</span>";
+                          }
+                          ?>
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -363,10 +385,32 @@ foreach ($files as $file) {
                           <span class="fw-semibold">Additional Staff</span>
                           <span class="text-end">
                             <?php echo $eng_staff_2; ?><br>
-                            <span class="text-secondary" style="font-size: 12px;"><?php echo $eng_staff_2_dol; ?></span>
+                            <?php
+                            if ($eng_staff_2 === 'Garrett Morgan') {
+                                $assigned_list = [];
+                                $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                                $stmt->bind_param("is", $eng_idno, $eng_staff_2);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                while ($row = $result->fetch_assoc()) {
+                                    $section = strtoupper(trim($row['section']));
+                                    $status = strtolower(trim($row['status']));
+                                    $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+                                    $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
+                                }
+                                $stmt->close();
+                                $count = count($assigned_list);
+                                foreach ($assigned_list as $i => $item) {
+                                    echo $item;
+                                    if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
+                                }
+                            } else {
+                                echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_2_dol</span>";
+                            }
+                            ?>
                           </span>
                         </li>
-                       <?php endif; ?>
+                      <?php endif; ?>
                     </ul>
                 </div>
 
