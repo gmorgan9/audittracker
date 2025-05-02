@@ -496,7 +496,7 @@ foreach ($files as $file) {
                         ?>
                             <tr class="align-middle" style="cursor: pointer;" >
                                 <td data-bs-toggle="modal" data-bs-target="#comment_details_<?php echo $comment_id; ?>">
-                                    <span class="badge" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
+                                    <span class="badge text-capitialize" style="background-color: rgb(232,232,232); color: rgb(130, 130, 130);">
                                         <?php echo $comment_status; ?>
                                     </span>
                                 </td>
