@@ -40,6 +40,10 @@ if (isset($_POST['update_comment'])) {
 }
 // END UPDATE COMMENT
 
+
+
+
+
 function nullIfEmpty($value) {
     return ($value === '' || $value === null) ? null : $value;
 }
@@ -74,7 +78,7 @@ if (isset($_POST['update_engagement'])) {
         exit;
     }
 
-    // Prepare and execute SQL update
+    // Prepare and execute engagement update
     $sql = "UPDATE engagements SET 
         name = ?, type = ?, status = ?, 
         reporting_start = ?, reporting_end = ?, reporting_as_of = ?, 
@@ -107,12 +111,22 @@ if (isset($_POST['update_engagement'])) {
             $dol_sections = explode(',', $staff_1_dol);
         } elseif ($staff_2 === $user && !empty($staff_2_dol)) {
             $dol_sections = explode(',', $staff_2_dol);
+        } else {
+            // User no longer assigned - delete all their assigned sections
+            $delete_all_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+            $delete_all_stmt->bind_param("is", $engagement_id, $user);
+            $delete_all_stmt->execute();
+            $delete_all_stmt->close();
+
+            // Redirect after cleanup
+            header("Location: /");
+            exit;
         }
 
-        // Clean up spaces
+        // Clean up whitespace
         $dol_sections = array_map('trim', $dol_sections);
 
-        // Only consider assigned sections that match DOL
+        // Only keep sections assigned AND part of DOL
         $valid_sections = array_intersect($assigned_sections, $dol_sections);
 
         // Fetch current assignments
@@ -127,11 +141,11 @@ if (isset($_POST['update_engagement'])) {
         }
         $stmt2->close();
 
-        // Calculate diffs
+        // Determine additions/removals
         $to_add = array_diff($valid_sections, $current_sections);
         $to_remove = array_diff($current_sections, $valid_sections);
 
-        // Add missing sections
+        // Add new sections
         foreach ($to_add as $section) {
             $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
             $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
@@ -139,7 +153,7 @@ if (isset($_POST['update_engagement'])) {
             $insert_stmt->close();
         }
 
-        // Remove no-longer-valid sections
+        // Remove obsolete sections
         foreach ($to_remove as $section) {
             $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
             $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
