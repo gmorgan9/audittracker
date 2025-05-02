@@ -408,7 +408,7 @@ foreach ($files as $file) {
 
 
                     <div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
+                      <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
                             <h5 class="modal-title" id="garrettModalLabel">Assigned Sections: Garrett Morgan</h5>
