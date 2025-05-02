@@ -43,7 +43,7 @@ def upload_data():
                 'staff_2': {'name': row['staff_2'], 'dol': row['staff_2_dol']}
             }
 
-            # Prepare the SQL query for insertion
+            # Prepare the SQL query for insertion into the engagements table
             sql = """
                 INSERT INTO engagements (
                     idno, name, type, reporting_start, reporting_end, reporting_as_of,
@@ -64,33 +64,31 @@ def upload_data():
             print(f"Executing SQL: {sql}")
             print(f"With values: {values}")
 
-            # Execute the insert statement
+            # Start transaction for both inserts
             try:
                 cursor.execute(sql, values)
+                
+                # Insert into assigned_sections for Garrett Morgan if any DOL is present
+                for role, data in roles.items():
+                    if data['name'] == 'Garrett Morgan' and data['dol']:
+                        sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
+                        for section in sections:
+                            insert_stmt = """
+                            INSERT INTO assigned_sections (engagement_idno, section, employee, status)
+                            VALUES (%s, %s, %s, %s)
+                            """
+                            cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
+
+                # Commit only if both inserts were successful
                 conn.commit()
-                rows_inserted.append(row)  # Add to successful rows
+                rows_inserted.append(row)
             except mysql.connector.Error as e:
                 print(f"Failed to insert row into engagements: {row}")
                 print(f"MySQL Error: {e}")
                 rows_failed.append((row, str(e)))  # Add to failed rows
+                conn.rollback()  # Rollback the transaction on error
 
-            # Insert into assigned_sections for Garrett Morgan if any DOL is present
-            for role, data in roles.items():
-                if data['name'] == 'Garrett Morgan' and data['dol']:
-                    sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
-                    for section in sections:
-                        insert_stmt = """
-                        INSERT INTO assigned_sections (engagement_idno, section, employee, status)
-                        VALUES (%s, %s, %s, %s)
-                        """
-                        try:
-                            cursor.execute(insert_stmt, (e_idno, section, data['name'], 'Assigned'))
-                            conn.commit()
-                        except mysql.connector.Error as e:
-                            print(f"Failed to insert section {section} for row {row}")
-                            print(f"MySQL Error: {e}")
-                            rows_failed.append((row, str(e)))
-
+        # Return response
         return jsonify({
             'message': 'Data uploaded successfully',
             'rows_inserted': len(rows_inserted),
