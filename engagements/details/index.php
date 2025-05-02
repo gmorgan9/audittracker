@@ -719,7 +719,7 @@ foreach ($files as $file) {
             </section>
 
 
-          <!-- Modal -->
+          <!-- ADD COMMENT Modal -->
             <div class="modal fade" id="add_comment" data-bs-keyboard="false" tabindex="-1" aria-labelledby="add_engagement_label" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
