@@ -336,7 +336,7 @@ foreach ($files as $file) {
                                           $color_class = 'text-muted'; // Fallback
                                       }
                                     
-                                      $assigned_list[] = "<span class='$color_class'>$section</span>";
+                                      $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
                                   }
                                 
                                   $stmt->close();
