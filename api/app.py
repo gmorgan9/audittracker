@@ -13,17 +13,6 @@ def get_db_connection():
         database='audittracker'
     )
 
-def generate_unique_idno(cursor):
-    while True:
-        e_idno = random.randint(1000000, 9999999)
-        cursor.execute("SELECT COUNT(*) FROM engagements WHERE idno = %s", (e_idno,))
-        if cursor.fetchone()[0] == 0:
-            return e_idno
-
-# Sanitize empty strings to None, ensuring null values are properly handled
-def sanitize(value):
-    return value if value != '' else None
-
 @app.route('/upload_data', methods=['POST'])
 def upload_data():
     data = request.get_json()
@@ -36,8 +25,12 @@ def upload_data():
 
     try:
         for row in data:
-            # Generate a unique IDNO
-            e_idno = generate_unique_idno(cursor)
+            # Generate a unique ID (IDNO)
+            e_idno = random.randint(1000000, 9999999)
+
+            # Sanitize the input, converting empty strings to None
+            def sanitize(value):
+                return value if value != '' else None
 
             # Roles with corresponding DOL fields
             roles = {
@@ -47,12 +40,12 @@ def upload_data():
                 'staff_2': {'name': row['staff_2'], 'dol': row['staff_2_dol']}
             }
 
-            # Count assigned sections for Garrett Morgan
-            garrett_section_count = 0
+            # Calculate number of sections for Garrett Morgan
+            number_sections = 0
             for role, data in roles.items():
                 if data['name'] == 'Garrett Morgan' and data['dol']:
                     sections = [section.strip() for section in data['dol'].split(',') if section.strip()]
-                    garrett_section_count += len(sections)
+                    number_sections += len(sections)
 
             # Insert into engagements table
             sql = """
@@ -64,15 +57,12 @@ def upload_data():
                 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
-                e_idno, sanitize(row['name']), sanitize(row['type']), sanitize(row.get('reporting_start')),
-                sanitize(row.get('reporting_end')), sanitize(row.get('reporting_as_of')),
-                sanitize(row.get('irl_due_date')), sanitize(row.get('evidence_due_date')),
-                sanitize(row.get('fieldwork_week')), sanitize(row.get('leadsheet_due')),
-                sanitize(row.get('draft_date')), sanitize(row.get('final_date')),
-                sanitize(row.get('manager')), sanitize(row.get('senior')),
-                sanitize(row.get('staff_1')), sanitize(row.get('staff_2')),
-                sanitize(row.get('senior_dol')), sanitize(row.get('staff_1_dol')), sanitize(row.get('staff_2_dol')),
-                garrett_section_count
+                e_idno, row['name'], row['type'], row.get('reporting_start'), row.get('reporting_end'),
+                row.get('reporting_as_of'), row.get('irl_due_date'), row.get('evidence_due_date'),
+                row.get('fieldwork_week'), row.get('leadsheet_due'), row.get('draft_date'),
+                row.get('final_date'), row.get('manager'), row.get('senior'), row.get('staff_1'),
+                row.get('staff_2'), row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol'),
+                number_sections
             )
             cursor.execute(sql, values)
 
