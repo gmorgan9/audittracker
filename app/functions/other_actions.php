@@ -118,7 +118,7 @@ if (isset($_POST['update_engagement'])) {
         $valid_sections = array_intersect($assigned_sections, $dol_sections);
 
         // Fetch current assignments from DB
-        $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND user = ?";
+        $query = "SELECT section FROM assigned_sections WHERE engagement_idno = ? AND employee = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("is", $engagement_id, $user);
         $stmt->execute();
@@ -135,7 +135,7 @@ if (isset($_POST['update_engagement'])) {
 
         // Add new ones
         foreach ($to_add as $section) {
-            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, user) VALUES (?, ?, ?)");
+            $insert_stmt = $conn->prepare("INSERT INTO assigned_sections (engagement_idno, section, employee) VALUES (?, ?, ?)");
             $insert_stmt->bind_param("iss", $engagement_id, $section, $user);
             $insert_stmt->execute();
             $insert_stmt->close();
@@ -143,7 +143,7 @@ if (isset($_POST['update_engagement'])) {
 
         // Remove ones no longer assigned
         foreach ($to_remove as $section) {
-            $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND user = ?");
+            $delete_stmt = $conn->prepare("DELETE FROM assigned_sections WHERE engagement_idno = ? AND section = ? AND employee = ?");
             $delete_stmt->bind_param("iss", $engagement_id, $section, $user);
             $delete_stmt->execute();
             $delete_stmt->close();
