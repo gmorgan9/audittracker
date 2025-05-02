@@ -147,7 +147,7 @@ if (isset($_POST['add_engagement'])) {
 
 
 // add qa comment
-    if (isset($_POST['add_qa_comment'])) {
+    if (isset($_POST['add_comment'])) {
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
@@ -156,12 +156,9 @@ if (isset($_POST['add_engagement'])) {
 
         // Sanitize and validate input data
         $qa_engagement_id = isset($_POST['qa_engagement_id']) ? trim($_POST['qa_engagement_id']) : ""; 
-        $qa_client_name = isset($_POST['qa_client_name']) ? trim($_POST['qa_client_name']) : "";
-        $control_ref = isset($_POST['control_ref']) ? trim($_POST['control_ref']) : "";
-        $cell_reference = isset($_POST['cell_reference']) ? trim($_POST['cell_reference']) : "";
         $comment_by = isset($_POST['comment_by']) ? trim($_POST['comment_by']) : "";
-        $control = isset($_POST['control']) ? trim($_POST['control']) : "";
-        $qa_comment = isset($_POST['qa_comment']) ? trim($_POST['qa_comment']) : "";
+        $reference = isset($_POST['control']) ? trim($_POST['control']) : "";
+        $comment = isset($_POST['qa_comment']) ? trim($_POST['qa_comment']) : "";
 
         // Prepare query
         $stmt = $conn->prepare(

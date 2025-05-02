@@ -767,77 +767,15 @@ foreach ($files as $file) {
                           </div>
                         </div>
 
-                        
-
-
                         <div class="mb-3">
                           <label for="comment " class="form-label">Comment</label>
                           <textarea class="form-control" id="comment " name="comment" rows="5"></textarea>
                         </div>
 
-                        
-
-                        <div class="row">
-                          <div class="col-md-4 mb-3">
-                            <label for="leadsheet_due" class="form-label">Leadsheet Due</label>
-                            <input type="date" class="form-control" id="leadsheet_due" name="leadsheet_due">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="draft_date" class="form-label">Draft Date</label>
-                            <input type="date" class="form-control" id="draft_date" name="draft_date">
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="final_date" class="form-label">Final Date</label>
-                            <input type="date" class="form-control" id="final_date" name="final_date">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-3 mb-3">
-                            <label for="manager" class="form-label">Manager</label>
-                            <input type="text" class="form-control" id="manager" name="manager">
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="senior" class="form-label">Senior</label>
-                            <input type="text" class="form-control" id="senior" name="senior">
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="staff_1" class="form-label">Staff 1</label>
-                            <input type="text" class="form-control" id="staff_1" name="staff_1">
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="staff_2" class="form-label">Staff 2</label>
-                            <input type="text" class="form-control" id="staff_2" name="staff_2">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-3 mb-3">
-                            <label for="senior_dol" class="form-label">Senior DOL</label>
-                            <input type="text" class="form-control" id="senior_dol" name="senior_dol">
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="staff_1_dol" class="form-label">Staff 1 DOL</label>
-                            <input type="text" class="form-control" id="staff_1_dol" name="staff_1_dol">
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="staff_2_dol" class="form-label">Staff 2 DOL</label>
-                            <input type="text" class="form-control" id="staff_2_dol" name="staff_2_dol">
-                          </div>
-                          <!-- <div class="col-md-3 mb-3">
-                            <label for="number_sections" class="form-label">Number of Sections</label>
-                            <input type="text" class="form-control" id="number_sections" name="number_sections">
-                          </div> -->
-                        </div>
-                      </div>
-
+                        <input type="text" class="form-control" id="engagement_idno" name="engagement_idno" value="<?php echo $eng_idno; ?>">
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="add_engagement" class="btn btn-primary">Add</button>
+                        <button type="submit" name="add_comment" class="btn btn-primary">Add</button>
                       </div>
                     </form>
 
