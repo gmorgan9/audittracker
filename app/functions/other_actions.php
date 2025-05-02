@@ -71,7 +71,7 @@ if (isset($_POST['update_section'])) {
 
     // Clean up
     $stmt->close();
-    $conn->close();
+    // $conn->close();
 }
 // END UPDATE SECTION STATUS
 
@@ -200,5 +200,5 @@ if (isset($_POST['update_engagement'])) {
     }
 
     $stmt->close();
-    $conn->close();
+    // $conn->close();
 }
