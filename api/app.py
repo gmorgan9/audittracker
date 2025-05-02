@@ -23,15 +23,15 @@ def upload_data():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    rows_inserted = []  # Keep track of successfully inserted rows
-    rows_failed = []  # Keep track of rows that fail
+    rows_inserted = []
+    rows_failed = []
 
     try:
         for row in data:
-            # Generate a unique ID (IDNO)
+            # Generate unique ID
             e_idno = random.randint(1000000, 9999999)
 
-            # Prepare the SQL query for insertion into the engagements table
+            # Insert into engagements table
             sql = """
                 INSERT INTO engagements (
                     idno, name, type, reporting_start, reporting_end, reporting_as_of,
@@ -50,22 +50,22 @@ def upload_data():
                 row.get('senior_dol'), row.get('staff_1_dol'), row.get('staff_2_dol')
             )
 
-
-            # Execute the SQL query to insert data
             cursor.execute(sql, values)
 
-            # Insert into assigned_sections for Garrett Morgan if any DOL is present
-            for role, data in row.items():
-                if 'dol' in role.lower() and data:  # Check if there's any DOL data
-                    insert_stmt = """
-                    INSERT INTO assigned_sections (engagement_idno, section, employee, status)
-                    VALUES (%s, %s, %s, %s)
-                    """
-                    sections = [section.strip() for section in data.split(',') if section.strip()]
-                    for section in sections:
-                        cursor.execute(insert_stmt, (e_idno, section, row['manager'], 'Assigned'))
+            # Insert into assigned_sections ONLY for Garrett Morgan
+            for role in ['senior_dol', 'staff_1_dol', 'staff_2_dol']:
+                employee_role = role.replace('_dol', '')
+                assigned_employee = row.get(employee_role)
 
-            # Commit the transaction
+                if assigned_employee and assigned_employee.strip().lower() == 'garrett morgan' and row.get(role):
+                    sections = [section.strip() for section in row[role].split(',') if section.strip()]
+                    for section in sections:
+                        insert_stmt = """
+                        INSERT INTO assigned_sections (engagement_idno, section, employee, status)
+                        VALUES (%s, %s, %s, %s)
+                        """
+                        cursor.execute(insert_stmt, (e_idno, section, 'Garrett Morgan', 'Assigned'))
+
             conn.commit()
             rows_inserted.append(row)
 
@@ -77,7 +77,7 @@ def upload_data():
         }), 200
 
     except mysql.connector.Error as e:
-        conn.rollback()  # Rollback if any error occurs
+        conn.rollback()
         return jsonify({'error': str(e)}), 500
 
     finally:
