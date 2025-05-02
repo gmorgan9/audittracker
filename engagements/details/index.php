@@ -341,7 +341,14 @@ foreach ($files as $file) {
                                 
                                   $stmt->close();
                                 
-                                  echo implode(', ', $assigned_list);
+                                  // Print with colored commas
+                                  $count = count($assigned_list);
+                                  foreach ($assigned_list as $i => $item) {
+                                      echo $item;
+                                      if ($i < $count - 1) {
+                                          echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
+                                      }
+                                  }
                               } else {
                                   // Default display for other users
                                   echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_1_dol</span>";
@@ -349,6 +356,7 @@ foreach ($files as $file) {
                               ?>
                           </span>
                       </li>
+
 
                       <?php if (!empty($eng_staff_2)) : ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
