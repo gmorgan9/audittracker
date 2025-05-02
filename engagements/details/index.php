@@ -312,39 +312,44 @@ foreach ($files as $file) {
                         </span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span class="fw-semibold">Staff</span>
-                        <span class="text-end">
-                            <?php echo $eng_staff_1; ?><br>
-                            <?php
-$assigned_list = [];
-
-$stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-$stmt->bind_param("is", $eng_idno, $eng_staff_1);
-$stmt->execute();
-$result = $stmt->get_result();
-
-while ($row = $result->fetch_assoc()) {
-    $section = strtoupper(trim($row['section']));
-    $status = strtolower(trim($row['status']));
-    
-    if ($status === 'assigned') {
-        $color_class = 'text-warning'; // Yellow
-    } elseif ($status === 'completed') {
-        $color_class = 'text-success'; // Green
-    } else {
-        $color_class = 'text-muted'; // Fallback
-    }
-
-    $assigned_list[] = "<span class='$color_class'>$section</span>";
-}
-
-$stmt->close();
-
-echo implode(', ', $assigned_list);
-?>
-
-                        </span>
+                          <span class="fw-semibold">Staff</span>
+                          <span class="text-end">
+                              <?php echo $eng_staff_1; ?><br>
+                              <?php
+                              if ($eng_staff_1 === 'Garrett Morgan') {
+                                  $assigned_list = [];
+                              
+                                  $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                                  $stmt->bind_param("is", $eng_idno, $eng_staff_1);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                              
+                                  while ($row = $result->fetch_assoc()) {
+                                      $section = strtoupper(trim($row['section']));
+                                      $status = strtolower(trim($row['status']));
+                                  
+                                      if ($status === 'assigned') {
+                                          $color_class = 'text-warning'; // Yellow
+                                      } elseif ($status === 'completed') {
+                                          $color_class = 'text-success'; // Green
+                                      } else {
+                                          $color_class = 'text-muted'; // Fallback
+                                      }
+                                    
+                                      $assigned_list[] = "<span class='$color_class'>$section</span>";
+                                  }
+                                
+                                  $stmt->close();
+                                
+                                  echo implode(', ', $assigned_list);
+                              } else {
+                                  // Default display for other users
+                                  echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_1_dol</span>";
+                              }
+                              ?>
+                          </span>
                       </li>
+
                       <?php if (!empty($eng_staff_2)) : ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           <span class="fw-semibold">Additional Staff</span>
