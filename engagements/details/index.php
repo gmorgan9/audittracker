@@ -304,92 +304,18 @@ foreach ($files as $file) {
                             <?php echo $eng_manager; ?>
                         </span>
                       </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span class="fw-semibold">Senior</span>
-                        <span class="text-end">
-                          <?php echo $eng_senior; ?><br>
-                          <?php
-                          if ($eng_senior === 'Garrett Morgan') {
-                              $assigned_list = [];
-                              $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-                              $stmt->bind_param("is", $eng_idno, $eng_senior);
-                              $stmt->execute();
-                              $result = $stmt->get_result();
-                              while ($row = $result->fetch_assoc()) {
-                                  $section = strtoupper(trim($row['section']));
-                                  $status = strtolower(trim($row['status']));
-                                  $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
-                                  $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
-                              }
-                              $stmt->close();
-                              $count = count($assigned_list);
-                              foreach ($assigned_list as $i => $item) {
-                                  echo $item;
-                                  if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
-                              }
-                          } else {
-                              echo "<span class='text-secondary' style='font-size: 12px;'>$eng_senior_dol</span>";
-                          }
-                          ?>
-                        </span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                          <span class="fw-semibold">Staff</span>
-                          <span class="text-end">
-                              <?php echo $eng_staff_1; ?><br>
-                              <?php
-                              if ($eng_staff_1 === 'Garrett Morgan') {
-                                  $assigned_list = [];
-                              
-                                  $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-                                  $stmt->bind_param("is", $eng_idno, $eng_staff_1);
-                                  $stmt->execute();
-                                  $result = $stmt->get_result();
-                              
-                                  while ($row = $result->fetch_assoc()) {
-                                      $section = strtoupper(trim($row['section']));
-                                      $status = strtolower(trim($row['status']));
-                                  
-                                      if ($status === 'assigned') {
-                                          $color_class = 'text-warning'; // Yellow
-                                      } elseif ($status === 'completed') {
-                                          $color_class = 'text-success'; // Green
-                                      } else {
-                                          $color_class = 'text-secondary'; // Fallback
-                                      }
-                                    
-                                      $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
-                                  }
-                                
-                                  $stmt->close();
-                                
-                                  // Print with colored commas
-                                  $count = count($assigned_list);
-                                  foreach ($assigned_list as $i => $item) {
-                                      echo $item;
-                                      if ($i < $count - 1) {
-                                          echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
-                                      }
-                                  }
-                              } else {
-                                  // Default display for other users
-                                  echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_1_dol</span>";
-                              }
-                              ?>
-                          </span>
-                      </li>
-
-
-                      <?php if (!empty($eng_staff_2)) : ?>
+                      <!-- Senior -->
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          <span class="fw-semibold">Additional Staff</span>
+                          <span class="fw-semibold">Senior</span>
                           <span class="text-end">
-                            <?php echo $eng_staff_2; ?><br>
+                            <?php echo ($eng_senior === 'Garrett Morgan')
+                              ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_senior . '</a>'
+                              : $eng_senior; ?><br>
                             <?php
-                            if ($eng_staff_2 === 'Garrett Morgan') {
+                            if ($eng_senior === 'Garrett Morgan') {
                                 $assigned_list = [];
                                 $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
-                                $stmt->bind_param("is", $eng_idno, $eng_staff_2);
+                                $stmt->bind_param("is", $eng_idno, $eng_senior);
                                 $stmt->execute();
                                 $result = $stmt->get_result();
                                 while ($row = $result->fetch_assoc()) {
@@ -405,13 +331,117 @@ foreach ($files as $file) {
                                     if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
                                 }
                             } else {
-                                echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_2_dol</span>";
+                                echo "<span class='text-secondary' style='font-size: 12px;'>$eng_senior_dol</span>";
                             }
                             ?>
                           </span>
                         </li>
-                      <?php endif; ?>
+                          
+                        <!-- Staff -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <span class="fw-semibold">Staff</span>
+                          <span class="text-end">
+                            <?php echo ($eng_staff_1 === 'Garrett Morgan')
+                              ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_1 . '</a>'
+                              : $eng_staff_1; ?><br>
+                            <?php
+                            if ($eng_staff_1 === 'Garrett Morgan') {
+                                $assigned_list = [];
+                                $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                                $stmt->bind_param("is", $eng_idno, $eng_staff_1);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                while ($row = $result->fetch_assoc()) {
+                                    $section = strtoupper(trim($row['section']));
+                                    $status = strtolower(trim($row['status']));
+                                    $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+                                    $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
+                                }
+                                $stmt->close();
+                                $count = count($assigned_list);
+                                foreach ($assigned_list as $i => $item) {
+                                    echo $item;
+                                    if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
+                                }
+                            } else {
+                                echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_1_dol</span>";
+                            }
+                            ?>
+                          </span>
+                        </li>
+                          
+                        <!-- Additional Staff -->
+                        <?php if (!empty($eng_staff_2)) : ?>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">Additional Staff</span>
+                            <span class="text-end">
+                              <?php echo ($eng_staff_2 === 'Garrett Morgan')
+                                ? '<a href="#" data-bs-toggle="modal" data-bs-target="#garrettModal">' . $eng_staff_2 . '</a>'
+                                : $eng_staff_2; ?><br>
+                              <?php
+                              if ($eng_staff_2 === 'Garrett Morgan') {
+                                  $assigned_list = [];
+                                  $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+                                  $stmt->bind_param("is", $eng_idno, $eng_staff_2);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  while ($row = $result->fetch_assoc()) {
+                                      $section = strtoupper(trim($row['section']));
+                                      $status = strtolower(trim($row['status']));
+                                      $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+                                      $assigned_list[] = "<span class='$color_class' style='font-size: 12px;'>$section</span>";
+                                  }
+                                  $stmt->close();
+                                  $count = count($assigned_list);
+                                  foreach ($assigned_list as $i => $item) {
+                                      echo $item;
+                                      if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 12px;'>, </span>";
+                                  }
+                              } else {
+                                  echo "<span class='text-secondary' style='font-size: 12px;'>$eng_staff_2_dol</span>";
+                              }
+                              ?>
+                            </span>
+                          </li>
+                        <?php endif; ?>
                     </ul>
+
+
+                    <!-- Modal for Garrett Morgan -->
+<div class="modal fade" id="garrettModal" tabindex="-1" aria-labelledby="garrettModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="garrettModalLabel">Assigned Sections: Garrett Morgan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php
+        $stmt = $conn->prepare("SELECT section, status FROM assigned_sections WHERE engagement_idno = ? AND employee = ?");
+        $stmt->bind_param("is", $eng_idno, $gm = 'Garrett Morgan');
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $modal_list = [];
+        while ($row = $result->fetch_assoc()) {
+            $section = strtoupper(trim($row['section']));
+            $status = strtolower(trim($row['status']));
+            $color_class = ($status === 'assigned') ? 'text-warning' : (($status === 'completed') ? 'text-success' : 'text-secondary');
+            $modal_list[] = "<span class='$color_class' style='font-size: 14px;'>$section</span>";
+        }
+        $stmt->close();
+        $count = count($modal_list);
+        foreach ($modal_list as $i => $item) {
+            echo $item;
+            if ($i < $count - 1) echo "<span class='text-secondary' style='font-size: 14px;'>, </span>";
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
                 </div>
 
                 <div class="comments">
